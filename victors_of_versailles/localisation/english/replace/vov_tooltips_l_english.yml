@@ -1,4 +1,13 @@
 ﻿l_english:
+  pop_militancy_change_tt: "Militancy: [?temp|%-]."
+  pop_consciousness_change_tt: "Consciousness: [?temp|%-]."
+  pop_militancy_equals_tt: "Militancy is §Y[?temp|%]§!."
+  pop_consciousness_equals_tt: "Consciousness is §Y[?temp|%]§!."
+  pop_militancy_less_than_tt: "Militancy is less than §Y[?temp|%]§!."
+  pop_consciousness_less_than_tt: "Consciousness is less than §Y[?temp|%]§!."
+  pop_militancy_more_than_tt: "Militancy is more than §Y[?temp|%]§!."
+  pop_consciousness_more_than_tt: "Consciousness is more than §Y[?temp|%]§!."
+
   SGF_1920_elections_happened: "The 1920 Elections have happened."
   SGF_become_republicans: "You will assume control of the republicans during the South German Civil War."
   SGF_become_bavarian_communists: "You will assume control of the communists during the South German Civil War."

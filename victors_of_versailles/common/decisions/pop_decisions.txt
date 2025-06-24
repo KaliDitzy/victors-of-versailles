@@ -83,8 +83,11 @@ coup_crisis = {
 				limit = {
 					is_controlled_by = ROOT
 				}
-				subtract_from_variable = { consciousness = 0.25 }
-				subtract_from_variable = { militancy = 0.25 }
+				set_temp_variable = { temp = -0.25 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -164,8 +167,11 @@ coup_crisis = {
 				limit = {
 					is_controlled_by = ROOT
 				}
-				subtract_from_variable = { consciousness = 0.25 }
-				subtract_from_variable = { militancy = 0.25 }
+				set_temp_variable = { temp = -0.25 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -253,8 +259,11 @@ coup_crisis = {
 				limit = {
 					is_controlled_by = ROOT
 				}
-				subtract_from_variable = { consciousness = 0.25 }
-				subtract_from_variable = { militancy = 0.25 }
+				set_temp_variable = { temp = -0.25 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -348,8 +357,11 @@ coup_crisis = {
 				limit = {
 					is_controlled_by = ROOT
 				}
-				subtract_from_variable = { consciousness = 0.25 }
-				subtract_from_variable = { militancy = 0.25 }
+				set_temp_variable = { temp = -0.25 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -373,14 +385,22 @@ civil_war_crisis = {
 		activation = {
 			check_variable = { num_owned_states > 1 }
 			has_civil_war = no
-			NOT = { check_variable = { militancy < 0.5 } }
+			NOT = {
+				set_temp_variable = { temp = 0.5 }
+				custom_trigger_tooltip = { tooltip = pop_militancy_less_than_tt }
+				check_variable = { militancy < temp }
+			}
 		}
 		cancel_trigger = {
 			NOT = {
 				AND = {
 					check_variable = { num_owned_states > 1 }
 					has_civil_war = no
-					NOT = { check_variable = { militancy < 0.3 } }
+					NOT = {
+						set_temp_variable = { temp = 0.3 }
+						custom_trigger_tooltip = { tooltip = pop_militancy_less_than_tt }
+						check_variable = { militancy < temp }
+					}
 				}
 			}
 		}

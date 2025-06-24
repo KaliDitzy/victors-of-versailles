@@ -1,0 +1,6 @@
+﻿capital = 47
+
+declare_war_on = {
+	target = OTT
+	type = take_state_focus
+}

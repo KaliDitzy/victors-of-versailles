@@ -1,10 +1,10 @@
 load_generic_units = {
 	load_oob = generic
 				
-	every_owned_state = {
+	every_controlled_state = {
 		limit = {
 			any_neighbor_state = {
-				owner = {
+				controller = {
 					NOT = { tag = PREV.PREV.PREV }
 				}
 			}
@@ -14,10 +14,10 @@ load_generic_units = {
 			owner = PREV
 		}
 	}
-	every_owned_state = {
+	every_controlled_state = {
 		limit = {
 			any_neighbor_state = {
-				owner = {
+				controller = {
 					has_war_with = PREV.PREV.PREV
 				}
 			}

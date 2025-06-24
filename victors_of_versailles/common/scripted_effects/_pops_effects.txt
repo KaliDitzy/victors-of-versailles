@@ -36,8 +36,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
-				subtract_from_variable = { consciousness = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -56,7 +59,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -73,7 +80,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -92,7 +103,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -111,7 +126,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -128,7 +147,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -147,7 +170,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -166,7 +193,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -183,7 +214,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -202,7 +237,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -221,7 +260,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}
@@ -238,7 +281,11 @@ civil_war_from_pops = {
 				is_capital = no
 			}
 			every_controlled_state = {
-				subtract_from_variable = { militancy = 0.2 }
+				set_temp_variable = { temp = -0.2 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 		}
 	}

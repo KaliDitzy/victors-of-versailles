@@ -478,7 +478,9 @@ force_reform = {
 }
 reduce_consciousness_from_reform = {
 	every_controlled_state = {
-		subtract_from_variable = { consciousness = 0.15 }
+		set_temp_variable = { temp = -0.15 }
+		custom_effect_tooltip = pop_consciousness_change_tt
+		add_to_variable = { consciousness = temp }
 		clamp_variable = {
 			var = consciousness
 			min = 0

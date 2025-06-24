@@ -1,14 +1,12 @@
 capital = 797
 
-set_cosmetic_tag = TUR_nationalist
-
 set_politics = {
 	ruling_party = neutrality
 	elections_allowed = no
 }
 set_popularities = {
 	democratic = 20
-	fascism = 2
-	communism = 5
+	fascism = 5
+	communism = 2
 	neutrality = 73
 }

@@ -1,0 +1,168 @@
+@FLAVOR = 0.42857142857
+@TINY = 2
+@MINOR = 3
+@AVERAGE = 5
+@MAJOR = 10
+@SUPERMAJOR = 15
+
+focus_tree = {
+	id = OTT_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 40
+			OR = {
+				original_tag = OTT
+			}
+		}
+	}
+	
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 2048 y = 64 }
+
+	initial_show_position = {
+		focus = OTT_dead_man_of_europe
+	}
+
+	focus = {
+		id = OTT_dead_man_of_europe
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 0
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -100
+		}
+	}
+	
+	focus = {
+		id = OTT_form_the_grand_national_assembly
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = OTT_dead_man_of_europe
+		x = -2
+		y = 1
+		cost = @MAJOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = {
+			focus = OTT_resist_the_fates
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = OTT_dead_man_of_europe
+		}
+
+		completion_reward = {
+			every_controlled_state = {
+				limit = {
+					is_core_of = OTT
+				}
+				set_temp_variable = { temp = -0.05 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
+			}
+			every_core_state = {
+				add_core_of = TUR
+			}
+			TUR = {
+				transfer_state = 49
+				transfer_state = 346
+				transfer_state = 798
+				transfer_state = 343
+				set_capital = {
+					state = 49
+				}
+				load_focus_tree = {
+					tree = OTT_focus
+					keep_completed = yes
+					copy_completed_from = OTT
+				}
+				change_tag_from = OTT
+			}
+			hidden_effect = {
+				load_focus_tree = { tree = generic_focus }
+			}
+		}
+	}
+	focus = {
+		id = OTT_resist_the_fates
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = OTT_dead_man_of_europe
+		x = 2
+		y = 1
+		cost = @MAJOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = {
+			focus = OTT_form_the_grand_national_assembly
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = OTT_dead_man_of_europe
+		}
+
+		completion_reward = {
+			every_controlled_state = {
+				limit = {
+					is_core_of = OTT
+				}
+				add_to_variable = { consciousness = 0.15 }
+				add_to_variable = { militancy = 0.15 }
+			}
+			every_core_state = {
+				add_core_of = TUR
+			}
+		}
+	}
+
+	focus = {
+		id = OTT_organize_our_command
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = OTT_form_the_grand_national_assembly
+		x = 1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = OTT_form_the_grand_national_assembly
+		}
+
+		completion_reward = {
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = OTT_declare_independence
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = OTT_form_the_grand_national_assembly
+		x = -1
+		y = 4
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = OTT_form_the_grand_national_assembly
+		}
+
+		completion_reward = {
+			OTT = {
+				declare_war_on = {
+					target = TUR
+					type = civil_war
+				}
+			}
+		}
+	}
+}

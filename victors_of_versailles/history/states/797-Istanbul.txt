@@ -13,7 +13,7 @@ state={
 	state_category = city
 
 	history= {
-		owner = TUR
+		owner = OTT
 		victory_points = {
 			9833 25
 		}
@@ -32,7 +32,7 @@ state={
                 }
 			}
 		}
-		add_core_of = TUR
+		add_core_of = OTT
 	}
 
 	local_supplies=0.0 

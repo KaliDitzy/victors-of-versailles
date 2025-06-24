@@ -40,39 +40,9 @@ bookmarks = {
 			history = "OTHER_GREAT_BIG_TROUBLE_DESC"
 		}
 
-		"RHI"={
+		"OTT"={
 			minor = yes
-			history = "RHI_GREAT_BIG_TROUBLE_DESC"
-			ideology = democratic
-		}
-		"POL"={
-			minor = yes
-			history = "POL_GREAT_BIG_TROUBLE_DESC"
-			ideology = neutrality
-		}
-		"BLR"={
-			minor = yes
-			history = "BLR_GREAT_BIG_TROUBLE_DESC"
-			ideology = neutrality
-		}
-		"UKR"={
-			minor = yes
-			history = "UKR_GREAT_BIG_TROUBLE_DESC"
-			ideology = democratic
-		}
-		"YUG"={
-			minor = yes
-			history = "YUG_GREAT_BIG_TROUBLE_DESC"
-			ideology = neutrality
-		}
-		"KUR"={
-			minor = yes
-			history = "KUR_GREAT_BIG_TROUBLE_DESC"
-			ideology = democratic
-		}
-		"MKH"={
-			minor = yes
-			history = "MKH_GREAT_BIG_TROUBLE_DESC"
+			history = "OTT_GREAT_BIG_TROUBLE_DESC"
 			ideology = neutrality
 		}
 

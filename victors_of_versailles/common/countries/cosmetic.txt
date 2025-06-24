@@ -63,11 +63,6 @@ CAN_UK = {
 	color_ui = rgb { 155 62 51 }
 }
 
-TUR_ottoman = {
-	color = rgb { 126 203 120 }
-	color_ui = rgb { 126 203 120 }
-}
-
 SOV_preformation = {
 	color = rgb { 171 5 21 }
 	color_ui = rgb { 171 5 21 }

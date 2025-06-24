@@ -560,7 +560,9 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			every_core_state = {
-				subtract_from_variable = { consciousness = 0.15 }
+				set_temp_variable = { temp = -0.15 }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 				hidden_effect = {
 					clamp_variable = {
 						var = consciousness
@@ -588,7 +590,9 @@ focus_tree = {
 
 		completion_reward = {
 			every_core_state = {
-				subtract_from_variable = { militancy = 0.05 }
+				set_temp_variable = { temp = -0.05 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
 				hidden_effect = {
 					clamp_variable = {
 						var = militancy
