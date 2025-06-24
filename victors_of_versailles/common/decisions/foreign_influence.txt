@@ -276,7 +276,13 @@ foreign_influence = {
 			FROM = {
 				set_politics = {
 					ruling_party = democratic
-					elections_allowed = yes
+					elections_allowed = no
+				}
+				if = {
+					limit = {
+						has_idea = no_elections
+					}
+					add_ideas = limited_womens_suffrage
 				}
 			}
 		}

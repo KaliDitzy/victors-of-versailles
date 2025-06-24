@@ -935,7 +935,16 @@ democratic_on_the_rise = {
 		cost = 50
 		
 		complete_effect = {
-			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			if = {
+				limit = {
+					has_idea = no_elections
+				}
+				add_ideas = limited_womens_suffrage
+			}
 			clr_country_flag = preparation_for_democratic_civil_war
 			clr_country_flag = military_support_for_democratic_civil_war
 			clr_country_flag = civil_support_for_democratic_civil_war
