@@ -1,0 +1,555 @@
+@DRIFT_AMOUNT = 0.001
+
+prepare_elections = {
+	# DEMOCRATIC
+	set_variable = { conservatism_bias = 0 }
+	set_variable = { liberalism_bias = 0 }
+	set_variable = { socialism_bias = 0 }
+	set_variable = { populism_bias = 0 }
+
+	# COMMUNISM
+	set_variable = { marxism_bias = 0 }
+	set_variable = { leninism_bias = 0 }
+	set_variable = { stalinism_bias = 0 }
+	set_variable = { anti_revisionism_bias = 0 }
+	set_variable = { anarchist_communism_bias = 0 }
+
+	# FASCISM
+	set_variable = { nazism_bias = 0 }
+	set_variable = { gen_nazism_bias = 0 }
+	set_variable = { fascism_ideology_bias = 0 }
+	set_variable = { falangism_bias = 0 }
+	set_variable = { rexism_bias = 0 }
+
+	# NEUTRALITY
+	set_variable = { despotism_bias = 0 }
+	set_variable = { oligarchism_bias = 0 }
+	set_variable = { anarchism_bias = 0 }
+	set_variable = { moderatism_bias = 0 }
+	set_variable = { centrism_bias = 0 }
+}
+
+finish_elections = {
+	if = { ### DEMOCRATIC
+		limit = {
+			democratic > party_popularity@communism
+			democratic > party_popularity@fascism
+			democratic > party_popularity@neutrality
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		if = { # CONSERVATISM
+			limit = {
+				check_variable = { conservatism_bias > var:liberalism_bias }
+				check_variable = { conservatism_bias > var:socialism_bias }
+				check_variable = { conservatism_bias > var:populism_bias }
+			}
+			promote_character = var:conservative_leader
+		}
+	}
+	else_if = { ### COMMUNISM
+		limit = {
+			communism > party_popularity@democratic
+			communism > party_popularity@fascism
+			communism > party_popularity@neutrality
+		}
+		set_politics = {
+			ruling_party = communism
+		}
+		if = { # LENINISM
+			limit = {
+				check_variable = { leninism_bias > var:marxism_bias }
+				check_variable = { leninism_bias > var:stalinism_bias }
+				check_variable = { leninism_bias > var:anti_revisionism_bias }
+				check_variable = { leninism_bias > var:anarchist_communism_bias }
+			}
+			promote_character = var:leninism_leader
+		}
+	}
+	else_if = { ### FASCISM
+		limit = {
+			fascism > party_popularity@democratic
+			fascism > party_popularity@communism
+			fascism > party_popularity@neutrality
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		if = { # NAZISM
+			limit = {
+				check_variable = { nazism_bias > var:gen_nazism_bias }
+				check_variable = { nazism_bias > var:fascism_ideology_bias }
+				check_variable = { nazism_bias > var:falangism_bias }
+				check_variable = { nazism_bias > var:rexism_bias }
+			}
+			promote_character = var:nazism_leader
+		}
+	}
+	else_if = { ### NEUTRALITY
+		limit = {
+			neutrality > party_popularity@democratic
+			neutrality > party_popularity@communism
+			neutrality > party_popularity@fascism
+		}
+		set_politics = {
+			ruling_party = neutrality
+		}
+		if = { # LENINISM
+			limit = {
+				check_variable = { despotism_bias > var:oligarchism_bias }
+				check_variable = { despotism_bias > var:anarchism_bias }
+				check_variable = { despotism_bias > var:moderatism_bias }
+				check_variable = { despotism_bias > var:centrism_bias }
+			}
+			promote_character = var:despotism_leader
+		}
+	}
+	clr_country_flag = election_active
+	set_variable = { days_until_election = var:days_between_elections }
+}
+
+election_democratic_drift = {
+	if = {	# CONSERVATISM
+		limit = {
+			has_country_flag = has_conservatism_party
+		}
+		if = {	#SOCIAL
+			limit = {
+				has_idea = var:conservatism_suffrage
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+			add_to_variable = { conservatism_bias = 1 }
+		}
+		if = {
+			limit = {
+				has_idea = var:conservatism_property
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+			add_to_variable = { conservatism_bias = 1 }
+		}
+		if = {
+			limit = {
+				has_idea = var:conservatism_acceptance
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+			add_to_variable = { conservatism_bias = 1 }
+		}
+		if = {	#FOREIGN
+			limit = {
+				has_idea = var:conservatism_warfare
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+			add_to_variable = { conservatism_bias = 1 }
+		}
+	}
+	if = {	# NO DEFINED POLITICS
+		limit = {
+			NOT = {
+				has_country_flag = defined_politics
+			}
+		}
+		if = {	#SOCIAL
+			limit = {
+				OR = {
+					has_idea = limited_womens_suffrage
+					has_idea = womens_suffrage_law
+					has_idea = minority_suffrage
+					has_idea = universal_suffrage
+				}
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				has_idea = private_property
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = racial_discrimination
+					has_idea = sexual_discrimination
+					has_idea = no_discrimination
+				}
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {	#FOREIGN
+			limit = {
+				OR = {
+					has_idea = pacifism
+					has_idea = retaliatory
+					has_idea = interventionism
+				}
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+	}
+}
+
+election_communism_drift = {
+	if = {	# NO DEFINED POLITICS
+		limit = {
+			NOT = {
+				has_country_flag = defined_politics
+			}
+		}
+		if = {	#SOCIAL
+			limit = {
+				OR = {
+					has_idea = no_elections
+					has_idea = universal_suffrage
+				}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = state_property
+					has_idea = property_abolished
+				}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = sexual_discrimination
+					has_idea = no_discrimination
+				}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {	#FOREIGN
+			limit = {
+				OR = {
+					has_idea = pacifism
+					has_idea = retaliatory
+					has_idea = interventionism
+					has_idea = jingoism
+				}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+	}
+}
+
+election_fascism_drift = {
+	if = {	# NO DEFINED POLITICS
+		limit = {
+			NOT = {
+				has_country_flag = defined_politics
+			}
+		}
+		if = { 	#SOCIAL
+			limit = {
+				OR = {
+					has_idea = no_elections
+					has_idea = upper_class_voting
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				has_idea = state_property
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = religious_discrimination
+					has_idea = racial_discrimination
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {	#FOREIGN
+			limit = {
+				OR = {
+					has_idea = interventionism
+					has_idea = jingoism
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+	}
+}
+
+election_neutrality_drift = {
+	if = {	# NO DEFINED POLITICS
+		limit = {
+			NOT = {
+				has_country_flag = defined_politics
+			}
+		}
+		if = {	#SOCIAL
+			limit = {
+				OR = {
+					has_idea = no_elections
+					has_idea = upper_class_voting
+					has_idea = wealth_voting
+				}
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = feudalism
+					has_idea = limited_private_property
+				}
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = religious_discrimination
+					has_idea = racial_discrimination
+				}
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+		if = {	#FOREIGN
+			limit = {
+				OR = {
+					has_idea = retaliatory
+					has_idea = interventionism
+				}
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = @DRIFT_AMOUNT
+			}
+		}
+	}
+}
+
+bias_elections = {
+	if = {
+		limit = {
+			has_idea = no_elections
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.004
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = fascism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.004
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = communism
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.004
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.004
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = upper_class_voting
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.003
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = fascism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.003
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = communism
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.003
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.003
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = wealth_voting
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.002
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = fascism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.002
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = communism
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.002
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.002
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = men_only
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.001
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = fascism
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.001
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = communism
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.001
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.001
+			}
+		}
+	}
+}

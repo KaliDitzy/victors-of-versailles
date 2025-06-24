@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_idea_GER_treaty_of_versailles"
+        texturefile = "gfx/interface/ideas/GER_treaty_of_versailles.dds"
+	}
+}

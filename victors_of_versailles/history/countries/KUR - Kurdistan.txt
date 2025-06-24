@@ -1,0 +1,62 @@
+﻿capital = 800
+
+set_research_slots = 2
+
+set_cosmetic_tag = KUR_condominium
+
+give_resource_rights = { receiver = FRA state = 350 }
+give_resource_rights = { receiver = FRA state = 352 }
+give_military_access = FRA
+FRA = {
+	give_military_access = KUR
+}
+
+give_resource_rights = { receiver = ENG state = 1019 }
+give_resource_rights = { receiver = ENG state = 676 }
+give_military_access = ENG
+ENG = {
+	give_military_access = KUR
+}
+
+set_power_balance = {
+    id = KUR_colonial_balance
+    left_side = KUR_colonial_authority
+    right_side = KUR_separatists
+	set_default = yes
+}
+
+add_ideas = {
+	limited_conscription
+}
+
+# There were many Kurdish uprisings in Iraq, Iran, and Turkey in the 20th century, it's difficult to define a "ruling party". Democratic has been chosen since the Dersim Rebellion is the closest uprising to HoI's start date.
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 40
+	communism = 25
+	fascism = 30
+	neutrality = 5
+}
+
+recruit_character = KUR_haji_baba
+recruit_character = KUR_ahmed_barzani
+recruit_character = KUR_ar
+recruit_character = KUR_nccr
+recruit_character = KUR_mt
+recruit_character = KUR_ai2
+recruit_character = KUR_ncs
+recruit_character = KUR_nuri_dersimi
+recruit_character = KUR_ihsan_nuri
+recruit_character = KUR_acr
+recruit_character = KUR_aa2
+recruit_character = KUR_acgs
+recruit_character = KUR_ncm
+recruit_character = KUR_nt
+recruit_character = KUR_acas
+recruit_character = KUR_awt
+recruit_character = KUR_kamuran_ali_bedirxan
+recruit_character = KUR_aco2

@@ -1,0 +1,687 @@
+ideas = {
+	mobilization_laws = {
+		law = yes
+		use_list_view = yes
+
+		disarmed_nation = {
+
+			removal_cost = -1
+			level = 7
+
+			available = {
+				has_idea = no_elections
+			}
+
+			modifier = {
+				conscription = 0.01
+			}
+
+			cancel_if_invalid = no
+		}
+
+		volunteer_only = {
+
+			removal_cost = -1
+			level = 6
+
+			available = {
+				has_idea = no_elections
+			}
+
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					factor = 60 # being disarmed is bad in a wargame yo
+					has_idea = disarmed_nation
+				}
+			}
+
+			modifier = {
+				conscription = 0.015
+			}
+
+			default = yes
+
+			cancel_if_invalid = no
+		}
+
+		limited_conscription = {
+
+			removal_cost = -1
+			level = 5
+
+			available = {
+				has_idea = no_elections
+			}
+
+			modifier = {
+				conscription = 0.025
+			}
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					# Ignore if high on manpower
+					factor = 0.5
+					manpower_per_military_factory > 5000
+				}
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory < 2000
+				}
+				modifier = {
+					tag = ENG
+					has_idea_with_trait = military_theorist
+					factor = 20
+				}
+				modifier = {
+					tag = ENG
+					AND = {
+						is_historical_focus_on = yes
+						has_game_rule = {
+							rule = ENG_ai_behavior
+							option = DEFAULT
+						}
+					}
+					date > 1939.1.1
+					date < 1939.9.1
+					has_war = no
+					NOT = { has_guaranteed = POL }
+					factor = 0
+				}
+				modifier = {
+					tag = SOV
+					threat > 0.8
+					factor = 3
+				}
+				modifier = {
+					tag = SOV
+					is_historical_focus_on = yes
+					date > 1939.1.1
+					has_idea = volunteer_only
+					factor = 201
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_idea = volunteer_only }
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		extensive_conscription = {
+
+			available = {
+				has_idea = no_elections
+			}
+			ai_will_do = {
+   				factor = 1
+
+				modifier = {
+					# Ignore if high on manpower
+					factor = 0.5
+					manpower_per_military_factory > 3000
+				}
+
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  800
+				}
+
+				modifier = {
+					tag = TUR
+					has_dlc = "Battle for the Bosporus"
+					factor = 50
+				}
+
+				# china relies a lot on throwing bodies at the enemy
+				modifier = {
+					factor = 3
+
+					original_tag = CHI
+					has_manpower < 300000
+				}
+
+				# soviet also relies a lot on throwing bodies at the enemy
+				modifier = {
+					factor = 3
+
+					original_tag = SOV
+					has_manpower < 300000
+				}
+
+				modifier = {
+					factor = 5
+
+					original_tag = SOV
+					has_war = yes
+					has_manpower < 1000000
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = limited_conscription }
+				}
+
+				modifier = {
+					factor = 100
+					OR = {
+						original_tag = URG
+						original_tag = PAR
+					}
+					has_completed_focus = GUAY_coup_detat
+				}
+
+			}
+
+			removal_cost = -1
+			level = 4
+
+			modifier = {
+				conscription = 0.05
+				#industrial_capacity_factory = -0.1
+				#production_speed_buildings_factor = -0.1
+				training_time_factor = 0.1
+			}
+
+			cancel_if_invalid = no
+		}
+
+		service_by_requirement = {
+
+
+			available = {
+				has_idea = no_elections
+			}
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  700
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					NOT = { tag = CHI }
+					NOT = { tag = SOV }
+					manpower_per_military_factory >  3000
+				}
+
+				modifier = { # china relies a lot on throwing bodies at the enemy
+					factor = 3
+
+					original_tag = CHI
+					has_manpower < 200000
+				}
+
+				modifier = {
+					factor = 5
+
+					original_tag = SOV
+					has_manpower < 400000
+				}
+
+				modifier = { # germany needs this before russia, badly
+					factor = 10
+
+					original_tag = GER
+					has_manpower < 2000000
+				}
+
+				modifier = { # germany needs this before russia, badly
+					factor = 10
+
+					original_tag = GER
+					date > 1941.1.1
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = extensive_conscription }
+				}
+
+				modifier = {
+					factor = 100
+					OR = {
+						original_tag = URG
+						original_tag = PAR
+					}
+					has_completed_focus = GUAY_coup_detat
+				}
+
+			}
+
+			removal_cost = -1
+			level = 3
+
+			modifier = {
+				conscription = 0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+				training_time_factor = 0.2
+			}
+
+			cancel_if_invalid = no
+		}
+
+		all_adults_serve = {
+
+
+			available = {
+				has_idea = no_elections
+			}
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  600
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					NOT = { tag = CHI }
+					manpower_per_military_factory >  2800
+				}
+
+				modifier = { # china relies a lot on throwing bodies at the enemy
+					factor = 3
+
+					tag = CHI
+					has_manpower < 200000
+				}
+				modifier = {
+					factor = 10
+					original_tag = SOV
+					date > 1943.1.1
+					has_manpower < 2000000
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = service_by_requirement }
+				}
+
+			}
+
+			on_add = {
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+						original_tag = FIN
+						has_completed_focus = FIN_militarized_society
+						NOT = { has_idea = FIN_militarized_society }
+					}
+					add_ideas = FIN_militarized_society
+				}
+			}
+
+			removal_cost = -1
+			level = 2
+
+			modifier = {
+				conscription = 0.2
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+				production_speed_buildings_factor = -0.3
+				#XP from reinforcement penalty (small)
+				training_time_factor = 0.3
+			}
+
+			cancel_if_invalid = no
+		}
+
+		scraping_the_barrel = {
+
+			available = {
+				has_idea = no_elections
+			}
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  500
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					manpower_per_military_factory >  5000
+				}
+
+				modifier = {
+					factor = 0
+					NOT = { has_idea = all_adults_serve }
+				}
+
+			}
+
+			on_add = {
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+						original_tag = FIN
+						has_completed_focus = FIN_militarized_society
+						NOT = { has_idea = FIN_militarized_society }
+					}
+					add_ideas = FIN_militarized_society
+				}
+			}
+
+			removal_cost = -1
+			level = 1
+
+			modifier = {
+				conscription = 0.25
+				industrial_capacity_factory = -0.4
+				industrial_capacity_dockyard = -0.4
+				production_speed_buildings_factor = -0.4
+				training_time_factor = 0.5
+			}
+
+			cancel_if_invalid = no
+		}
+
+		### Ethiopian National Levy
+		ETH_chitet_law = {
+			picture = ETH_chitet_law
+			cost = 150
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				always = no
+			}
+
+			ai_will_do = {
+   				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.045
+				custom_modifier_tooltip = ETH_chitet_law_tt
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+
+			default = yes
+
+			cancel_if_invalid = no
+		}
+		ETH_chitet_law_peace_time = {
+			picture = ETH_chitet_law
+
+			cost = 150
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				always = no
+			}
+
+			ai_will_do = {
+   				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.005
+				custom_modifier_tooltip = ETH_chitet_law_tt
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+
+			default = yes
+
+			cancel_if_invalid = no
+		}
+
+		### Swiss Citizen Militia ###
+
+		SWI_citizen_militia_1 = {
+			cost = 200
+			picture = citizen_militia_1
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				has_completed_focus = SWI_professionalize_militias
+				has_completed_focus = SWI_join_the_allies
+				has_completed_focus = SWI_join_france
+				has_completed_focus = SWI_jump_into_action
+			}
+			ai_will_do = {
+				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.1
+				custom_modifier_tooltip = SWI_army_limitations_TT
+				ai_desired_divisions_factor = 1
+			}
+		}
+
+		SWI_citizen_militia_2 = {
+			picture = citizen_militia_2
+			cost = 200
+			removal_cost = -1
+			level = 6
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+ 				has_completed_focus = SWI_professionalize_militias
+				has_completed_focus = SWI_join_the_allies
+				has_completed_focus = SWI_join_france
+				has_completed_focus = SWI_jump_into_action
+			}
+			ai_will_do = {
+				factor = 0
+			}
+
+			modifier = {
+				conscription = 0.2
+				custom_modifier_tooltip = SWI_army_limitations_TT
+				ai_desired_divisions_factor = 2
+			}
+		}
+	}
+
+	age_of_enlistment = {
+		law = yes
+		use_list_view = yes
+		aoe_children = {
+			level = 7
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = 0.3
+				war_support_weekly = -0.02
+			}
+			cancel_if_invalid = no
+		}
+		aoe_16 = {
+			level = 6
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = 0.1
+				war_support_weekly = -0.005
+			}
+			cancel_if_invalid = no
+		}
+		aoe_17 = {
+			level = 5
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = 0.05
+				war_support_weekly = -0.0025
+			}
+			cancel_if_invalid = no
+		}
+		aoe_18 = {
+			level = 4
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+		aoe_19 = {
+			level = 3
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = -0.05
+				war_support_weekly = 0.0025
+			}
+			cancel_if_invalid = no
+		}
+		aoe_20 = {
+			level = 2
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = -0.1
+				war_support_weekly = 0.005
+			}
+			cancel_if_invalid = no
+		}
+		aoe_21 = {
+			level = 1
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = -0.15
+				war_support_weekly = 0.01
+			}
+			cancel_if_invalid = no
+		}
+	}
+
+	military_centralization = {
+		law = yes
+		use_list_view = yes
+		civilian_irregulars = {
+			level = 5
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = 0.5
+				max_planning_factor = -0.25
+				coordination_bonus = -0.25
+			}
+			cancel_if_invalid = no
+		}
+		militias = {
+			level = 4
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = 0.25
+				max_planning_factor = -0.15
+				coordination_bonus = -0.15
+			}
+			cancel_if_invalid = no
+		}
+		gendarmerie = {
+			level = 3
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = 0.125
+				max_planning_factor = -0.1
+				coordination_bonus = -0.1
+			}
+			cancel_if_invalid = no
+		}
+		national_military = {
+			level = 2
+			cost = 200
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+		hegemonic_military = {
+			level = 1
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = -0.125
+				max_planning_factor = 0.1
+				coordination_bonus = 0.1
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

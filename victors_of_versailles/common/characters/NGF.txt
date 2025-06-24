@@ -1,0 +1,15 @@
+characters = {
+	NGF_gustav_bauer = {
+		name = NGF_gustav_bauer
+		portraits = {
+			civilian = {
+				large = GFX_portrait_NGF_gustav_bauer
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}

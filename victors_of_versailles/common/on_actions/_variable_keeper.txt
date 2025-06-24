@@ -1,0 +1,63 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					100 = {
+						owner = {
+							original_tag = ROOT
+						}
+					}
+				}
+				set_global_flag = {
+					flag = num_major_wars
+					value = 0
+				}
+				every_country = {
+					limit = {
+						is_major = yes
+						has_war = yes
+					}
+					modify_global_flag = {
+						flag = num_major_wars
+						value = 1
+					}
+				}
+
+				set_global_flag = {
+					flag = num_intermajor_wars
+					value = 0
+				}
+				every_country = {
+					limit = {
+						is_major = yes
+						has_war_with_major = yes
+					}
+					modify_global_flag = {
+						flag = num_major_wars
+						value = 1
+					}
+				}
+
+				modify_global_flag = {
+					flag = days_since_last_great_war
+					value = 1
+				}
+			}
+
+			## non-existent countries that this country occupies
+			clear_array = ROOT.potential_rebel_countries
+			for_each_loop = {
+				array = ROOT.occupied_countries
+				value = v
+
+				if = {
+					limit = {
+						var:v = { exists = no }
+					}
+					add_to_array = { ROOT.potential_rebel_countries = var:v }
+				}
+			}
+		}
+	}
+}

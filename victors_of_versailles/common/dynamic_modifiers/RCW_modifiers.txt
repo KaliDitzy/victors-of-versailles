@@ -1,0 +1,9 @@
+RCW_modifier = {
+    icon = GFX_idea_unknown
+    remove_trigger = {
+        NOT = {
+            has_global_flag = RCW_active
+        }
+    }
+    surrender_limit = var:RCW_surrender_limit # Variable value
+}

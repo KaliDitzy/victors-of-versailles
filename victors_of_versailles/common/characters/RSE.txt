@@ -1,0 +1,15 @@
+characters = {
+	RSE_anton_denikin = {
+		name = RSE_anton_denikin
+		portraits = {
+			civilian = {
+				large = GFX_portrait_RSE_anton_denikin
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}

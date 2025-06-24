@@ -1,0 +1,28 @@
+guiTypes = {
+    containerWindowType = {
+        name = "vov_state"
+        position = { x = 0 y = 0 }
+        size = { width = 1024 height = 128 }
+
+        instantTextBoxType = {
+            name = "militancy"
+            position = { x = 64 y = 128 }
+            Orientation = "UPPER_LEFT"
+            text = "[?THIS.militancy|0%]"
+            font = "hoi_16mbs"
+            maxWidth = 128
+			maxHeight = 20
+			format = left
+        }
+		instantTextBoxType = {
+            name = "consciousness"
+            position = { x = 128 y = 128 }
+            Orientation = "UPPER_LEFT"
+            text = "[?THIS.consciousness|0%]"
+            font = "hoi_16mbs"
+            maxWidth = 128
+			maxHeight = 20
+			format = left
+        }
+    }
+}

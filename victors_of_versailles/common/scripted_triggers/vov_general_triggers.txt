@@ -1,0 +1,10 @@
+world_war_active = {
+	has_global_flag = {
+		flag = num_intermajor_wars
+		value > 3
+	}
+	has_global_flag = {
+		flag = days_since_last_great_war
+		value > 2400
+	}
+}

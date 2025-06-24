@@ -1,0 +1,14 @@
+capital = 797
+
+set_cosmetic_tag = TUR_ottoman
+
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 20
+	fascism = 2
+	communism = 5
+	neutrality = 73
+}

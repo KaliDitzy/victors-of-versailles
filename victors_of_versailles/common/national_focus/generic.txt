@@ -1,0 +1,359 @@
+﻿search_filter_prios = {
+	FOCUS_FILTER_POLITICAL = 1010
+	
+	FOCUS_FILTER_RESEARCH = 522
+	
+	FOCUS_FILTER_INDUSTRY = 509
+
+	FOCUS_FILTER_BALANCE_OF_POWER = 200
+	FOCUS_FILTER_SOV_POLITICAL_PARANOIA = 111
+	FOCUS_FILTER_PROPAGANDA = 110
+	FOCUS_FILTER_MISSIOLINI = 110
+	FOCUS_FILTER_ARMY_XP = 103
+	FOCUS_FILTER_NAVY_XP = 102
+	FOCUS_FILTER_AIR_XP = 101
+
+}
+
+focus_tree = {
+	id = generic_focus
+	
+	country = {
+		factor = 20
+	}
+	
+	default = yes
+	reset_on_civilwar = no
+
+	initial_show_position = {
+		focus = generic_focus_politics
+	}
+
+	focus = {
+		id = generic_focus_politics
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 0
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	focus = {
+		id = generic_democratic_focus
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_politics
+		x = -3
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = {
+			focus = generic_communism_focus
+			focus = generic_fascism_focus
+			focus = generic_neutrality_focus
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_politics
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = generic_communism_focus
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_politics
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = {
+			focus = generic_democratic_focus
+			focus = generic_fascism_focus
+			focus = generic_neutrality_focus
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_politics
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = generic_fascism_focus
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_politics
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = {
+			focus = generic_democratic_focus
+			focus = generic_communism_focus
+			focus = generic_neutrality_focus
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_politics
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = generic_neutrality_focus
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_politics
+		x = 3
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = {
+			focus = generic_democratic_focus
+			focus = generic_communism_focus
+			focus = generic_fascism_focus
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_politics
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = generic_focus_industry
+		icon = GFX_goal_generic_political_pressure
+		x = 12
+		y = 0
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		allow_branch = {
+			OR = {
+				AND = {
+					has_war = no
+					OR = {
+						any_controlled_state = {
+							arms_factory < 3
+						}
+						any_controlled_state = {
+							industrial_complex < 3
+						}
+					}
+				}
+				AND = {
+					has_war = yes
+					OR = {
+						any_controlled_state = {
+							arms_factory < 4
+						}
+						any_controlled_state = {
+							industrial_complex < 4
+						}
+					}
+				}
+			}
+		}
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = generic_military_industry_focus
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_industry
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		allow_branch = {
+			any_controlled_state = {
+				arms_factory < 3
+			}
+			has_war = no
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_industry
+		}
+
+		completion_reward = {
+			random_controlled_state = {
+				limit = {
+					arms_factory < 3
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = generic_military_industry_focus_wartime
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_industry
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		allow_branch = {
+			any_controlled_state = {
+				arms_factory < 4
+			}
+			has_war = yes
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_industry
+		}
+
+		completion_reward = {
+			random_controlled_state = {
+				limit = {
+					arms_factory < 4
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = generic_civilian_industry_focus
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_industry
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		allow_branch = {
+			any_controlled_state = {
+				industrial_complex < 3
+			}
+			has_war = no
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_industry
+		}
+
+		completion_reward = {
+			random_controlled_state = {
+				limit = {
+					industrial_complex < 3
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = generic_civilian_industry_focus_wartime
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = generic_focus_industry
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		allow_branch = {
+			any_controlled_state = {
+				industrial_complex < 4
+			}
+			has_war = yes
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = generic_focus_industry
+		}
+
+		completion_reward = {
+			random_controlled_state = {
+				limit = {
+					industrial_complex < 4
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = generic_restart_tree
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 5
+		cost = 3
+		
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = generic_democratic_focus
+			focus = generic_communism_focus
+			focus = generic_fascism_focus
+			focus = generic_neutrality_focus
+
+			focus = generic_military_industry_focus
+			focus = generic_military_industry_focus_wartime
+			focus = generic_civilian_industry_focus
+			focus = generic_civilian_industry_focus_wartime
+		}
+
+		completion_reward = {
+			set_variable = { chance = random }
+			load_focus_tree = {
+				tree = generic_focus
+				keep_completed = no
+			}
+			hidden_effect = { country_event = vov_hidden.1 } # refresh focus visibility
+		}
+	}
+}

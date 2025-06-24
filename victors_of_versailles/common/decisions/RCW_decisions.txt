@@ -1,0 +1,311 @@
+RCW_decisions = {
+	RCW_maintain_the_offensive = {
+		icon = GFX_decision_border_war
+		activation = {
+			OR = {
+				original_tag = RSE
+				original_tag = SOV
+			}
+			SOV = { exists = yes }
+			RSE = { exists = yes }
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		cancel_trigger = {
+			hidden_trigger = { NOT = { has_global_flag = RCW_active } }
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+		timeout_effect = {
+			add_war_support = -0.025
+			custom_effect_tooltip = RCW_advance_surrender
+			add_to_variable = { RCW_surrender_limit = -0.025 }
+		}
+		priority = 100
+	}
+	RCW_strategic_victory = {
+		icon = GFX_decision_infiltrate_state
+		state_target = yes
+		visible = {
+			SOV = { exists = yes }
+			RSE = { exists = yes }
+		}
+		target_trigger = {
+			FROM = {
+				check_variable = { RCW_strategic_importance = 1 }
+				NOT = { check_variable = { RCW_control = ROOT } }
+			}
+		}
+		available = {
+			FROM = {
+				is_controlled_by = ROOT
+			}
+		}
+		complete_effect = {
+			add_political_power = 15
+			add_war_support = 0.05
+			custom_effect_tooltip = RCW_delay_surrender
+			add_to_variable = { RCW_surrender_limit = 0.05 }
+			FROM = {
+				custom_effect_tooltip = RCW_strategic_control
+				set_variable = { RCW_control = ROOT }
+			}
+			add_days_mission_timeout = {
+				mission = RCW_maintain_the_offensive
+				days = 90
+			}
+		}
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	RCW_reclaim_BLR = {
+		icon = GFX_decision_generic_prepare_civil_war
+		activation = {
+			OR = {
+				original_tag = RSE
+				original_tag = SOV
+			}
+			NOT = {
+				AND = {
+					SOV = { exists = yes }
+					RSE = { exists = yes }
+				}
+			}
+			BLR = { exists = yes }
+			any_neighbor_country = {
+				original_tag = BLR
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		cost = 90
+		fire_only_once = yes
+		is_good = no
+		war_with_on_timeout = BLR
+		days_mission_timeout = 180
+		selectable_mission = yes
+		complete_effect = {
+			set_country_flag = RCW_reclaiming_BLR
+			declare_war_on = {
+				target = BLR
+				type = civil_war
+			}
+			add_days_mission_timeout = {
+				mission = RCW_reclaim_UKR
+				days = 60
+			}
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+				add = -20
+				has_war = yes
+			}
+		}
+	}
+	RCW_reclaim_UKR = {
+		icon = GFX_decision_generic_prepare_civil_war
+		activation = {
+			OR = {
+				original_tag = RSE
+				original_tag = SOV
+			}
+			NOT = {
+				AND = {
+					SOV = { exists = yes }
+					RSE = { exists = yes }
+				}
+			}
+			OR = {
+				UKR = { exists = yes }
+				MKH = { exists = yes }
+			}
+			any_neighbor_country = {
+				OR = {
+					original_tag = UKR
+					original_tag = MKH
+				}
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		cost = 90
+		fire_only_once = yes
+		is_good = no
+		war_with_on_timeout = UKR
+		war_with_on_timeout = MKH
+		days_mission_timeout = 180
+		selectable_mission = yes
+		complete_effect = {
+			set_country_flag = RCW_reclaiming_UKR
+			set_country_flag = RCW_reclaiming_MKH
+			declare_war_on = {
+				target = UKR
+				type = civil_war
+			}
+			declare_war_on = {
+				target = MKH
+				type = civil_war
+			}
+			add_days_mission_timeout = {
+				mission = RCW_reclaim_FIN
+				days = 60
+			}
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+				add = -20
+				has_war = yes
+			}
+		}
+	}
+	RCW_reclaim_baltics = {
+		icon = GFX_decision_generic_prepare_civil_war
+		activation = {
+			OR = {
+				original_tag = RSE
+				original_tag = SOV
+			}
+			NOT = {
+				AND = {
+					SOV = { exists = yes }
+					RSE = { exists = yes }
+				}
+			}
+			OR = {
+				EST = { exists = yes }
+				LAT = { exists = yes }
+				LIT = { exists = yes }
+			}
+			any_neighbor_country = {
+				OR = {
+					original_tag = EST
+					original_tag = LAT
+					original_tag = LIT
+				}
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		cost = 180
+		fire_only_once = yes
+		is_good = no
+		war_with_on_timeout = EST
+		war_with_on_timeout = LAT
+		war_with_on_timeout = LIT
+		days_mission_timeout = 180
+		selectable_mission = yes
+		complete_effect = {
+			set_country_flag = RCW_reclaiming_baltics
+			declare_war_on = {
+				target = EST
+				type = civil_war
+			}
+			declare_war_on = {
+				target = LAT
+				type = civil_war
+			}
+			declare_war_on = {
+				target = LIT
+				type = civil_war
+			}
+			add_days_mission_timeout = {
+				mission = RCW_reclaim_POL
+				days = 60
+			}
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				add = -20
+				has_war = yes
+			}
+		}
+	}
+	RCW_reclaim_POL = {
+		icon = GFX_decision_generic_prepare_civil_war
+		activation = {
+			OR = {
+				original_tag = RSE
+				original_tag = SOV
+			}
+			NOT = {
+				AND = {
+					SOV = { exists = yes }
+					RSE = { exists = yes }
+				}
+			}
+			POL = { exists = yes }
+			any_neighbor_country = {
+				original_tag = POL
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		cost = 180
+		fire_only_once = yes
+		is_good = no
+		war_with_on_timeout = POL
+		days_mission_timeout = 180
+		selectable_mission = yes
+		complete_effect = {
+			set_country_flag = RCW_reclaiming_POL
+			declare_war_on = {
+				target = POL
+				type = civil_war
+			}
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				add = -20
+				has_war = yes
+			}
+		}
+	}
+	RCW_reclaim_FIN = {
+		icon = GFX_decision_generic_prepare_civil_war
+		activation = {
+			OR = {
+				original_tag = RSE
+				original_tag = SOV
+			}
+			NOT = {
+				AND = {
+					SOV = { exists = yes }
+					RSE = { exists = yes }
+				}
+			}
+			FIN = { exists = yes }
+			any_neighbor_country = {
+				original_tag = FIN
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		cost = 180
+		fire_only_once = yes
+		is_good = no
+		war_with_on_timeout = FIN
+		days_mission_timeout = 180
+		selectable_mission = yes
+		complete_effect = {
+			set_country_flag = RCW_reclaiming_FIN
+			declare_war_on = {
+				target = FIN
+				type = civil_war
+			}
+			add_days_mission_timeout = {
+				mission = RCW_reclaim_baltics
+				days = 60
+			}
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = -20
+				has_war = yes
+			}
+		}
+	}
+}

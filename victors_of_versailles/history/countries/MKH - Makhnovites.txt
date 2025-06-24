@@ -1,0 +1,22 @@
+capital = 226
+
+set_rule = {
+	can_join_factions = no
+}
+
+declare_war_on = {
+	target = UKR
+	type = civil_war
+}
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 75
+	democratic = 2
+	communism = 23
+}

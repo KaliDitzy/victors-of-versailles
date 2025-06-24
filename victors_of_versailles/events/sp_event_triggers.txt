@@ -1,0 +1,56 @@
+add_namespace = sp_event
+
+country_event = {
+	id = sp_event.1
+
+	trigger = {
+		world_war_active = yes
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	fire_only_once = yes
+
+	hidden = yes
+	
+	immediate = {
+		set_global_flag = ww2_happened
+		set_global_flag = {
+			flag = days_since_last_great_war
+			value = 0
+		}
+		every_country = {
+			set_variable = { current_super_event = 1 }
+		}
+		play_song = "super_ww2"
+	}
+}
+country_event = {
+	id = sp_event.4
+
+	trigger = {
+		has_global_flag = ww2_happened
+		world_war_active = yes
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	fire_only_once = yes
+
+	hidden = yes
+	
+	immediate = {
+		set_global_flag = {
+			flag = days_since_last_great_war
+			value = 0
+		}
+		every_country = {
+			set_variable = { current_super_event = 4 }
+		}
+		play_song = "super_ww3"
+	}
+}

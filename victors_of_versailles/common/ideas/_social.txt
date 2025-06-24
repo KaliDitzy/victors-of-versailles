@@ -1,0 +1,244 @@
+ideas = {
+	suffrage = {
+		law = yes
+		use_list_view = yes
+
+		no_elections = {
+			level = 8
+			cost = 50
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+			on_add = {
+				clr_country_flag = politics_reforms_open
+				clr_country_flag = election_active
+				set_variable = { days_until_election = var:days_between_elections }
+				force_reform = yes #get them pesky democratic processes outta here!
+			}
+		}
+
+		upper_class_voting = {
+			level = 7
+			cost = 50
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+
+		wealth_voting = {
+			level = 6
+			cost = 50
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+
+		men_only = {
+			level = 5
+			cost = 50
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+
+		limited_womens_suffrage = {
+			level = 4
+			cost = 50
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+
+		womens_suffrage_law = {
+			level = 3
+			cost = 50
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+
+		minority_suffrage = {
+			level = 2
+			cost = 50
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+
+		universal_suffrage = {
+			level = 1
+			cost = 50
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+	}
+	property = {
+		law = yes
+		use_list_view = yes
+
+		feudalism = {
+			level = 5
+			cost = 300
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				neutrality_drift = 0.1
+				consumer_goods_factor = 0.8
+				production_speed_buildings_factor = -0.15
+			}
+			cancel_if_invalid = no
+		}
+		limited_private_property = {
+			level = 4
+			cost = 300
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				neutrality_drift = 0.05
+				consumer_goods_factor = 0.2
+				production_speed_buildings_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		private_property = {
+			level = 3
+			cost = 300
+			default = yes
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+		state_property = {
+			level = 2
+			cost = 300
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				communism_drift = 0.05
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+			cancel_if_invalid = no
+		}
+		property_abolished = {
+			level = 1
+			cost = 300
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				communism_drift = 0.1
+				consumer_goods_factor = 0.4
+				production_speed_buildings_factor = 0.1
+			}
+			cancel_if_invalid = no
+		}
+	}
+	acceptance = {
+		law = yes
+		use_list_view = yes
+
+		religious_discrimination = {
+			level = 4
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				political_power_factor = 0.05
+				conscription_factor = -0.12
+				stability_factor = -0.02
+			}
+			cancel_if_invalid = no
+		}
+		racial_discrimination = {
+			level = 3
+			cost = 200
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				conscription_factor = -0.04
+			}
+			cancel_if_invalid = no
+		}
+		sexual_discrimination = {
+			level = 2
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.02
+			}
+			cancel_if_invalid = no
+		}
+		no_discrimination = {
+			level = 1
+			cost = 200
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				political_power_factor = -0.15
+				conscription_factor = 0.04
+				stability_factor = 0.04
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

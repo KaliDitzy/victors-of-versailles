@@ -1,0 +1,44 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_reforms_open_btn"
+        textureFile = "gfx/interface/politics/reforms_open_btn.dds"
+	}
+	spriteType = {
+		name = "GFX_stupid_volunteer_only"
+		textureFile = "gfx/interface/ideas/idea_volunteer_only.dds"
+	}
+
+	spriteType = {
+		name = "GFX_politics_regress_bar_inactive"
+		textureFile = "gfx/interface/politics/regress_inactive.dds"
+	}
+	spriteType = {
+		name = "GFX_politics_regress_bar_active"
+		textureFile = "gfx/interface/politics/regress_active.dds"
+	}
+	spriteType = {
+		name = "GFX_politics_progress_bar_inactive"
+		textureFile = "gfx/interface/politics/progress_inactive.dds"
+	}
+	spriteType = {
+		name = "GFX_politics_progress_bar_active"
+		textureFile = "gfx/interface/politics/progress_active.dds"
+	}
+
+	spriteType = {
+		name = "GFX_law_bg"
+		textureFile = "gfx/interface/politics/law_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_law_bg_noleft"
+		textureFile = "gfx/interface/politics/law_bg_noleft.dds"
+	}
+	spriteType = {
+		name = "GFX_law_bg_noright"
+		textureFile = "gfx/interface/politics/law_bg_noright.dds"
+	}
+	spriteType = {
+		name = "GFX_law_bg_none"
+		textureFile = "gfx/interface/politics/law_bg_none.dds"
+	}
+}

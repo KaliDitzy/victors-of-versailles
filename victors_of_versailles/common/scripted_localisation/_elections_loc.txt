@@ -1,0 +1,58 @@
+defined_text = {
+	name = election_status
+
+	text = {
+		trigger = {
+			has_idea = no_elections
+		}
+		localization_key = "Elections prohibited"
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = election_active }
+			check_variable = { days_until_election > 1825 }
+		}
+		localization_key = no_current_election_6y
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = election_active }
+			check_variable = { days_until_election > 1460 }
+		}
+		localization_key = no_current_election_5y
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = election_active }
+			check_variable = { days_until_election > 1095 }
+		}
+		localization_key = no_current_election_4y
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = election_active }
+			check_variable = { days_until_election > 730 }
+		}
+		localization_key = no_current_election_3y
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = election_active }
+			check_variable = { days_until_election > 365 }
+		}
+		localization_key = no_current_election_2y
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = election_active }
+			NOT = { check_variable = { days_until_election > 365 } }
+		}
+		localization_key = no_current_election
+	}
+	text = {
+		trigger = {
+			has_country_flag = election_active
+		}
+		localization_key = election_in_progress
+	}
+}

@@ -1,0 +1,131 @@
+add_namespace = SGF
+add_namespace = SGF_focus
+
+country_event = { # republican victory, communists reject
+	id = SGF_focus.1
+	title = SGF_focus.1.t
+	desc = SGF_focus.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = SGF_focus.1a
+		hidden_effect = {
+			54 = {
+				set_variable = { SGF_cw_start = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { SGF_cw_size > 0 }
+				}
+				50 = {
+					set_variable = { SGF_cw_start = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { SGF_cw_size > 1 }
+				}
+				53 = {
+					set_variable = { SGF_cw_start = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { SGF_cw_size > 2 }
+				}
+				978 = {
+					set_variable = { SGF_cw_start = 1 }
+				}
+			}
+		}
+		start_civil_war = {
+			ideology = communism
+			size = SGF_army_size
+			capital = 52
+			states = all
+			states_filter = {
+				NOT = { check_variable = { SGF_cw_start = 1 } }
+			}
+			set_cosmetic_tag = SGF_bavaria
+		}
+		if = {
+			limit = {
+				has_completed_focus = SGF_permit_right_paramilitaries
+			}
+			load_oob = SGF_nazi_partisans
+		}
+		hidden_effect = { FRA = { country_event = FRA.1 } }
+	}
+}
+country_event = { # communist victory, republicans reject
+	id = SGF_focus.2
+	title = SGF_focus.2.t
+	desc = SGF_focus.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = SGF_focus.2a
+		hidden_effect = {
+			52 = {
+				set_variable = { SGF_cw_start = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { SGF_cw_size > 0 }
+				}
+				978 = {
+					set_variable = { SGF_cw_start = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { SGF_cw_size > 1 }
+				}
+				53 = {
+					set_variable = { SGF_cw_start = 1 }
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { SGF_cw_size > 2 }
+				}
+				50 = {
+					set_variable = { SGF_cw_start = 1 }
+				}
+			}
+		}
+		start_civil_war = {
+			ruling_party = communism
+			ideology = democratic
+			size = SGF_army_size
+			capital = 50
+			states = all
+			states_filter = {
+				NOT = { check_variable = { SGF_cw_start = 1 } }
+			}
+			hidden_effect = { set_cosmetic_tag = SGF_republican }
+		}
+		set_cosmetic_tag = SGF_bavaria
+		if = {
+			limit = {
+				has_completed_focus = SGF_strengthen_bavarian_soviet
+			}
+			dec_suffrage_law = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = SGF_soviet_russian_support
+			}
+			SOV = {
+				send_equipment = {
+					equipment = infantry_equipment
+					amount = 1500
+					target = SGF
+				}
+			}
+		}
+		hidden_effect = { FRA = { country_event = FRA.1 } }
+	}
+}

@@ -1,0 +1,4 @@
+NGF	= "countries/NGF.txt"
+SGF	= "countries/SGF.txt"
+RSE = "countries/RSE.txt"
+MKH = "countries/MKH.txt"

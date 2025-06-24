@@ -1,0 +1,49 @@
+﻿capital = 219
+
+set_major = yes
+
+set_cosmetic_tag = SOV_preformation
+
+declare_war_on = {
+	target = RSE
+	type = civil_war
+}
+
+set_party_name = {
+	ideology = communism
+	long_name = SOV_communism_party_russian_long
+	name = SOV_communism_party_russian
+}
+set_party_name = {
+	ideology = fascism
+	long_name = SOV_fascism_party_russian_long
+	name = SOV_fascism_party_russian
+}
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = communism
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 10
+	fascism = 2
+	communism = 88
+}
+
+add_ideas = {
+	no_elections
+}
+
+create_faction = Comintern
+add_to_faction = SOV
+#add_to_faction = MON
+#add_to_faction = TAN
+
+set_variable = { RCW_surrender_limit = 0.15 }
+
+recruit_character = SOV_vladimir_lenin
+promote_character = SOV_vladimir_lenin
+
+#set_oob = SOV

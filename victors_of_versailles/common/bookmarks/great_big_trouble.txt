@@ -1,0 +1,84 @@
+bookmarks = {
+	bookmark = {
+		name = "GREAT_BIG_TROUBLE_NAME"
+		desc = "GREAT_BIG_TROUBLE_DESC"
+		date = 1920.1.1.12
+		picture = "GFX_select_date_1920"
+		default_country = "NGF"
+		default = yes
+		
+		"NGF"={
+			history = "NGF_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"SGF"={
+			history = "SGF_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"FRA"={
+			history = "FRA_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"ENG"={
+			history = "ENG_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"ITA"={
+			history = "ITA_GREAT_BIG_TROUBLE_DESC"
+			ideology = neutrality
+		}
+		"SOV"={
+			history = "SOV_GREAT_BIG_TROUBLE_DESC"
+			ideology = communism
+		}
+		"RSE"={
+			history = "RSE_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+
+		"---"={
+			history = "OTHER_GREAT_BIG_TROUBLE_DESC"
+		}
+
+		"RHI"={
+			minor = yes
+			history = "RHI_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"POL"={
+			minor = yes
+			history = "POL_GREAT_BIG_TROUBLE_DESC"
+			ideology = neutrality
+		}
+		"BLR"={
+			minor = yes
+			history = "BLR_GREAT_BIG_TROUBLE_DESC"
+			ideology = neutrality
+		}
+		"UKR"={
+			minor = yes
+			history = "UKR_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"YUG"={
+			minor = yes
+			history = "YUG_GREAT_BIG_TROUBLE_DESC"
+			ideology = neutrality
+		}
+		"KUR"={
+			minor = yes
+			history = "KUR_GREAT_BIG_TROUBLE_DESC"
+			ideology = democratic
+		}
+		"MKH"={
+			minor = yes
+			history = "MKH_GREAT_BIG_TROUBLE_DESC"
+			ideology = neutrality
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

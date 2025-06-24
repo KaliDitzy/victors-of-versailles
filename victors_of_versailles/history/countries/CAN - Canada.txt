@@ -1,0 +1,3 @@
+﻿capital = 276
+
+set_cosmetic_tag = CAN_UK

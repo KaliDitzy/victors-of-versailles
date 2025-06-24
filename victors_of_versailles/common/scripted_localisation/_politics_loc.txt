@@ -1,0 +1,3120 @@
+defined_text = {
+    name = reforms_social_laws_btn
+    text = {
+        trigger = {
+            check_variable = { reforms_page = 0 }
+        }
+        localization_key = "GFX_button_148x34_light"
+    }
+    text = {
+        trigger = {
+            NOT = { check_variable = { reforms_page = 0 } }
+        }
+        localization_key = "GFX_button_148x34"
+    }
+}
+defined_text = {
+    name = reforms_economy_laws_btn
+    text = {
+        trigger = {
+            check_variable = { reforms_page = 1 }
+        }
+        localization_key = "GFX_button_148x34_light"
+    }
+    text = {
+        trigger = {
+            NOT = { check_variable = { reforms_page = 1 } }
+        }
+        localization_key = "GFX_button_148x34"
+    }
+}
+defined_text = {
+    name = reforms_military_laws_btn
+    text = {
+        trigger = {
+            check_variable = { reforms_page = 2 }
+        }
+        localization_key = "GFX_button_148x34_light"
+    }
+    text = {
+        trigger = {
+            NOT = { check_variable = { reforms_page = 2 } }
+        }
+        localization_key = "GFX_button_148x34"
+    }
+}
+defined_text = {
+    name = reforms_foreign_laws_btn
+    text = {
+        trigger = {
+            check_variable = { reforms_page = 3 }
+        }
+        localization_key = "GFX_button_148x34_light"
+    }
+    text = {
+        trigger = {
+            NOT = { check_variable = { reforms_page = 3 } }
+        }
+        localization_key = "GFX_button_148x34"
+    }
+}
+
+### SOCIAL
+# SUFFRAGE
+defined_text = {
+    name = reforms_current_suffrage_law
+
+    text = {
+        trigger = {
+			has_idea = no_elections
+        }
+        localization_key = "GFX_idea_no_elections"
+    }
+	text = {
+        trigger = {
+			has_idea = upper_class_voting
+        }
+        localization_key = "GFX_idea_upper_class_voting"
+    }
+	text = {
+        trigger = {
+			has_idea = wealth_voting
+        }
+        localization_key = "GFX_idea_wealth_voting"
+    }
+	text = {
+        trigger = {
+			has_idea = men_only
+        }
+        localization_key = "GFX_idea_men_only"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_womens_suffrage
+        }
+        localization_key = "GFX_idea_limited_womens_suffrage"
+    }
+	text = {
+        trigger = {
+			has_idea = womens_suffrage_law
+        }
+        localization_key = "GFX_idea_womens_suffrage_law"
+    }
+    text = {
+        trigger = {
+			has_idea = minority_suffrage
+        }
+        localization_key = "GFX_idea_minority_suffrage"
+    }
+    text = {
+        trigger = {
+			has_idea = universal_suffrage
+        }
+        localization_key = "GFX_idea_universal_suffrage"
+    }
+}
+defined_text = {
+    name = reforms_current_suffrage_law_title
+
+    text = {
+        trigger = {
+			has_idea = no_elections
+        }
+        localization_key = no_elections
+    }
+	text = {
+        trigger = {
+			has_idea = upper_class_voting
+        }
+        localization_key = upper_class_voting
+    }
+	text = {
+        trigger = {
+			has_idea = wealth_voting
+        }
+        localization_key = wealth_voting
+    }
+	text = {
+        trigger = {
+			has_idea = men_only
+        }
+        localization_key = men_only
+    }
+	text = {
+        trigger = {
+			has_idea = limited_womens_suffrage
+        }
+        localization_key = limited_womens_suffrage
+    }
+	text = {
+        trigger = {
+			has_idea = womens_suffrage_law
+        }
+        localization_key = womens_suffrage_law
+    }
+    text = {
+        trigger = {
+			has_idea = minority_suffrage
+        }
+        localization_key = minority_suffrage
+    }
+    text = {
+        trigger = {
+			has_idea = universal_suffrage
+        }
+        localization_key = universal_suffrage
+    }
+}
+
+defined_text = {
+    name = reforms_previous_suffrage_law
+
+	text = {
+        trigger = {
+			has_idea = upper_class_voting
+        }
+        localization_key = "GFX_idea_no_elections"
+    }
+	text = {
+        trigger = {
+			has_idea = wealth_voting
+        }
+        localization_key = "GFX_idea_upper_class_voting"
+    }
+	text = {
+        trigger = {
+			has_idea = men_only
+        }
+        localization_key = "GFX_idea_wealth_voting"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_womens_suffrage
+        }
+        localization_key = "GFX_idea_men_only"
+    }
+	text = {
+        trigger = {
+			has_idea = womens_suffrage_law
+        }
+        localization_key = "GFX_idea_limited_womens_suffrage"
+    }
+    text = {
+        trigger = {
+			has_idea = minority_suffrage
+        }
+        localization_key = "GFX_idea_womens_suffrage_law"
+    }
+    text = {
+        trigger = {
+			has_idea = universal_suffrage
+        }
+        localization_key = "GFX_idea_minority_suffrage"
+    }
+}
+defined_text = {
+    name = reforms_previous_suffrage_law_title
+
+	text = {
+        trigger = {
+			has_idea = upper_class_voting
+        }
+        localization_key = no_elections
+    }
+	text = {
+        trigger = {
+			has_idea = wealth_voting
+        }
+        localization_key = upper_class_voting
+    }
+	text = {
+        trigger = {
+			has_idea = men_only
+        }
+        localization_key = wealth_voting
+    }
+	text = {
+        trigger = {
+			has_idea = limited_womens_suffrage
+        }
+        localization_key = men_only
+    }
+	text = {
+        trigger = {
+			has_idea = womens_suffrage_law
+        }
+        localization_key = limited_womens_suffrage
+    }
+    text = {
+        trigger = {
+			has_idea = minority_suffrage
+        }
+        localization_key = womens_suffrage_law
+    }
+    text = {
+        trigger = {
+			has_idea = universal_suffrage
+        }
+        localization_key = minority_suffrage
+    }
+}
+
+defined_text = {
+    name = reforms_next_suffrage_law
+
+    text = {
+        trigger = {
+			has_idea = no_elections
+        }
+        localization_key = "GFX_idea_upper_class_voting"
+    }
+	text = {
+        trigger = {
+			has_idea = upper_class_voting
+        }
+        localization_key = "GFX_idea_wealth_voting"
+    }
+	text = {
+        trigger = {
+			has_idea = wealth_voting
+        }
+        localization_key = "GFX_idea_men_only"
+    }
+	text = {
+        trigger = {
+			has_idea = men_only
+        }
+        localization_key = "GFX_idea_limited_womens_suffrage"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_womens_suffrage
+        }
+        localization_key = "GFX_idea_womens_suffrage_law"
+    }
+	text = {
+        trigger = {
+			has_idea = womens_suffrage_law
+        }
+        localization_key = "GFX_idea_minority_suffrage"
+    }
+    text = {
+        trigger = {
+			has_idea = minority_suffrage
+        }
+        localization_key = "GFX_idea_universal_suffrage"
+    }
+}
+defined_text = {
+    name = reforms_next_suffrage_law_title
+
+    text = {
+        trigger = {
+			has_idea = no_elections
+        }
+        localization_key = upper_class_voting
+    }
+	text = {
+        trigger = {
+			has_idea = upper_class_voting
+        }
+        localization_key = wealth_voting
+    }
+	text = {
+        trigger = {
+			has_idea = wealth_voting
+        }
+        localization_key = men_only
+    }
+	text = {
+        trigger = {
+			has_idea = men_only
+        }
+        localization_key = limited_womens_suffrage
+    }
+	text = {
+        trigger = {
+			has_idea = limited_womens_suffrage
+        }
+        localization_key = womens_suffrage_law
+    }
+	text = {
+        trigger = {
+			has_idea = womens_suffrage_law
+        }
+        localization_key = minority_suffrage
+    }
+    text = {
+        trigger = {
+			has_idea = minority_suffrage
+        }
+        localization_key = universal_suffrage
+    }
+}
+
+defined_text = {
+    name = suffrage_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_suffrage_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_suffrage_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_suffrage_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_suffrage_in_progress }
+        }
+        localization_key = previous_suffrage_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_suffrage_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = suffrage_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_suffrage_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_suffrage_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_suffrage_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_suffrage_in_progress }
+        }
+        localization_key = next_suffrage_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_suffrage_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# PROPERTY
+defined_text = {
+    name = reforms_current_property_law
+
+    text = {
+        trigger = {
+			has_idea = feudalism
+        }
+        localization_key = "GFX_idea_feudalism"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_private_property
+        }
+        localization_key = "GFX_idea_limited_private_property"
+    }
+	text = {
+        trigger = {
+			has_idea = private_property
+        }
+        localization_key = "GFX_idea_private_property"
+    }
+	text = {
+        trigger = {
+			has_idea = state_property
+        }
+        localization_key = "GFX_idea_state_property"
+    }
+	text = {
+        trigger = {
+			has_idea = property_abolished
+        }
+        localization_key = "GFX_idea_property_abolished"
+    }
+}
+defined_text = {
+    name = reforms_current_property_law_title
+
+    text = {
+        trigger = {
+			has_idea = feudalism
+        }
+        localization_key = feudalism
+    }
+	text = {
+        trigger = {
+			has_idea = limited_private_property
+        }
+        localization_key = limited_private_property
+    }
+	text = {
+        trigger = {
+			has_idea = private_property
+        }
+        localization_key = private_property
+    }
+	text = {
+        trigger = {
+			has_idea = state_property
+        }
+        localization_key = state_property
+    }
+	text = {
+        trigger = {
+			has_idea = property_abolished
+        }
+        localization_key = property_abolished
+    }
+}
+
+defined_text = {
+    name = reforms_previous_property_law
+
+	text = {
+        trigger = {
+			has_idea = limited_private_property
+        }
+        localization_key = "GFX_idea_feudalism"
+    }
+	text = {
+        trigger = {
+			has_idea = private_property
+        }
+        localization_key = "GFX_idea_limited_private_property"
+    }
+	text = {
+        trigger = {
+			has_idea = state_property
+        }
+        localization_key = "GFX_idea_private_property"
+    }
+	text = {
+        trigger = {
+			has_idea = property_abolished
+        }
+        localization_key = "GFX_idea_state_property"
+    }
+}
+defined_text = {
+    name = reforms_previous_property_law_title
+
+	text = {
+        trigger = {
+			has_idea = limited_private_property
+        }
+        localization_key = feudalism
+    }
+	text = {
+        trigger = {
+			has_idea = private_property
+        }
+        localization_key = limited_private_property
+    }
+	text = {
+        trigger = {
+			has_idea = state_property
+        }
+        localization_key = private_property
+    }
+	text = {
+        trigger = {
+			has_idea = property_abolished
+        }
+        localization_key = state_property
+    }
+}
+
+defined_text = {
+    name = reforms_next_property_law
+
+    text = {
+        trigger = {
+			has_idea = feudalism
+        }
+        localization_key = "GFX_idea_limited_private_property"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_private_property
+        }
+        localization_key = "GFX_idea_private_property"
+    }
+	text = {
+        trigger = {
+			has_idea = private_property
+        }
+        localization_key = "GFX_idea_state_property"
+    }
+	text = {
+        trigger = {
+			has_idea = state_property
+        }
+        localization_key = "GFX_idea_property_abolished"
+    }
+}
+defined_text = {
+    name = reforms_next_property_law_title
+
+    text = {
+        trigger = {
+			has_idea = feudalism
+        }
+        localization_key = limited_private_property
+    }
+	text = {
+        trigger = {
+			has_idea = limited_private_property
+        }
+        localization_key = private_property
+    }
+	text = {
+        trigger = {
+			has_idea = private_property
+        }
+        localization_key = state_property
+    }
+	text = {
+        trigger = {
+			has_idea = state_property
+        }
+        localization_key = property_abolished
+    }
+}
+
+defined_text = {
+    name = property_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_property_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_property_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_property_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_property_in_progress }
+        }
+        localization_key = previous_property_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_property_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = property_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_property_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_property_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_property_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_property_in_progress }
+        }
+        localization_key = next_property_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_property_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# ACCEPTANCE
+defined_text = {
+    name = reforms_current_acceptance_law
+
+    text = {
+        trigger = {
+			has_idea = religious_discrimination
+        }
+        localization_key = "GFX_idea_religious_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = racial_discrimination
+        }
+        localization_key = "GFX_idea_racial_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = "GFX_idea_sexual_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = no_discrimination
+        }
+        localization_key = "GFX_idea_no_discrimination"
+    }
+}
+defined_text = {
+    name = reforms_current_acceptance_law_title
+
+    text = {
+        trigger = {
+			has_idea = religious_discrimination
+        }
+        localization_key = religious_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = racial_discrimination
+        }
+        localization_key = racial_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = sexual_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = no_discrimination
+        }
+        localization_key = no_discrimination
+    }
+}
+
+defined_text = {
+    name = reforms_previous_acceptance_law
+
+    text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = "GFX_idea_religious_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = "GFX_idea_racial_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = no_discrimination
+        }
+        localization_key = "GFX_idea_sexual_discrimination"
+    }
+}
+defined_text = {
+    name = reforms_previous_acceptance_law_title
+
+    text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = religious_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = racial_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = no_discrimination
+        }
+        localization_key = sexual_discrimination
+    }
+}
+
+defined_text = {
+    name = reforms_next_acceptance_law
+
+	text = {
+        trigger = {
+			has_idea = religious_discrimination
+        }
+        localization_key = "GFX_idea_racial_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = racial_discrimination
+        }
+        localization_key = "GFX_idea_sexual_discrimination"
+    }
+	text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = "GFX_idea_no_discrimination"
+    }
+}
+defined_text = {
+    name = reforms_next_acceptance_law_title
+
+	text = {
+        trigger = {
+			has_idea = religious_discrimination
+        }
+        localization_key = racial_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = racial_discrimination
+        }
+        localization_key = sexual_discrimination
+    }
+	text = {
+        trigger = {
+			has_idea = sexual_discrimination
+        }
+        localization_key = no_discrimination
+    }
+}
+
+defined_text = {
+    name = acceptance_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_acceptance_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_acceptance_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_acceptance_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_acceptance_in_progress }
+        }
+        localization_key = previous_acceptance_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_acceptance_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = acceptance_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_acceptance_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_acceptance_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_acceptance_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_acceptance_in_progress }
+        }
+        localization_key = next_acceptance_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_acceptance_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+### ECONOMICS
+#TRADE
+defined_text = {
+    name = reforms_current_trade_law
+
+    text = {
+        trigger = {
+			has_idea = closed_economy
+        }
+        localization_key = "GFX_idea_closed_economy"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_exports
+        }
+        localization_key = "GFX_idea_limited_exports"
+    }
+	text = {
+        trigger = {
+			has_idea = export_focus
+        }
+        localization_key = "GFX_idea_export_focus"
+    }
+	text = {
+        trigger = {
+			has_idea = free_trade
+        }
+        localization_key = "GFX_idea_free_trade"
+    }
+}
+defined_text = {
+    name = reforms_current_trade_law_title
+
+    text = {
+        trigger = {
+			has_idea = closed_economy
+        }
+        localization_key = closed_economy
+    }
+	text = {
+        trigger = {
+			has_idea = limited_exports
+        }
+        localization_key = limited_exports
+    }
+	text = {
+        trigger = {
+			has_idea = export_focus
+        }
+        localization_key = export_focus
+    }
+	text = {
+        trigger = {
+			has_idea = free_trade
+        }
+        localization_key = free_trade
+    }
+}
+
+defined_text = {
+    name = reforms_previous_trade_law
+
+	text = {
+        trigger = {
+			has_idea = limited_exports
+        }
+        localization_key = "GFX_idea_closed_economy"
+    }
+	text = {
+        trigger = {
+			has_idea = export_focus
+        }
+        localization_key = "GFX_idea_limited_exports"
+    }
+	text = {
+        trigger = {
+			has_idea = free_trade
+        }
+        localization_key = "GFX_idea_export_focus"
+    }
+}
+defined_text = {
+    name = reforms_previous_trade_law_title
+
+	text = {
+        trigger = {
+			has_idea = limited_exports
+        }
+        localization_key = closed_economy
+    }
+	text = {
+        trigger = {
+			has_idea = export_focus
+        }
+        localization_key = limited_exports
+    }
+	text = {
+        trigger = {
+			has_idea = free_trade
+        }
+        localization_key = export_focus
+    }
+}
+
+defined_text = {
+    name = reforms_next_trade_law
+
+    text = {
+        trigger = {
+			has_idea = closed_economy
+        }
+        localization_key = "GFX_idea_limited_exports"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_exports
+        }
+        localization_key = "GFX_idea_export_focus"
+    }
+	text = {
+        trigger = {
+			has_idea = export_focus
+        }
+        localization_key = "GFX_idea_free_trade"
+    }
+}
+defined_text = {
+    name = reforms_next_trade_law_title
+
+    text = {
+        trigger = {
+			has_idea = closed_economy
+        }
+        localization_key = limited_exports
+    }
+	text = {
+        trigger = {
+			has_idea = limited_exports
+        }
+        localization_key = export_focus
+    }
+	text = {
+        trigger = {
+			has_idea = export_focus
+        }
+        localization_key = free_trade
+    }
+}
+
+defined_text = {
+    name = trade_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_trade_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_trade_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_trade_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_trade_in_progress }
+        }
+        localization_key = previous_trade_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_trade_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = trade_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_trade_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_trade_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_trade_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_trade_in_progress }
+        }
+        localization_key = next_trade_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_trade_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+#ECONOMY
+defined_text = {
+    name = reforms_current_economy_law
+
+    text = {
+        trigger = {
+			has_idea = civilian_economy
+        }
+        localization_key = "GFX_idea_civilian_economy"
+    }
+	text = {
+        trigger = {
+			has_idea = low_economic_mobilisation
+        }
+        localization_key = "GFX_idea_low_economic_mobilisation"
+    }
+	text = {
+        trigger = {
+			has_idea = partial_economic_mobilisation
+        }
+        localization_key = "GFX_idea_partial_economic_mobilisation"
+    }
+	text = {
+        trigger = {
+			has_idea = war_economy
+        }
+        localization_key = "GFX_idea_war_economy"
+    }
+    text = {
+        trigger = {
+			has_idea = tot_economic_mobilisation
+        }
+        localization_key = "GFX_idea_tot_economic_mobilisation"
+    }
+}
+defined_text = {
+    name = reforms_current_economy_law_title
+
+    text = {
+        trigger = {
+			has_idea = civilian_economy
+        }
+        localization_key = civilian_economy
+    }
+	text = {
+        trigger = {
+			has_idea = low_economic_mobilisation
+        }
+        localization_key = low_economic_mobilisation
+    }
+	text = {
+        trigger = {
+			has_idea = partial_economic_mobilisation
+        }
+        localization_key = partial_economic_mobilisation
+    }
+	text = {
+        trigger = {
+			has_idea = war_economy
+        }
+        localization_key = war_economy
+    }
+    text = {
+        trigger = {
+			has_idea = tot_economic_mobilisation
+        }
+        localization_key = tot_economic_mobilisation
+    }
+}
+
+defined_text = {
+    name = reforms_previous_economy_law
+
+	text = {
+        trigger = {
+			has_idea = low_economic_mobilisation
+        }
+        localization_key = "GFX_idea_civilian_economy"
+    }
+	text = {
+        trigger = {
+			has_idea = partial_economic_mobilisation
+        }
+        localization_key = "GFX_idea_low_economic_mobilisation"
+    }
+	text = {
+        trigger = {
+			has_idea = war_economy
+        }
+        localization_key = "GFX_idea_partial_economic_mobilisation"
+    }
+    text = {
+        trigger = {
+			has_idea = tot_economic_mobilisation
+        }
+        localization_key = "GFX_idea_war_economy"
+    }
+}
+defined_text = {
+    name = reforms_previous_economy_law_title
+
+	text = {
+        trigger = {
+			has_idea = low_economic_mobilisation
+        }
+        localization_key = civilian_economy
+    }
+	text = {
+        trigger = {
+			has_idea = partial_economic_mobilisation
+        }
+        localization_key = low_economic_mobilisation
+    }
+	text = {
+        trigger = {
+			has_idea = war_economy
+        }
+        localization_key = partial_economic_mobilisation
+    }
+    text = {
+        trigger = {
+			has_idea = tot_economic_mobilisation
+        }
+        localization_key = war_economy
+    }
+}
+
+defined_text = {
+    name = reforms_next_economy_law
+
+    text = {
+        trigger = {
+			has_idea = civilian_economy
+        }
+        localization_key = "GFX_idea_low_economic_mobilisation"
+    }
+	text = {
+        trigger = {
+			has_idea = low_economic_mobilisation
+        }
+        localization_key = "GFX_idea_partial_economic_mobilisation"
+    }
+	text = {
+        trigger = {
+			has_idea = partial_economic_mobilisation
+        }
+        localization_key = "GFX_idea_war_economy"
+    }
+	text = {
+        trigger = {
+			has_idea = war_economy
+        }
+        localization_key = "GFX_idea_tot_economic_mobilisation"
+    }
+}
+defined_text = {
+    name = reforms_next_economy_law_title
+
+    text = {
+        trigger = {
+			has_idea = civilian_economy
+        }
+        localization_key = low_economic_mobilisation
+    }
+	text = {
+        trigger = {
+			has_idea = low_economic_mobilisation
+        }
+        localization_key = partial_economic_mobilisation
+    }
+	text = {
+        trigger = {
+			has_idea = partial_economic_mobilisation
+        }
+        localization_key = war_economy
+    }
+	text = {
+        trigger = {
+			has_idea = war_economy
+        }
+        localization_key = tot_economic_mobilisation
+    }
+}
+
+defined_text = {
+    name = economy_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_economy_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_economy_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_economy_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_economy_in_progress }
+        }
+        localization_key = previous_economy_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_economy_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = economy_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_economy_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_economy_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_economy_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_economy_in_progress }
+        }
+        localization_key = next_economy_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_economy_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+#LABOR
+defined_text = {
+    name = reforms_current_labor_law
+
+    text = {
+        trigger = {
+			has_idea = child_labor_legal
+        }
+        localization_key = "GFX_idea_child_labor_legal"
+    }
+	text = {
+        trigger = {
+			has_idea = child_labor_prohibited
+        }
+        localization_key = "GFX_idea_child_labor_prohibited"
+    }
+    text = {
+        trigger = {
+			has_idea = limited_work_hours
+        }
+        localization_key = "GFX_idea_limited_work_hours"
+    }
+	text = {
+        trigger = {
+			has_idea = subsidized_unemployment
+        }
+        localization_key = "GFX_idea_subsidized_unemployment"
+    }
+}
+defined_text = {
+    name = reforms_current_labor_law_title
+
+    text = {
+        trigger = {
+			has_idea = child_labor_legal
+        }
+        localization_key = child_labor_legal
+    }
+	text = {
+        trigger = {
+			has_idea = child_labor_prohibited
+        }
+        localization_key = child_labor_prohibited
+    }
+    text = {
+        trigger = {
+			has_idea = limited_work_hours
+        }
+        localization_key = limited_work_hours
+    }
+	text = {
+        trigger = {
+			has_idea = subsidized_unemployment
+        }
+        localization_key = subsidized_unemployment
+    }
+}
+
+defined_text = {
+    name = reforms_previous_labor_law
+
+	text = {
+        trigger = {
+			has_idea = child_labor_prohibited
+        }
+        localization_key = "GFX_idea_child_labor_legal"
+    }
+    text = {
+        trigger = {
+			has_idea = limited_work_hours
+        }
+        localization_key = "GFX_idea_child_labor_prohibited"
+    }
+	text = {
+        trigger = {
+			has_idea = subsidized_unemployment
+        }
+        localization_key = "GFX_idea_limited_work_hours"
+    }
+}
+defined_text = {
+    name = reforms_previous_labor_law_title
+
+	text = {
+        trigger = {
+			has_idea = child_labor_prohibited
+        }
+        localization_key = child_labor_legal
+    }
+    text = {
+        trigger = {
+			has_idea = limited_work_hours
+        }
+        localization_key = child_labor_prohibited
+    }
+	text = {
+        trigger = {
+			has_idea = subsidized_unemployment
+        }
+        localization_key = limited_work_hours
+    }
+}
+
+defined_text = {
+    name = reforms_next_labor_law
+
+    text = {
+        trigger = {
+			has_idea = child_labor_legal
+        }
+        localization_key = "GFX_idea_child_labor_prohibited"
+    }
+	text = {
+        trigger = {
+			has_idea = child_labor_prohibited
+        }
+        localization_key = "GFX_idea_limited_work_hours"
+    }
+    text = {
+        trigger = {
+			has_idea = limited_work_hours
+        }
+        localization_key = "GFX_idea_subsidized_unemployment"
+    }
+}
+defined_text = {
+    name = reforms_next_labor_law_title
+
+    text = {
+        trigger = {
+			has_idea = child_labor_legal
+        }
+        localization_key = child_labor_prohibited
+    }
+	text = {
+        trigger = {
+			has_idea = child_labor_prohibited
+        }
+        localization_key = limited_work_hours
+    }
+    text = {
+        trigger = {
+			has_idea = limited_work_hours
+        }
+        localization_key = subsidized_unemployment
+    }
+}
+
+defined_text = {
+    name = labor_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_labor_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_labor_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_labor_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_labor_in_progress }
+        }
+        localization_key = previous_labor_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_labor_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = labor_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_labor_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_labor_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_labor_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_labor_in_progress }
+        }
+        localization_key = next_labor_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_labor_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+### MILITARY
+# CONSCRIPTION
+defined_text = {
+    name = reforms_current_conscription_law
+
+    text = {
+        trigger = {
+			has_idea = disarmed_nation
+        }
+        localization_key = "GFX_idea_disarmed_nation"
+    }
+	text = {
+        trigger = {
+			has_idea = volunteer_only
+        }
+        localization_key = "GFX_stupid_volunteer_only"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_conscription
+        }
+        localization_key = "GFX_idea_limited_conscription"
+    }
+	text = {
+        trigger = {
+			has_idea = extensive_conscription
+        }
+        localization_key = "GFX_idea_extensive_conscription"
+    }
+	text = {
+        trigger = {
+			has_idea = all_adults_serve
+        }
+        localization_key = "GFX_idea_all_adults_serve"
+    }
+	text = {
+        trigger = {
+			has_idea = scraping_the_barrel
+        }
+        localization_key = "GFX_idea_scraping_the_barrel"
+    }
+}
+defined_text = {
+    name = reforms_current_conscription_law_title
+
+    text = {
+        trigger = {
+			has_idea = disarmed_nation
+        }
+        localization_key = disarmed_nation
+    }
+	text = {
+        trigger = {
+			has_idea = volunteer_only
+        }
+        localization_key = volunteer_only
+    }
+	text = {
+        trigger = {
+			has_idea = limited_conscription
+        }
+        localization_key = limited_conscription
+    }
+	text = {
+        trigger = {
+			has_idea = extensive_conscription
+        }
+        localization_key = extensive_conscription
+    }
+	text = {
+        trigger = {
+			has_idea = all_adults_serve
+        }
+        localization_key = all_adults_serve
+    }
+	text = {
+        trigger = {
+			has_idea = scraping_the_barrel
+        }
+        localization_key = scraping_the_barrel
+    }
+}
+
+defined_text = {
+    name = reforms_previous_conscription_law
+
+	text = {
+        trigger = {
+			has_idea = volunteer_only
+        }
+        localization_key = "GFX_idea_disarmed_nation"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_conscription
+        }
+        localization_key = "GFX_stupid_volunteer_only"
+    }
+	text = {
+        trigger = {
+			has_idea = extensive_conscription
+        }
+        localization_key = "GFX_idea_limited_conscription"
+    }
+	text = {
+        trigger = {
+			has_idea = all_adults_serve
+        }
+        localization_key = "GFX_idea_extensive_conscription"
+    }
+	text = {
+        trigger = {
+			has_idea = scraping_the_barrel
+        }
+        localization_key = "GFX_idea_all_adults_serve"
+    }
+}
+defined_text = {
+    name = reforms_previous_conscription_law_title
+
+	text = {
+        trigger = {
+			has_idea = volunteer_only
+        }
+        localization_key = disarmed_nation
+    }
+	text = {
+        trigger = {
+			has_idea = limited_conscription
+        }
+        localization_key = volunteer_only
+    }
+	text = {
+        trigger = {
+			has_idea = extensive_conscription
+        }
+        localization_key = limited_conscription
+    }
+	text = {
+        trigger = {
+			has_idea = all_adults_serve
+        }
+        localization_key = extensive_conscription
+    }
+	text = {
+        trigger = {
+			has_idea = scraping_the_barrel
+        }
+        localization_key = all_adults_serve
+    }
+}
+
+defined_text = {
+    name = reforms_next_conscription_law
+
+    text = {
+        trigger = {
+			has_idea = disarmed_nation
+        }
+        localization_key = "GFX_stupid_volunteer_only"
+    }
+	text = {
+        trigger = {
+			has_idea = volunteer_only
+        }
+        localization_key = "GFX_idea_limited_conscription"
+    }
+	text = {
+        trigger = {
+			has_idea = limited_conscription
+        }
+        localization_key = "GFX_idea_extensive_conscription"
+    }
+	text = {
+        trigger = {
+			has_idea = extensive_conscription
+        }
+        localization_key = "GFX_idea_all_adults_serve"
+    }
+	text = {
+        trigger = {
+			has_idea = all_adults_serve
+        }
+        localization_key = "GFX_idea_scraping_the_barrel"
+    }
+}
+defined_text = {
+    name = reforms_next_conscription_law_title
+
+    text = {
+        trigger = {
+			has_idea = disarmed_nation
+        }
+        localization_key = volunteer_only
+    }
+	text = {
+        trigger = {
+			has_idea = volunteer_only
+        }
+        localization_key = limited_conscription
+    }
+	text = {
+        trigger = {
+			has_idea = limited_conscription
+        }
+        localization_key = extensive_conscription
+    }
+	text = {
+        trigger = {
+			has_idea = extensive_conscription
+        }
+        localization_key = all_adults_serve
+    }
+	text = {
+        trigger = {
+			has_idea = all_adults_serve
+        }
+        localization_key = scraping_the_barrel
+    }
+}
+
+defined_text = {
+    name = conscription_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_conscription_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_conscription_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_conscription_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_conscription_in_progress }
+        }
+        localization_key = previous_conscription_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_conscription_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = conscription_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_conscription_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_conscription_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_conscription_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_conscription_in_progress }
+        }
+        localization_key = next_conscription_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_conscription_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# age of enlistment
+defined_text = {
+    name = reforms_current_aoe_law
+
+    text = {
+        trigger = {
+			has_idea = aoe_children
+        }
+        localization_key = "GFX_idea_aoe_children"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_16
+        }
+        localization_key = "GFX_idea_aoe_16"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_17
+        }
+        localization_key = "GFX_idea_aoe_17"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_18
+        }
+        localization_key = "GFX_idea_aoe_18"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_19
+        }
+        localization_key = "GFX_idea_aoe_19"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_20
+        }
+        localization_key = "GFX_idea_aoe_20"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_21
+        }
+        localization_key = "GFX_idea_aoe_21"
+    }
+}
+defined_text = {
+    name = reforms_current_aoe_law_title
+
+    text = {
+        trigger = {
+			has_idea = aoe_children
+        }
+        localization_key = aoe_children
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_16
+        }
+        localization_key = aoe_16
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_17
+        }
+        localization_key = aoe_17
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_18
+        }
+        localization_key = aoe_18
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_19
+        }
+        localization_key = aoe_19
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_20
+        }
+        localization_key = aoe_20
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_21
+        }
+        localization_key = aoe_21
+    }
+}
+
+defined_text = {
+    name = reforms_previous_aoe_law
+
+	text = {
+        trigger = {
+			has_idea = aoe_16
+        }
+        localization_key = "GFX_idea_aoe_children"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_17
+        }
+        localization_key = "GFX_idea_aoe_16"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_18
+        }
+        localization_key = "GFX_idea_aoe_17"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_19
+        }
+        localization_key = "GFX_idea_aoe_18"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_20
+        }
+        localization_key = "GFX_idea_aoe_19"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_21
+        }
+        localization_key = "GFX_idea_aoe_20"
+    }
+}
+defined_text = {
+    name = reforms_previous_aoe_law_title
+
+	text = {
+        trigger = {
+			has_idea = aoe_16
+        }
+        localization_key = aoe_children
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_17
+        }
+        localization_key = aoe_16
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_18
+        }
+        localization_key = aoe_17
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_19
+        }
+        localization_key = aoe_18
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_20
+        }
+        localization_key = aoe_19
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_21
+        }
+        localization_key = aoe_20
+    }
+}
+
+defined_text = {
+    name = reforms_next_aoe_law
+
+    text = {
+        trigger = {
+			has_idea = aoe_children
+        }
+        localization_key = "GFX_idea_aoe_16"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_16
+        }
+        localization_key = "GFX_idea_aoe_17"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_17
+        }
+        localization_key = "GFX_idea_aoe_18"
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_18
+        }
+        localization_key = "GFX_idea_aoe_19"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_19
+        }
+        localization_key = "GFX_idea_aoe_20"
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_20
+        }
+        localization_key = "GFX_idea_aoe_21"
+    }
+}
+defined_text = {
+    name = reforms_next_aoe_law_title
+
+    text = {
+        trigger = {
+			has_idea = aoe_children
+        }
+        localization_key = aoe_16
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_16
+        }
+        localization_key = aoe_17
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_17
+        }
+        localization_key = aoe_18
+    }
+	text = {
+        trigger = {
+			has_idea = aoe_18
+        }
+        localization_key = aoe_19
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_19
+        }
+        localization_key = aoe_20
+    }
+    text = {
+        trigger = {
+			has_idea = aoe_20
+        }
+        localization_key = aoe_21
+    }
+}
+
+defined_text = {
+    name = aoe_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_aoe_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_aoe_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_aoe_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_aoe_in_progress }
+        }
+        localization_key = previous_aoe_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_aoe_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = aoe_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_aoe_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_aoe_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_aoe_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_aoe_in_progress }
+        }
+        localization_key = next_aoe_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_aoe_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# age of enlistment
+defined_text = {
+    name = reforms_current_centralization_law
+
+    text = {
+        trigger = {
+			has_idea = civilian_irregulars
+        }
+        localization_key = "GFX_idea_civilian_irregulars"
+    }
+	text = {
+        trigger = {
+			has_idea = militias
+        }
+        localization_key = "GFX_idea_militias"
+    }
+	text = {
+        trigger = {
+			has_idea = gendarmerie
+        }
+        localization_key = "GFX_idea_gendarmerie"
+    }
+	text = {
+        trigger = {
+			has_idea = national_military
+        }
+        localization_key = "GFX_idea_national_military"
+    }
+    text = {
+        trigger = {
+			has_idea = hegemonic_military
+        }
+        localization_key = "GFX_idea_hegemonic_military"
+    }
+}
+defined_text = {
+    name = reforms_current_centralization_law_title
+
+    text = {
+        trigger = {
+			has_idea = civilian_irregulars
+        }
+        localization_key = civilian_irregulars
+    }
+	text = {
+        trigger = {
+			has_idea = militias
+        }
+        localization_key = militias
+    }
+	text = {
+        trigger = {
+			has_idea = gendarmerie
+        }
+        localization_key = gendarmerie
+    }
+	text = {
+        trigger = {
+			has_idea = national_military
+        }
+        localization_key = national_military
+    }
+    text = {
+        trigger = {
+			has_idea = hegemonic_military
+        }
+        localization_key = hegemonic_military
+    }
+}
+
+defined_text = {
+    name = reforms_previous_centralization_law
+
+	text = {
+        trigger = {
+			has_idea = militias
+        }
+        localization_key = "GFX_idea_civilian_irregulars"
+    }
+	text = {
+        trigger = {
+			has_idea = gendarmerie
+        }
+        localization_key = "GFX_idea_militias"
+    }
+	text = {
+        trigger = {
+			has_idea = national_military
+        }
+        localization_key = "GFX_idea_gendarmerie"
+    }
+    text = {
+        trigger = {
+			has_idea = hegemonic_military
+        }
+        localization_key = "GFX_idea_national_military"
+    }
+}
+defined_text = {
+    name = reforms_previous_centralization_law_title
+
+	text = {
+        trigger = {
+			has_idea = militias
+        }
+        localization_key = civilian_irregulars
+    }
+	text = {
+        trigger = {
+			has_idea = gendarmerie
+        }
+        localization_key = militias
+    }
+	text = {
+        trigger = {
+			has_idea = national_military
+        }
+        localization_key = gendarmerie
+    }
+    text = {
+        trigger = {
+			has_idea = hegemonic_military
+        }
+        localization_key = national_military
+    }
+}
+
+defined_text = {
+    name = reforms_next_centralization_law
+
+    text = {
+        trigger = {
+			has_idea = civilian_irregulars
+        }
+        localization_key = "GFX_idea_militias"
+    }
+	text = {
+        trigger = {
+			has_idea = militias
+        }
+        localization_key = "GFX_idea_gendarmerie"
+    }
+	text = {
+        trigger = {
+			has_idea = gendarmerie
+        }
+        localization_key = "GFX_idea_national_military"
+    }
+	text = {
+        trigger = {
+			has_idea = national_military
+        }
+        localization_key = "GFX_idea_hegemonic_military"
+    }
+}
+defined_text = {
+    name = reforms_next_centralization_law_title
+
+    text = {
+        trigger = {
+			has_idea = civilian_irregulars
+        }
+        localization_key = militias
+    }
+	text = {
+        trigger = {
+			has_idea = militias
+        }
+        localization_key = gendarmerie
+    }
+	text = {
+        trigger = {
+			has_idea = gendarmerie
+        }
+        localization_key = national_military
+    }
+	text = {
+        trigger = {
+			has_idea = national_military
+        }
+        localization_key = hegemonic_military
+    }
+}
+
+defined_text = {
+    name = centralization_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_centralization_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_centralization_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_centralization_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_centralization_in_progress }
+        }
+        localization_key = previous_centralization_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_centralization_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = centralization_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_centralization_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_centralization_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_centralization_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_centralization_in_progress }
+        }
+        localization_key = next_centralization_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_centralization_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+### POLICY
+# WARFARE ATTITUDE
+defined_text = {
+    name = reforms_current_warfare_law
+
+    text = {
+        trigger = {
+			has_idea = pacifism
+        }
+        localization_key = "GFX_idea_pacifism"
+    }
+	text = {
+        trigger = {
+			has_idea = retaliatory
+        }
+        localization_key = "GFX_idea_retaliatory"
+    }
+	text = {
+        trigger = {
+			has_idea = interventionism
+        }
+        localization_key = "GFX_idea_interventionism"
+    }
+	text = {
+        trigger = {
+			has_idea = jingoism
+        }
+        localization_key = "GFX_idea_jingoism"
+    }
+}
+defined_text = {
+    name = reforms_current_warfare_law_title
+
+    text = {
+        trigger = {
+			has_idea = pacifism
+        }
+        localization_key = pacifism
+    }
+	text = {
+        trigger = {
+			has_idea = retaliatory
+        }
+        localization_key = retaliatory
+    }
+	text = {
+        trigger = {
+			has_idea = interventionism
+        }
+        localization_key = interventionism
+    }
+	text = {
+        trigger = {
+			has_idea = jingoism
+        }
+        localization_key = jingoism
+    }
+}
+
+defined_text = {
+    name = reforms_previous_warfare_law
+
+	text = {
+        trigger = {
+			has_idea = retaliatory
+        }
+        localization_key = "GFX_idea_pacifism"
+    }
+	text = {
+        trigger = {
+			has_idea = interventionism
+        }
+        localization_key = "GFX_idea_retaliatory"
+    }
+	text = {
+        trigger = {
+			has_idea = jingoism
+        }
+        localization_key = "GFX_idea_interventionism"
+    }
+}
+defined_text = {
+    name = reforms_previous_warfare_law_title
+
+	text = {
+        trigger = {
+			has_idea = retaliatory
+        }
+        localization_key = pacifism
+    }
+	text = {
+        trigger = {
+			has_idea = interventionism
+        }
+        localization_key = retaliatory
+    }
+	text = {
+        trigger = {
+			has_idea = jingoism
+        }
+        localization_key = interventionism
+    }
+}
+
+defined_text = {
+    name = reforms_next_warfare_law
+
+    text = {
+        trigger = {
+			has_idea = pacifism
+        }
+        localization_key = "GFX_idea_retaliatory"
+    }
+	text = {
+        trigger = {
+			has_idea = retaliatory
+        }
+        localization_key = "GFX_idea_interventionism"
+    }
+	text = {
+        trigger = {
+			has_idea = interventionism
+        }
+        localization_key = "GFX_idea_jingoism"
+    }
+}
+defined_text = {
+    name = reforms_next_warfare_law_title
+
+    text = {
+        trigger = {
+			has_idea = pacifism
+        }
+        localization_key = retaliatory
+    }
+	text = {
+        trigger = {
+			has_idea = retaliatory
+        }
+        localization_key = interventionism
+    }
+	text = {
+        trigger = {
+			has_idea = interventionism
+        }
+        localization_key = jingoism
+    }
+}
+
+defined_text = {
+    name = warfare_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_warfare_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_warfare_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_warfare_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_warfare_in_progress }
+        }
+        localization_key = previous_warfare_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_warfare_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = warfare_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_warfare_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_warfare_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_warfare_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_warfare_in_progress }
+        }
+        localization_key = next_warfare_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_warfare_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# DIPLOMACY POLICY
+defined_text = {
+    name = reforms_current_diplomacy_law
+
+    text = {
+        trigger = {
+			has_idea = diplomatic_isolation
+        }
+        localization_key = "GFX_idea_diplomatic_isolation"
+    }
+	text = {
+        trigger = {
+			has_idea = cold_diplomacy
+        }
+        localization_key = "GFX_idea_cold_diplomacy"
+    }
+	text = {
+        trigger = {
+			has_idea = balanced_diplomacy
+        }
+        localization_key = "GFX_idea_balanced_diplomacy"
+    }
+	text = {
+        trigger = {
+			has_idea = warm_diplomacy
+        }
+        localization_key = "GFX_idea_warm_diplomacy"
+    }
+    text = {
+        trigger = {
+			has_idea = diplomatic_collaboration
+        }
+        localization_key = "GFX_idea_diplomatic_collaboration"
+    }
+}
+defined_text = {
+    name = reforms_current_diplomacy_law_title
+
+    text = {
+        trigger = {
+			has_idea = diplomatic_isolation
+        }
+        localization_key = diplomatic_isolation
+    }
+	text = {
+        trigger = {
+			has_idea = cold_diplomacy
+        }
+        localization_key = cold_diplomacy
+    }
+	text = {
+        trigger = {
+			has_idea = balanced_diplomacy
+        }
+        localization_key = balanced_diplomacy
+    }
+	text = {
+        trigger = {
+			has_idea = warm_diplomacy
+        }
+        localization_key = warm_diplomacy
+    }
+    text = {
+        trigger = {
+			has_idea = diplomatic_collaboration
+        }
+        localization_key = diplomatic_collaboration
+    }
+}
+
+defined_text = {
+    name = reforms_previous_diplomacy_law
+
+	text = {
+        trigger = {
+			has_idea = cold_diplomacy
+        }
+        localization_key = "GFX_idea_diplomatic_isolation"
+    }
+	text = {
+        trigger = {
+			has_idea = balanced_diplomacy
+        }
+        localization_key = "GFX_idea_cold_diplomacy"
+    }
+	text = {
+        trigger = {
+			has_idea = warm_diplomacy
+        }
+        localization_key = "GFX_idea_balanced_diplomacy"
+    }
+    text = {
+        trigger = {
+			has_idea = diplomatic_collaboration
+        }
+        localization_key = "GFX_idea_warm_diplomacy"
+    }
+}
+defined_text = {
+    name = reforms_previous_diplomacy_law_title
+
+	text = {
+        trigger = {
+			has_idea = cold_diplomacy
+        }
+        localization_key = diplomatic_isolation
+    }
+	text = {
+        trigger = {
+			has_idea = balanced_diplomacy
+        }
+        localization_key = cold_diplomacy
+    }
+	text = {
+        trigger = {
+			has_idea = warm_diplomacy
+        }
+        localization_key = balanced_diplomacy
+    }
+    text = {
+        trigger = {
+			has_idea = diplomatic_collaboration
+        }
+        localization_key = warm_diplomacy
+    }
+}
+
+defined_text = {
+    name = reforms_next_diplomacy_law
+
+    text = {
+        trigger = {
+			has_idea = diplomatic_isolation
+        }
+        localization_key = "GFX_idea_cold_diplomacy"
+    }
+	text = {
+        trigger = {
+			has_idea = cold_diplomacy
+        }
+        localization_key = "GFX_idea_balanced_diplomacy"
+    }
+	text = {
+        trigger = {
+			has_idea = balanced_diplomacy
+        }
+        localization_key = "GFX_idea_warm_diplomacy"
+    }
+	text = {
+        trigger = {
+			has_idea = warm_diplomacy
+        }
+        localization_key = "GFX_idea_diplomatic_collaboration"
+    }
+}
+defined_text = {
+    name = reforms_next_diplomacy_law_title
+
+    text = {
+        trigger = {
+			has_idea = diplomatic_isolation
+        }
+        localization_key = cold_diplomacy
+    }
+	text = {
+        trigger = {
+			has_idea = cold_diplomacy
+        }
+        localization_key = balanced_diplomacy
+    }
+	text = {
+        trigger = {
+			has_idea = balanced_diplomacy
+        }
+        localization_key = warm_diplomacy
+    }
+	text = {
+        trigger = {
+			has_idea = warm_diplomacy
+        }
+        localization_key = diplomatic_collaboration
+    }
+}
+
+defined_text = {
+    name = diplomacy_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_diplomacy_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_diplomacy_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_diplomacy_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_diplomacy_in_progress }
+        }
+        localization_key = previous_diplomacy_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_diplomacy_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = diplomacy_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_diplomacy_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_diplomacy_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_diplomacy_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_diplomacy_in_progress }
+        }
+        localization_key = next_diplomacy_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_diplomacy_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# BORDER POLICY
+defined_text = {
+    name = reforms_current_border_law
+
+    text = {
+        trigger = {
+			has_idea = no_borders
+        }
+        localization_key = "GFX_idea_no_borders"
+    }
+	text = {
+        trigger = {
+			has_idea = open_borders
+        }
+        localization_key = "GFX_idea_open_borders"
+    }
+	text = {
+        trigger = {
+			has_idea = emigration_only
+        }
+        localization_key = "GFX_idea_emigration_only"
+    }
+	text = {
+        trigger = {
+			has_idea = closed_borders
+        }
+        localization_key = "GFX_idea_closed_borders"
+    }
+}
+defined_text = {
+    name = reforms_current_border_law_title
+
+    text = {
+        trigger = {
+			has_idea = no_borders
+        }
+        localization_key = no_borders
+    }
+	text = {
+        trigger = {
+			has_idea = open_borders
+        }
+        localization_key = open_borders
+    }
+	text = {
+        trigger = {
+			has_idea = emigration_only
+        }
+        localization_key = emigration_only
+    }
+	text = {
+        trigger = {
+			has_idea = closed_borders
+        }
+        localization_key = closed_borders
+    }
+}
+
+defined_text = {
+    name = reforms_previous_border_law
+
+	text = {
+        trigger = {
+			has_idea = open_borders
+        }
+        localization_key = "GFX_idea_no_borders"
+    }
+	text = {
+        trigger = {
+			has_idea = emigration_only
+        }
+        localization_key = "GFX_idea_open_borders"
+    }
+	text = {
+        trigger = {
+			has_idea = closed_borders
+        }
+        localization_key = "GFX_idea_emigration_only"
+    }
+}
+defined_text = {
+    name = reforms_previous_border_law_title
+
+	text = {
+        trigger = {
+			has_idea = open_borders
+        }
+        localization_key = no_borders
+    }
+	text = {
+        trigger = {
+			has_idea = emigration_only
+        }
+        localization_key = open_borders
+    }
+	text = {
+        trigger = {
+			has_idea = closed_borders
+        }
+        localization_key = emigration_only
+    }
+}
+
+defined_text = {
+    name = reforms_next_border_law
+
+    text = {
+        trigger = {
+			has_idea = no_borders
+        }
+        localization_key = "GFX_idea_open_borders"
+    }
+	text = {
+        trigger = {
+			has_idea = open_borders
+        }
+        localization_key = "GFX_idea_emigration_only"
+    }
+	text = {
+        trigger = {
+			has_idea = emigration_only
+        }
+        localization_key = "GFX_idea_closed_borders"
+    }
+}
+defined_text = {
+    name = reforms_next_border_law_title
+
+    text = {
+        trigger = {
+			has_idea = no_borders
+        }
+        localization_key = open_borders
+    }
+	text = {
+        trigger = {
+			has_idea = open_borders
+        }
+        localization_key = emigration_only
+    }
+	text = {
+        trigger = {
+			has_idea = emigration_only
+        }
+        localization_key = closed_borders
+    }
+}
+
+defined_text = {
+    name = border_regress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_border_in_progress }
+        }
+        localization_key = "GFX_politics_regress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_border_in_progress
+        }
+        localization_key = "GFX_politics_regress_bar_active"
+    }
+}
+defined_text = {
+    name = previous_border_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = previous_border_in_progress }
+        }
+        localization_key = previous_border_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = previous_border_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+defined_text = {
+    name = border_progress_bar
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_border_in_progress }
+        }
+        localization_key = "GFX_politics_progress_bar_inactive"
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_border_in_progress
+        }
+        localization_key = "GFX_politics_progress_bar_active"
+    }
+}
+defined_text = {
+    name = next_border_chance
+
+	text = {
+        trigger = {
+			NOT = { has_country_flag = next_border_in_progress }
+        }
+        localization_key = next_border_will
+    }
+	text = {
+        trigger = {
+			has_country_flag = next_diplomacy_in_progress
+        }
+        localization_key = enactment_progress
+    }
+}
+
+# TOPBAR REFORM ICON
+defined_text = {
+    name = reform_status
+
+    text = {
+        trigger = {
+            has_country_flag = passing_law
+            NOT = { check_variable = { law_progress < 0.666 } }
+        }
+        localization_key = "GFX_reform_status_active_good"
+    }
+    text = {
+        trigger = {
+            has_country_flag = passing_law
+            NOT = { check_variable = { law_progress < 0.333 } }
+        }
+        localization_key = "GFX_reform_status_active_okay"
+    }
+    text = {
+        trigger = {
+            has_country_flag = passing_law
+        }
+        localization_key = "GFX_reform_status_active_poor"
+    }
+    text = {
+        trigger = {
+            NOT = { has_country_flag = passing_law }
+        }
+        localization_key = "GFX_reform_status_inactive"
+    }
+}

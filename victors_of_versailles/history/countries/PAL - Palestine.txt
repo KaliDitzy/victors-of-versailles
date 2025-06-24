@@ -1,0 +1,3 @@
+﻿capital = 454
+
+set_cosmetic_tag = PAL_mandate

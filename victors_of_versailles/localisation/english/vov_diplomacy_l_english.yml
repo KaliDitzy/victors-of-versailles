@@ -1,0 +1,9 @@
+﻿l_english:
+  ADD_VICTORY_GOAL_TITLE: "Add Sanction"
+  ADD_VICTORY_GOAL_ACTION_DESC: "Add additional sanctions upon your victory."
+  ADD_VICTORY_GOAL_SEND_DESC: "It is possible for us place an additional sanction against our enemy, which will become active if we win the war.\nHowever, we will lose our §YJingoism§!."
+  UNJUSTIFIED_WAR_TITLE: "§YSnap War§!"
+  UNJUSTIFIED_WAR_ACTION_DESC: "Declare a war without a wargoal against them."
+  UNJUSTIFIED_WAR_SEND_DESC: "Due to our attitudes, we may freely declare war against §Y[THIS.GetNameDef]§!.\nHowever, we will lose our §YJingoism§!."
+
+  AGGRESSIVE_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ War of Aggression"

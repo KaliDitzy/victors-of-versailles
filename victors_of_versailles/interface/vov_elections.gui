@@ -1,0 +1,40 @@
+guiTypes = {
+    containerWindowType = {
+        name = "vov_politics_elections"
+        position = { x = 0 y = 0 }
+        size = { width = 1024 height = 1024 }
+
+        instantTextboxType = {
+			name = "election"
+			position = { x = 97 y = 330 }
+			font = "hoi_16mbs"
+			text = "[election_status]"
+			maxWidth = 250
+			maxHeight = 60
+			format = left
+			fixedsize = yes
+		}
+
+		buttonType = {
+			name = "snap_election_btn"
+			spriteType = "GFX_closebutton"
+            position = { x = 237 y = 330 }
+		}
+    }
+	#containerWindowType = {
+    #    name = "vov_diplomacy_elections"
+    #    position = { x = 0 y = 0 }
+    #    size = { width = 1024 height = 1024 }
+	#
+    #    instantTextboxType = {
+	#		name = "election"
+	#		position = { x = 263 y = 210 }
+	#		font = "hoi_16mbs"
+	#		text = "[election_status]"
+	#		maxWidth = 250
+	#		maxHeight = 60
+	#		format = left
+	#		fixedsize = yes
+	#	}
+    #}
+}

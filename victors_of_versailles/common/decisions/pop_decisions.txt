@@ -1,0 +1,397 @@
+coup_crisis = {
+	imminent_democratic_takeover = {
+		activation = {
+			NOT = { has_government = democratic }
+			has_civil_war = no
+
+			# SOCIAL
+			OR = { # SUFFRAGE
+				has_idea = wealth_voting
+				has_idea = men_only
+				has_idea = limited_womens_suffrage
+				has_idea = womens_suffrage_law
+				has_idea = minority_suffrage
+				has_idea = universal_suffrage
+			}
+			OR = { # PROPERTY
+				has_idea = limited_private_property
+				has_idea = private_property
+			}
+
+			if = {
+				limit = {
+					OR = {
+						original_tag = RSE
+						original_tag = SOV
+					}
+				}
+				OR = {
+					RSE = { exists = no }
+					SOV = { exists = no }
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				NOT = { has_government = democratic }
+				has_civil_war = no
+
+				# SOCIAL
+				OR = { # SUFFRAGE
+					has_idea = wealth_voting
+					has_idea = men_only
+					has_idea = limited_womens_suffrage
+					has_idea = womens_suffrage_law
+					has_idea = minority_suffrage
+					has_idea = universal_suffrage
+				}
+				OR = { # PROPERTY
+					has_idea = limited_private_property
+					has_idea = private_property
+				}
+
+				if = {
+					limit = {
+						OR = {
+							original_tag = RSE
+							original_tag = SOV
+						}
+					}
+					OR = {
+						RSE = { exists = no }
+						SOV = { exists = no }
+					}
+				}
+			}
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		is_good = no
+		days_mission_timeout = 200
+		days_re_enable = 300
+		timeout_effect = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				subtract_from_variable = { consciousness = 0.25 }
+				subtract_from_variable = { militancy = 0.25 }
+			}
+		}
+	}
+	imminent_communism_takeover = {
+		activation = {
+			NOT = { has_government = communism }
+			has_civil_war = no
+
+			# SOCIAL
+			OR = { # SUFFRAGE
+				has_idea = no_elections
+				has_idea = upper_class_voting
+			}
+			OR = { # PROPERTY
+				has_idea = state_property
+				has_idea = property_abolished
+			}
+
+			if = {
+				limit = {
+					OR = {
+						original_tag = RSE
+						original_tag = SOV
+					}
+				}
+				OR = {
+					RSE = { exists = no }
+					SOV = { exists = no }
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				NOT = { has_government = communism }
+				has_civil_war = no
+
+				# SOCIAL
+				OR = { # SUFFRAGE
+					has_idea = no_elections
+					has_idea = upper_class_voting
+				}
+				OR = { # PROPERTY
+					has_idea = state_property
+					has_idea = property_abolished
+				}
+
+				if = {
+					limit = {
+						OR = {
+							original_tag = RSE
+							original_tag = SOV
+						}
+					}
+					OR = {
+						RSE = { exists = no }
+						SOV = { exists = no }
+					}
+				}
+			}
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		is_good = no
+		days_mission_timeout = 200
+		days_re_enable = 300
+		timeout_effect = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				subtract_from_variable = { consciousness = 0.25 }
+				subtract_from_variable = { militancy = 0.25 }
+			}
+		}
+	}
+	imminent_fascism_takeover = {
+		activation = {
+			NOT = { has_government = fascism }
+			has_civil_war = no
+
+			# SOCIAL
+			OR = { # SUFFRAGE
+				has_idea = no_elections
+				has_idea = upper_class_voting
+				has_idea = wealth_voting
+			}
+			OR = { # PROPERTY
+				has_idea = private_property
+				has_idea = state_property
+			}
+			OR = { # ACCEPTANCE
+				has_idea = religious_discrimination
+			}
+
+			if = {
+				limit = {
+					OR = {
+						original_tag = RSE
+						original_tag = SOV
+					}
+				}
+				OR = {
+					RSE = { exists = no }
+					SOV = { exists = no }
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				NOT = { has_government = fascism }
+				has_civil_war = no
+
+				# SOCIAL
+				OR = { # SUFFRAGE
+					has_idea = no_elections
+					has_idea = upper_class_voting
+					has_idea = wealth_voting
+				}
+				OR = { # PROPERTY
+					has_idea = private_property
+					has_idea = state_property
+				}
+				OR = { # ACCEPTANCE
+					has_idea = religious_discrimination
+				}
+
+				if = {
+					limit = {
+						OR = {
+							original_tag = RSE
+							original_tag = SOV
+						}
+					}
+					OR = {
+						RSE = { exists = no }
+						SOV = { exists = no }
+					}
+				}
+			}
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		is_good = no
+		days_mission_timeout = 200
+		days_re_enable = 300
+		timeout_effect = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				subtract_from_variable = { consciousness = 0.25 }
+				subtract_from_variable = { militancy = 0.25 }
+			}
+		}
+	}
+	imminent_neutrality_takeover = {
+		activation = {
+			NOT = { has_government = neutrality }
+			has_civil_war = no
+
+			# SOCIAL
+			OR = { # SUFFRAGE
+				has_idea = no_elections
+				has_idea = upper_class_voting
+				has_idea = wealth_voting
+				has_idea = men_only
+			}
+			OR = { # PROPERTY
+				has_idea = feudalism
+				has_idea = limited_private_property
+				has_idea = private_property
+			}
+			OR = { # ACCEPTANCE
+				has_idea = religious_discrimination
+				has_idea = racial_discrimination
+			}
+
+			if = {
+				limit = {
+					OR = {
+						original_tag = RSE
+						original_tag = SOV
+					}
+				}
+				OR = {
+					RSE = { exists = no }
+					SOV = { exists = no }
+				}
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				NOT = { has_government = neutrality }
+				has_civil_war = no
+
+				# SOCIAL
+				OR = { # SUFFRAGE
+					has_idea = no_elections
+					has_idea = upper_class_voting
+					has_idea = wealth_voting
+					has_idea = men_only
+				}
+				OR = { # PROPERTY
+					has_idea = feudalism
+					has_idea = limited_private_property
+					has_idea = private_property
+				}
+				OR = { # ACCEPTANCE
+					has_idea = religious_discrimination
+					has_idea = racial_discrimination
+				}
+
+				if = {
+					limit = {
+						OR = {
+							original_tag = RSE
+							original_tag = SOV
+						}
+					}
+					OR = {
+						RSE = { exists = no }
+						SOV = { exists = no }
+					}
+				}
+			}
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		is_good = no
+		days_mission_timeout = 200
+		days_re_enable = 300
+		timeout_effect = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+			}
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				subtract_from_variable = { consciousness = 0.25 }
+				subtract_from_variable = { militancy = 0.25 }
+			}
+		}
+	}
+}
+civil_war_crisis = {
+	DEBUG_start_civil_war = {
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {
+			every_controlled_state = {
+				set_temp_variable_to_random = rng
+				multiply_temp_variable = { rng = 0.5 }
+				add_to_temp_variable = { rng = 0.3 }
+				set_variable = { militancy = rng }
+				set_variable = { consciousness = rng }
+			}
+		}
+	}
+	imminent_civil_war = {
+		activation = {
+			check_variable = { num_owned_states > 1 }
+			has_civil_war = no
+			NOT = { check_variable = { militancy < 0.5 } }
+		}
+		cancel_trigger = {
+			NOT = {
+				AND = {
+					check_variable = { num_owned_states > 1 }
+					has_civil_war = no
+					NOT = { check_variable = { militancy < 0.3 } }
+				}
+			}
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		is_good = no
+		days_mission_timeout = 180
+		days_re_enable = 300
+		timeout_effect = {
+			civil_war_from_pops = yes
+		}
+	}
+}

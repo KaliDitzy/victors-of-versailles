@@ -1,0 +1,955 @@
+guiTypes = {
+    containerWindowType = {
+        name = "vov_politicsview"
+        position = { x = 0 y = 0 }
+        size = { width = 1024 height = 1024 }
+
+        buttonType = {
+            name = "open_reform_btn"
+            spriteType = "GFX_reforms_open_btn"
+            position = { x = 400 y = 10 }
+            Orientation = "UPPER_LEFT"
+        }
+        instantTextBoxType = {
+            name = "open_reform_btn_txt"
+            position = { x = 416 y = 18 }
+            Orientation = "UPPER_LEFT"
+            text = "Reforms"
+            font = "hoi_16mbs"
+            maxWidth = 50
+			maxHeight = 20
+			format = left
+        }
+    }
+    containerWindowType = {
+        name = "vov_reformsview"
+        position = { x = 543 y = 2000 }
+        show_position = { x = 543 y = 0 }
+        show_animation_type = decelerated
+        hide_animation_type = accelerated
+        animation_time = 300
+        size = { width = 543 height = 430 }
+
+        background = {
+            quadTextureSprite = "GFX_tiled_bg"
+        }
+
+        iconType = {
+            name = "header_bg"
+            spriteType = "GFX_header_bg"
+            position = { x = 0 y = 8 }
+        }
+
+        instantTextboxType = {
+			name = "title"
+			position = { x = 36 y = 8 }
+			font = "hoi_36header"
+			text = "Reforms"
+			maxWidth = 160
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+		}
+
+        buttonType = {
+            name = "close_btn"
+            spriteType = "GFX_closebutton"
+            position = { x = 503 y = 10 }
+            Orientation = "UPPER_LEFT"
+        }
+
+        buttonType = {
+            name = "social_laws_btn"
+            spriteType = "GFX_button_148x34"
+            position = { x = 0 y = 42 }
+            Orientation = "UPPER_LEFT"
+            text = "Social Laws"
+            font = "hoi_18mbs"
+        }
+        buttonType = {
+            name = "economic_laws_btn"
+            spriteType = "GFX_button_148x34"
+            position = { x = 130 y = 42 }
+            Orientation = "UPPER_LEFT"
+            text = "Economic Laws"
+            font = "hoi_18mbs"
+        }
+        buttonType = {
+            name = "military_laws_btn"
+            spriteType = "GFX_button_148x34"
+            position = { x = 264 y = 42 }
+            Orientation = "UPPER_LEFT"
+            text = "Military Policy"
+            font = "hoi_18mbs"
+        }
+        buttonType = {
+            name = "foreign_laws_btn"
+            spriteType = "GFX_button_148x34"
+            position = { x = 395 y = 42 }
+            Orientation = "UPPER_LEFT"
+            text = "Foreign Policy"
+            font = "hoi_18mbs"
+        }
+
+        buttonType = {
+            name = "force_reform_btn"
+            spriteType = "GFX_closebutton"
+            position = { x = 400 y = 30 }
+            Orientation = "UPPER_LEFT"
+        }
+
+        iconType = {
+            name = "law1_bg"
+            spriteType = "GFX_law_bg"
+            position = { x = 28 y = 76 }
+        }
+        iconType = {
+            name = "law2_bg"
+            spriteType = "GFX_law_bg"
+            position = { x = 28 y = 186 }
+        }
+        iconType = {
+            name = "law3_bg"
+            spriteType = "GFX_law_bg"
+            position = { x = 28 y = 296 }
+        }
+        iconType = {
+            name = "law1_bg_noleft"
+            spriteType = "GFX_law_bg_noleft"
+            position = { x = 28 y = 76 }
+        }
+        iconType = {
+            name = "law2_bg_noleft"
+            spriteType = "GFX_law_bg_noleft"
+            position = { x = 28 y = 186 }
+        }
+        iconType = {
+            name = "law3_bg_noleft"
+            spriteType = "GFX_law_bg_noleft"
+            position = { x = 28 y = 296 }
+        }
+        iconType = {
+            name = "law1_bg_noright"
+            spriteType = "GFX_law_bg_noright"
+            position = { x = 28 y = 76 }
+        }
+        iconType = {
+            name = "law2_bg_noright"
+            spriteType = "GFX_law_bg_noright"
+            position = { x = 28 y = 186 }
+        }
+        iconType = {
+            name = "law3_bg_noright"
+            spriteType = "GFX_law_bg_noright"
+            position = { x = 28 y = 296 }
+        }
+
+        ### SOCIAL REFORMS
+        # SUFFRAGE
+        instantTextboxType = {
+			name = "suffrage_title"
+			position = { x = 171 y = 78 }
+			font = "hoi_24header"
+			text = "Suffrage"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_suffrage_law"
+            spriteType = "GFX_idea_closed_economy"
+            position = { x = 239 y = 102 }
+        }
+        instantTextboxType = {
+			name = "current_suffrage_law_title"
+			position = { x = 121 y = 161 }
+			font = "hoi_24header"
+			text = "[reforms_current_suffrage_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_suffrage_law"
+            spriteType = "GFX_idea_closed_economy"
+            position = { x = 39 y = 102 }
+        }
+        instantTextboxType = {
+			name = "previous_suffrage_law_chance"
+			position = { x = 22 y = 166 }
+			font = "hoi_18bms"
+			text = "[previous_suffrage_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_suffrage_law"
+            spriteType = "GFX_idea_closed_economy"
+            position = { x = 439 y = 102 }
+        }
+        instantTextboxType = {
+			name = "next_suffrage_law_chance"
+			position = { x = 422 y = 166 }
+			font = "hoi_18bms"
+			text = "[next_suffrage_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "suffrage_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 126 }
+        }
+        iconType = {
+            name = "suffrage_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 126 }
+        }
+
+        # PROPERTY
+        instantTextboxType = {
+			name = "property_title"
+			position = { x = 171 y = 188 }
+			font = "hoi_24header"
+			text = "Property"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_property_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 212 }
+        }
+        instantTextboxType = {
+			name = "current_property_law_title"
+			position = { x = 121 y = 271 }
+			font = "hoi_24header"
+			text = "[reforms_current_property_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_property_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 212 }
+        }
+        instantTextboxType = {
+			name = "previous_property_law_chance"
+			position = { x = 22 y = 276 }
+			font = "hoi_18bms"
+			text = "[previous_property_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_property_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 212 }
+        }
+        instantTextboxType = {
+			name = "next_property_law_chance"
+			position = { x = 422 y = 276 }
+			font = "hoi_18bms"
+			text = "[next_property_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "property_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 236 }
+        }
+        iconType = {
+            name = "property_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 236 }
+        }
+
+        # ACCEPTANCE
+        instantTextboxType = {
+			name = "acceptance_title"
+			position = { x = 171 y = 298 }
+			font = "hoi_24header"
+			text = "Acceptance"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_acceptance_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 322 }
+        }
+        instantTextboxType = {
+			name = "current_acceptance_law_title"
+			position = { x = 121 y = 381 }
+			font = "hoi_24header"
+			text = "[reforms_current_acceptance_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_acceptance_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 322 }
+        }
+        instantTextboxType = {
+			name = "previous_acceptance_law_chance"
+			position = { x = 22 y = 386 }
+			font = "hoi_18bms"
+			text = "[previous_acceptance_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_acceptance_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 322 }
+        }
+        instantTextboxType = {
+			name = "next_acceptance_law_chance"
+			position = { x = 422 y = 386 }
+			font = "hoi_18bms"
+			text = "[next_acceptance_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "acceptance_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 346 }
+        }
+        iconType = {
+            name = "acceptance_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 346 }
+        }
+
+        ### ECONOMY REFORMS
+        # TRADE
+        instantTextboxType = {
+			name = "trade_title"
+			position = { x = 171 y = 78 }
+			font = "hoi_24header"
+			text = "Trade"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_trade_law"
+            spriteType = "GFX_idea_closed_economy"
+            position = { x = 239 y = 102 }
+        }
+        instantTextboxType = {
+			name = "current_trade_law_title"
+			position = { x = 121 y = 161 }
+			font = "hoi_24header"
+			text = "[reforms_current_trade_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_trade_law"
+            spriteType = "GFX_idea_closed_economy"
+            position = { x = 39 y = 102 }
+        }
+        instantTextboxType = {
+			name = "previous_trade_law_chance"
+			position = { x = 22 y = 166 }
+			font = "hoi_18bms"
+			text = "[previous_trade_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_trade_law"
+            spriteType = "GFX_idea_closed_economy"
+            position = { x = 439 y = 102 }
+        }
+        instantTextboxType = {
+			name = "next_trade_law_chance"
+			position = { x = 422 y = 166 }
+			font = "hoi_18bms"
+			text = "[next_trade_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "trade_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 126 }
+        }
+        iconType = {
+            name = "trade_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 126 }
+        }
+
+        # ECONOMY
+        instantTextboxType = {
+			name = "economy_title"
+			position = { x = 171 y = 188 }
+			font = "hoi_24header"
+			text = "Economy"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_economy_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 212 }
+        }
+        instantTextboxType = {
+			name = "current_economy_law_title"
+			position = { x = 121 y = 271 }
+			font = "hoi_24header"
+			text = "[reforms_current_economy_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_economy_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 212 }
+        }
+        instantTextboxType = {
+			name = "previous_economy_law_chance"
+			position = { x = 22 y = 276 }
+			font = "hoi_18bms"
+			text = "[previous_economy_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_economy_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 212 }
+        }
+        instantTextboxType = {
+			name = "next_economy_law_chance"
+			position = { x = 422 y = 276 }
+			font = "hoi_18bms"
+			text = "[next_economy_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "economy_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 236 }
+        }
+        iconType = {
+            name = "economy_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 236 }
+        }
+
+        # LABOR REG
+        instantTextboxType = {
+			name = "labor_title"
+			position = { x = 171 y = 298 }
+			font = "hoi_24header"
+			text = "Labor Regulations"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_labor_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 322 }
+        }
+        instantTextboxType = {
+			name = "current_labor_law_title"
+			position = { x = 121 y = 381 }
+			font = "hoi_24header"
+			text = "[reforms_current_labor_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_labor_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 322 }
+        }
+        instantTextboxType = {
+			name = "previous_labor_law_chance"
+			position = { x = 22 y = 386 }
+			font = "hoi_18bms"
+			text = "[previous_labor_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_labor_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 322 }
+        }
+        instantTextboxType = {
+			name = "next_labor_law_chance"
+			position = { x = 422 y = 386 }
+			font = "hoi_18bms"
+			text = "[next_labor_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "labor_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 346 }
+        }
+        iconType = {
+            name = "labor_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 346 }
+        }
+
+        ### MILITARY REFORMS
+        # CONSCRIPTION
+        instantTextboxType = {
+			name = "conscription_title"
+			position = { x = 171 y = 78 }
+			font = "hoi_24header"
+			text = "Conscription"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_conscription_law"
+            spriteType = "GFX_idea_disarmed_nation"
+            position = { x = 239 y = 102 }
+        }
+        instantTextboxType = {
+			name = "current_conscription_law_title"
+			position = { x = 121 y = 161 }
+			font = "hoi_24header"
+			text = "[reforms_current_conscription_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_conscription_law"
+            spriteType = "GFX_idea_disarmed_nation"
+            position = { x = 39 y = 102 }
+        }
+        instantTextboxType = {
+			name = "previous_conscription_law_chance"
+			position = { x = 22 y = 166 }
+			font = "hoi_18bms"
+			text = "[previous_conscription_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_conscription_law"
+            spriteType = "GFX_idea_disarmed_nation"
+            position = { x = 439 y = 102 }
+        }
+        instantTextboxType = {
+			name = "next_conscription_law_chance"
+			position = { x = 422 y = 166 }
+			font = "hoi_18bms"
+			text = "[next_conscription_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "conscription_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 126 }
+        }
+        iconType = {
+            name = "conscription_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 126 }
+        }
+
+        # Age of enlistment
+        instantTextboxType = {
+			name = "aoe_title"
+			position = { x = 171 y = 188 }
+			font = "hoi_24header"
+			text = "Age of Enlistment"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_aoe_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 212 }
+        }
+        instantTextboxType = {
+			name = "current_aoe_law_title"
+			position = { x = 121 y = 271 }
+			font = "hoi_24header"
+			text = "[reforms_current_aoe_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_aoe_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 212 }
+        }
+        instantTextboxType = {
+			name = "previous_aoe_law_chance"
+			position = { x = 22 y = 276 }
+			font = "hoi_18bms"
+			text = "[previous_aoe_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_aoe_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 212 }
+        }
+        instantTextboxType = {
+			name = "next_aoe_law_chance"
+			position = { x = 422 y = 276 }
+			font = "hoi_18bms"
+			text = "[next_aoe_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "aoe_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 236 }
+        }
+        iconType = {
+            name = "aoe_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 236 }
+        }
+
+        # military centralization
+        instantTextboxType = {
+			name = "centralization_title"
+			position = { x = 171 y = 298 }
+			font = "hoi_24header"
+			text = "Centralization"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_centralization_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 322 }
+        }
+        instantTextboxType = {
+			name = "current_centralization_law_title"
+			position = { x = 121 y = 381 }
+			font = "hoi_24header"
+			text = "[reforms_current_centralization_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_centralization_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 322 }
+        }
+        instantTextboxType = {
+			name = "previous_centralization_law_chance"
+			position = { x = 22 y = 386 }
+			font = "hoi_18bms"
+			text = "[previous_centralization_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_centralization_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 322 }
+        }
+        instantTextboxType = {
+			name = "next_centralization_law_chance"
+			position = { x = 422 y = 386 }
+			font = "hoi_18bms"
+			text = "[next_centralization_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "centralization_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 346 }
+        }
+        iconType = {
+            name = "centralization_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 346 }
+        }
+
+        ### POLICY REFORMS
+        # WARFARE ATTITUDE
+        instantTextboxType = {
+			name = "warfare_title"
+			position = { x = 171 y = 78 }
+			font = "hoi_24header"
+			text = "Warfare Attitude"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_warfare_law"
+            spriteType = "GFX_idea_disarmed_nation"
+            position = { x = 239 y = 102 }
+        }
+        instantTextboxType = {
+			name = "current_warfare_law_title"
+			position = { x = 121 y = 161 }
+			font = "hoi_24header"
+			text = "[reforms_current_warfare_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_warfare_law"
+            spriteType = "GFX_idea_disarmed_nation"
+            position = { x = 39 y = 102 }
+        }
+        instantTextboxType = {
+			name = "previous_warfare_law_chance"
+			position = { x = 22 y = 166 }
+			font = "hoi_18bms"
+			text = "[previous_warfare_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_warfare_law"
+            spriteType = "GFX_idea_disarmed_nation"
+            position = { x = 439 y = 102 }
+        }
+        instantTextboxType = {
+			name = "next_warfare_law_chance"
+			position = { x = 422 y = 166 }
+			font = "hoi_18bms"
+			text = "[next_warfare_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "warfare_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 126 }
+        }
+        iconType = {
+            name = "warfare_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 126 }
+        }
+
+        # Diplomatic policy
+        instantTextboxType = {
+			name = "diplomacy_title"
+			position = { x = 171 y = 188 }
+			font = "hoi_24header"
+			text = "Diplomatic Policy"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_diplomacy_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 212 }
+        }
+        instantTextboxType = {
+			name = "current_diplomacy_law_title"
+			position = { x = 121 y = 271 }
+			font = "hoi_24header"
+			text = "[reforms_current_diplomacy_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_diplomacy_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 212 }
+        }
+        instantTextboxType = {
+			name = "previous_diplomacy_law_chance"
+			position = { x = 22 y = 276 }
+			font = "hoi_18bms"
+			text = "[previous_diplomacy_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_diplomacy_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 212 }
+        }
+        instantTextboxType = {
+			name = "next_diplomacy_law_chance"
+			position = { x = 422 y = 276 }
+			font = "hoi_18bms"
+			text = "[next_diplomacy_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "diplomacy_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 236 }
+        }
+        iconType = {
+            name = "diplomacy_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 236 }
+        }
+
+        # Border policy
+        instantTextboxType = {
+			name = "border_title"
+			position = { x = 171 y = 298 }
+			font = "hoi_24header"
+			text = "Border Policy"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "current_border_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 239 y = 322 }
+        }
+        instantTextboxType = {
+			name = "current_border_law_title"
+			position = { x = 121 y = 381 }
+			font = "hoi_24header"
+			text = "[reforms_current_border_law_title]"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "previous_border_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 39 y = 322 }
+        }
+        instantTextboxType = {
+			name = "previous_border_law_chance"
+			position = { x = 22 y = 386 }
+			font = "hoi_18bms"
+			text = "[previous_border_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        buttonType = {
+            name = "next_border_law"
+            spriteType = "GFX_idea_civilian_economy"
+            position = { x = 439 y = 322 }
+        }
+        instantTextboxType = {
+			name = "next_border_law_chance"
+			position = { x = 422 y = 386 }
+			font = "hoi_18bms"
+			text = "[next_border_chance]"
+			maxWidth = 100
+			maxHeight = 20
+			format = center
+			fixedsize = yes
+		}
+        iconType = {
+            name = "border_regress_bar"
+            spriteType = "GFX_politics_regress_bar_inactive"
+            position = { x = 108 y = 346 }
+        }
+        iconType = {
+            name = "border_progress_bar"
+            spriteType = "GFX_politics_progress_bar_inactive"
+            position = { x = 308 y = 346 }
+        }
+    }
+}

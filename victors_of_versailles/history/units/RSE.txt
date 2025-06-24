@@ -1,0 +1,521 @@
+division_template = {
+	name = "Pekhotnaya Diviziya"
+
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 0 y = 1 }
+	}
+	priority = 1
+}
+units = {
+	# Caucasus
+	division = {
+		name = "1. Pekhotnyy Korpus"
+		location = 9490
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "2. Pekhotnyy Korpus"
+		location = 9735
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.5
+	}
+	division = {
+		name = "3. Pekhotnyy Korpus"
+		location = 426
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "4. Pekhotnyy Korpus"
+		location = 3464
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "5. Pekhotnyy Korpus"
+		location = 11403
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "6. Pekhotnyy Korpus"
+		location = 11400
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "7. Pekhotnyy Korpus"
+		location = 3475
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "8. Pekhotnyy Korpus"
+		location = 6463
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "9. Pekhotnyy Korpus"
+		location = 6758
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "10. Pekhotnyy Korpus"
+		location = 765
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "11. Pekhotnyy Korpus"
+		location = 3587
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "12. Pekhotnyy Korpus"
+		location = 6783
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "13. Pekhotnyy Korpus"
+		location = 9744
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "14. Pekhotnyy Korpus"
+		location = 6490
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "15. Pekhotnyy Korpus"
+		location = 3439
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "16. Pekhotnyy Korpus"
+		location = 9442
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "17. Pekhotnyy Korpus"
+		location = 3597
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "18. Pekhotnyy Korpus"
+		location = 11706
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+
+	# Karelia
+	division = {
+		name = "19. Pekhotnyy Korpus"
+		location = 2998
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "20. Pekhotnyy Korpus"
+		location = 155
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "21. Pekhotnyy Korpus"
+		location = 157
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "22. Pekhotnyy Korpus"
+		location = 6090
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "23. Pekhotnyy Korpus"
+		location = 9055
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "24. Pekhotnyy Korpus"
+		location = 6159
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "25. Pekhotnyy Korpus"
+		location = 11094
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+
+	#Stanistan
+	division = {
+		name = "26. Pekhotnyy Korpus"
+		location = 642
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "27. Pekhotnyy Korpus"
+		location = 12235
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "28. Pekhotnyy Korpus"
+		location = 13008
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "29. Pekhotnyy Korpus"
+		location = 4294
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "30. Pekhotnyy Korpus"
+		location = 7370
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "31. Pekhotnyy Korpus"
+		location = 12254
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "32. Pekhotnyy Korpus"
+		location = 7341
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "33. Pekhotnyy Korpus"
+		location = 7313
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "34. Pekhotnyy Korpus"
+		location = 12227
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "35. Pekhotnyy Korpus"
+		location = 10164
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "36. Pekhotnyy Korpus"
+		location = 7410
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "37. Pekhotnyy Korpus"
+		location = 7337
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "38. Pekhotnyy Korpus"
+		location = 7354
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "39. Pekhotnyy Korpus"
+		location = 7243
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "40. Pekhotnyy Korpus"
+		location = 1649
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "41. Pekhotnyy Korpus"
+		location = 1576
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "42. Pekhotnyy Korpus"
+		location = 4618
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "43. Pekhotnyy Korpus"
+		location = 4488
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "44. Pekhotnyy Korpus"
+		location = 7486
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "45. Pekhotnyy Korpus"
+		location = 4638
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "46. Pekhotnyy Korpus"
+		location = 756
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "47. Pekhotnyy Korpus"
+		location = 1632
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "48. Pekhotnyy Korpus"
+		location = 9605
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+
+	#Kamchatka
+	division = {
+		name = "49. Pekhotnyy Korpus"
+		location = 1823
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+
+	#Siberia
+	division = {
+		name = "50. Pekhotnyy Korpus"
+		location = 13076
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "51. Pekhotnyy Korpus"
+		location = 3169
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "52. Pekhotnyy Korpus"
+		location = 1664
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "53. Pekhotnyy Korpus"
+		location = 9142
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "54. Pekhotnyy Korpus"
+		location = 12517
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "55. Pekhotnyy Korpus"
+		location = 7738
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "56. Pekhotnyy Korpus"
+		location = 1757
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "57. Pekhotnyy Korpus"
+		location = 7809
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "58. Pekhotnyy Korpus"
+		location = 11261
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "59. Pekhotnyy Korpus"
+		location = 2923
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "60. Pekhotnyy Korpus"
+		location = 10607
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "61. Pekhotnyy Korpus"
+		location = 11328
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "62. Pekhotnyy Korpus"
+		location = 12643
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "63. Pekhotnyy Korpus"
+		location = 1729
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "64. Pekhotnyy Korpus"
+		location = 10635
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+
+	# Mongolia
+	division = {
+		name = "65. Pekhotnyy Korpus"
+		location = 1810
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "66. Pekhotnyy Korpus"
+		location = 10661
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "67. Pekhotnyy Korpus"
+		location = 4815
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "68. Pekhotnyy Korpus"
+		location = 12647
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "69. Pekhotnyy Korpus"
+		location = 10596
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "70. Pekhotnyy Korpus"
+		location = 10524
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "71. Pekhotnyy Korpus"
+		location = 12575
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "72. Pekhotnyy Korpus"
+		location = 12506
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "73. Pekhotnyy Korpus"
+		location = 12506
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "74. Pekhotnyy Korpus"
+		location = 4835
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "75. Pekhotnyy Korpus"
+		location = 7736
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "76. Pekhotnyy Korpus"
+		location = 1826
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "77. Pekhotnyy Korpus"
+		location = 10643
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "77. Pekhotnyy Korpus"
+		location = 10565
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "78. Pekhotnyy Korpus"
+		location = 10681
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "79. Pekhotnyy Korpus"
+		location = 4675
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "80. Pekhotnyy Korpus"
+		location = 4832
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "81. Pekhotnyy Korpus"
+		location = 10559
+		division_template = "Pekhotnaya Diviziya"
+		start_experience_factor = 0.3
+	}
+}

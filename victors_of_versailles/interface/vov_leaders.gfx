@@ -1,0 +1,30 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_portrait_NGF_gustav_bauer"
+        textureFile = "gfx/leaders/NGF/Portrait_Gustav_Bauer.dds"
+	}
+	spriteType = {
+        name = "GFX_portrait_SGF_constantin_fehrenbach"
+        textureFile = "gfx/leaders/SGF/Portrait_Constantin_Fehrenbach.dds"
+	}
+	spriteType = {
+        name = "GFX_portrait_SGF_adolf_hitler"
+        textureFile = "gfx/leaders/SGF/Portrait_Adolf_Hitler.dds"
+	}
+	spriteType = {
+        name = "GFX_portrait_FRA_raymond_poincare"
+        textureFile = "gfx/leaders/FRA/Portrait_Raymond_Poincare.dds"
+	}
+	spriteType = {
+        name = "GFX_portrait_ENG_david_lloyd_george"
+        textureFile = "gfx/leaders/ENG/Portrait_David_Lloyd_George.dds"
+	}
+	spriteType = {
+        name = "GFX_portrait_SOV_vladimir_lenin"
+        textureFile = "gfx/leaders/SOV/Portrait_Vladimir_Lenin.dds"
+	}
+	spriteType = {
+        name = "GFX_portrait_RSE_anton_denikin"
+        textureFile = "gfx/leaders/RSE/Portrait_Anton_Denikin.dds"
+	}
+}

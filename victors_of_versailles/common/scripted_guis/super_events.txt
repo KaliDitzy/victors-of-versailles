@@ -1,0 +1,24 @@
+scripted_gui = {
+
+	sp_event_window = {
+		window_name = "sp_event_window"
+		context_type = player_context
+
+		visible = {
+			check_variable = { current_super_event > 0 }
+			is_ai = no
+		}
+
+		effects = {
+			sp_event_close_button_click = {
+				set_variable = { current_super_event = 0 }
+			}
+		}
+
+		properties = {
+			super_event_image = {
+				image = "[get_super_event_image]"
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+state = {
+	id = 1018
+	name = "STATE_1018"
+	manpower = 2048247
+
+	state_category = metropolis
+	
+	history = {
+
+		owner = NGF
+		add_core_of = NGF
+		add_core_of = PRE
+
+		victory_points = {
+			6469 10 # Essen
+		}
+
+		#victory_points = {
+		#	3444 5 # Düsseldorf
+		#}
+
+		#victory_points = {
+		#	3547 1 # Bonn
+		#}
+
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1 #WAS 2
+			air_base = 3
+		}
+	}
+
+	provinces = {
+		529 3512 6469 6570 9482
+	}
+	
+	local_supplies = 0.0 
+}

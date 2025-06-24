@@ -1,0 +1,26 @@
+scripted_gui = {
+	vov_topbar = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = vov_topbar
+
+		visible = {
+			always = yes
+		}
+
+		properties = {
+			reform_status_icon = {
+				image = "[reform_status]"
+			}
+		}
+	}
+	vov_state = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		window_name = vov_state
+
+		visible = {
+			always = yes
+		}
+	}
+}

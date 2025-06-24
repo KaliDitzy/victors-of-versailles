@@ -1,0 +1,111 @@
+defined_text = {
+	name = "get_super_event_image"
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 1 }
+		}
+		localization_key = "GFX_sp_event_ww2"
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 2 }
+		}
+		localization_key = "GFX_sp_event_RCW_soviet_victory"
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 3 }
+		}
+		localization_key = "GFX_sp_event_RCW_white_victory"
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 4 }
+		}
+		localization_key = "GFX_sp_event_ww3"
+	}
+}
+
+defined_text = {
+	name = "get_super_event_title"
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 1 }
+		}
+		localization_key = sp_event_ww2
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 2 }
+		}
+		localization_key = sp_event_RCW_soviet_victory
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 3 }
+		}
+		localization_key = sp_event_RCW_white_victory
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 4 }
+		}
+		localization_key = sp_event_ww3
+	}
+}
+
+defined_text = {
+	name = "get_super_event_quote"
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 1 }
+		}
+		localization_key = sp_event_ww2_q
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 2 }
+		}
+		localization_key = sp_event_RCW_soviet_victory_q
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 3 }
+		}
+		localization_key = sp_event_RCW_white_victory_q
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 4 }
+		}
+		localization_key = sp_event_ww3_q
+	}
+}
+
+defined_text = {
+	name = "get_super_event_remark"
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 1 }
+		}
+		localization_key = sp_event_ww2_r
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 2 }
+		}
+		localization_key = sp_event_RCW_soviet_victory_r
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 3 }
+		}
+		localization_key = sp_event_RCW_white_victory_r
+	}
+	text = {
+		trigger = {
+			check_variable = { current_super_event = 4 }
+		}
+		localization_key = sp_event_ww3_r
+	}
+}

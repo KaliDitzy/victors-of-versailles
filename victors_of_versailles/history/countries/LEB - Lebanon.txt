@@ -1,0 +1,3 @@
+﻿capital = 553
+
+set_cosmetic_tag = LEB_mandate

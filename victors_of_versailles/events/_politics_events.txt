@@ -1,0 +1,2538 @@
+### SOCIAL
+#SUFFRAGE
+add_namespace = next_suffrage_law
+
+country_event = {
+	id = next_suffrage_law.1
+
+	trigger = {
+		has_country_flag = next_suffrage_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_suffrage_in_progress
+			country_event = next_suffrage_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_suffrage_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_suffrage_in_progress
+			country_event = next_suffrage_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					country_event = next_suffrage_law.4
+				}
+				40 = {
+					country_event = next_suffrage_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_suffrage_law.2
+	title = next_suffrage_law.2.t
+	desc = next_suffrage_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_suffrage_law.2a
+	}
+}
+country_event = {
+	id = next_suffrage_law.3
+	title = next_suffrage_law.3.t
+	desc = next_suffrage_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_suffrage_law.3a
+	}
+}
+country_event = {
+	id = next_suffrage_law.4
+	title = next_suffrage_law.4.t
+	desc = next_suffrage_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_suffrage_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_suffrage_law.5
+	title = next_suffrage_law.5.t
+	desc = next_suffrage_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_suffrage_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_suffrage_law
+
+country_event = {
+	id = previous_suffrage_law.1
+
+	trigger = {
+		has_country_flag = previous_suffrage_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_suffrage_in_progress
+			country_event = previous_suffrage_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_suffrage_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_suffrage_in_progress
+			country_event = previous_suffrage_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				40 = {
+					country_event = previous_suffrage_law.4
+				}
+				20 = {
+					country_event = previous_suffrage_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_suffrage_law.2
+	title = previous_suffrage_law.2.t
+	desc = previous_suffrage_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_suffrage_law.2a
+	}
+}
+country_event = {
+	id = previous_suffrage_law.3
+	title = previous_suffrage_law.3.t
+	desc = previous_suffrage_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_suffrage_law.3a
+	}
+}
+country_event = {
+	id = previous_suffrage_law.4
+	title = previous_suffrage_law.4.t
+	desc = previous_suffrage_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_suffrage_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_suffrage_law.5
+	title = previous_suffrage_law.5.t
+	desc = previous_suffrage_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_suffrage_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+# PROPERTY
+add_namespace = next_property_law
+
+country_event = {
+	id = next_property_law.1
+
+	trigger = {
+		has_country_flag = next_property_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_property_in_progress
+			country_event = next_property_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_property_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_property_in_progress
+			country_event = next_property_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					country_event = next_property_law.4
+				}
+				30 = {
+					country_event = next_property_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_property_law.2
+	title = next_property_law.2.t
+	desc = next_property_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_property_law.2a
+	}
+}
+country_event = {
+	id = next_property_law.3
+	title = next_property_law.3.t
+	desc = next_property_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_property_law.3a
+	}
+}
+country_event = {
+	id = next_property_law.4
+	title = next_property_law.4.t
+	desc = next_property_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_property_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_property_law.5
+	title = next_property_law.5.t
+	desc = next_property_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_property_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_property_law
+
+country_event = {
+	id = previous_property_law.1
+
+	trigger = {
+		has_country_flag = previous_property_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_property_in_progress
+			country_event = previous_property_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_property_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_property_in_progress
+			country_event = previous_property_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				30 = {
+					country_event = previous_property_law.4
+				}
+				20 = {
+					country_event = previous_property_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_property_law.2
+	title = previous_property_law.2.t
+	desc = previous_property_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_property_law.2a
+	}
+}
+country_event = {
+	id = previous_property_law.3
+	title = previous_property_law.3.t
+	desc = previous_property_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_property_law.3a
+	}
+}
+country_event = {
+	id = previous_property_law.4
+	title = previous_property_law.4.t
+	desc = previous_property_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_property_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_property_law.5
+	title = previous_property_law.5.t
+	desc = previous_property_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_property_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+#ACCEPTANCE
+add_namespace = next_acceptance_law
+
+country_event = {
+	id = next_acceptance_law.1
+
+	trigger = {
+		has_country_flag = next_acceptance_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_acceptance_in_progress
+			country_event = next_acceptance_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_acceptance_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_acceptance_in_progress
+			country_event = next_acceptance_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				10 = {
+					country_event = next_acceptance_law.4
+				}
+				20 = {
+					country_event = next_acceptance_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_acceptance_law.2
+	title = next_acceptance_law.2.t
+	desc = next_acceptance_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_acceptance_law.2a
+	}
+}
+country_event = {
+	id = next_acceptance_law.3
+	title = next_acceptance_law.3.t
+	desc = next_acceptance_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_acceptance_law.3a
+	}
+}
+country_event = {
+	id = next_acceptance_law.4
+	title = next_acceptance_law.4.t
+	desc = next_acceptance_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_acceptance_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_acceptance_law.5
+	title = next_acceptance_law.5.t
+	desc = next_acceptance_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_acceptance_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_acceptance_law
+
+country_event = {
+	id = previous_acceptance_law.1
+
+	trigger = {
+		has_country_flag = previous_acceptance_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_acceptance_in_progress
+			country_event = previous_acceptance_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_acceptance_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_acceptance_in_progress
+			country_event = previous_acceptance_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					country_event = previous_acceptance_law.4
+				}
+				10 = {
+					country_event = previous_acceptance_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_acceptance_law.2
+	title = previous_acceptance_law.2.t
+	desc = previous_acceptance_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_acceptance_law.2a
+	}
+}
+country_event = {
+	id = previous_acceptance_law.3
+	title = previous_acceptance_law.3.t
+	desc = previous_acceptance_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_acceptance_law.3a
+	}
+}
+country_event = {
+	id = previous_acceptance_law.4
+	title = previous_acceptance_law.4.t
+	desc = previous_acceptance_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_acceptance_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_acceptance_law.5
+	title = previous_acceptance_law.5.t
+	desc = previous_acceptance_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_acceptance_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+### ECONOMIC
+# TRADE
+add_namespace = next_trade_law
+
+country_event = {
+	id = next_trade_law.1
+
+	trigger = {
+		has_country_flag = next_trade_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_trade_in_progress
+			country_event = next_trade_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_trade_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_trade_in_progress
+			country_event = next_trade_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				60 = {
+					country_event = next_trade_law.4
+				}
+				40 = {
+					country_event = next_trade_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_trade_law.2
+	title = next_trade_law.2.t
+	desc = next_trade_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_trade_law.2a
+	}
+}
+country_event = {
+	id = next_trade_law.3
+	title = next_trade_law.3.t
+	desc = next_trade_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_trade_law.3a
+	}
+}
+country_event = {
+	id = next_trade_law.4
+	title = next_trade_law.4.t
+	desc = next_trade_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_trade_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_trade_law.5
+	title = next_trade_law.5.t
+	desc = next_trade_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_trade_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_trade_law
+
+country_event = {
+	id = previous_trade_law.1
+
+	trigger = {
+		has_country_flag = previous_trade_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_trade_in_progress
+			country_event = previous_trade_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_trade_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_trade_in_progress
+			country_event = previous_trade_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				60 = {
+					country_event = previous_trade_law.4
+				}
+				40 = {
+					country_event = previous_trade_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_trade_law.2
+	title = previous_trade_law.2.t
+	desc = previous_trade_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_trade_law.2a
+	}
+}
+country_event = {
+	id = previous_trade_law.3
+	title = previous_trade_law.3.t
+	desc = previous_trade_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_trade_law.3a
+	}
+}
+country_event = {
+	id = previous_trade_law.4
+	title = previous_trade_law.4.t
+	desc = previous_trade_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_trade_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_trade_law.5
+	title = previous_trade_law.5.t
+	desc = previous_trade_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_trade_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = next_economy_law
+
+country_event = {
+	id = next_economy_law.1
+
+	trigger = {
+		has_country_flag = next_economy_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_economy_in_progress
+			country_event = next_economy_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_economy_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_economy_in_progress
+			country_event = next_economy_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				40 = {
+					country_event = next_economy_law.4
+				}
+				60 = {
+					country_event = next_economy_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_economy_law.2
+	title = next_economy_law.2.t
+	desc = next_economy_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_economy_law.2a
+	}
+}
+country_event = {
+	id = next_economy_law.3
+	title = next_economy_law.3.t
+	desc = next_economy_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_economy_law.3a
+	}
+}
+country_event = {
+	id = next_economy_law.4
+	title = next_economy_law.4.t
+	desc = next_economy_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_economy_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_economy_law.5
+	title = next_economy_law.5.t
+	desc = next_economy_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_economy_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_economy_law
+
+country_event = {
+	id = previous_economy_law.1
+
+	trigger = {
+		has_country_flag = previous_economy_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_economy_in_progress
+			country_event = previous_economy_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_economy_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_economy_in_progress
+			country_event = previous_economy_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				60 = {
+					country_event = previous_economy_law.4
+				}
+				40 = {
+					country_event = previous_economy_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_economy_law.2
+	title = previous_economy_law.2.t
+	desc = previous_economy_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_economy_law.2a
+	}
+}
+country_event = {
+	id = previous_economy_law.3
+	title = previous_economy_law.3.t
+	desc = previous_economy_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_economy_law.3a
+	}
+}
+country_event = {
+	id = previous_economy_law.4
+	title = previous_economy_law.4.t
+	desc = previous_economy_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_economy_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_economy_law.5
+	title = previous_economy_law.5.t
+	desc = previous_economy_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_economy_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = next_labor_law
+
+country_event = {
+	id = next_labor_law.1
+
+	trigger = {
+		has_country_flag = next_labor_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_labor_in_progress
+			country_event = next_labor_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_labor_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_labor_in_progress
+			country_event = next_labor_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					country_event = next_labor_law.4
+				}
+				40 = {
+					country_event = next_labor_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_labor_law.2
+	title = next_labor_law.2.t
+	desc = next_labor_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_labor_law.2a
+	}
+}
+country_event = {
+	id = next_labor_law.3
+	title = next_labor_law.3.t
+	desc = next_labor_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_labor_law.3a
+	}
+}
+country_event = {
+	id = next_labor_law.4
+	title = next_labor_law.4.t
+	desc = next_labor_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_labor_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_labor_law.5
+	title = next_labor_law.5.t
+	desc = next_labor_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_labor_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_labor_law
+
+country_event = {
+	id = previous_labor_law.1
+
+	trigger = {
+		has_country_flag = previous_labor_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_labor_in_progress
+			country_event = previous_labor_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_labor_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_labor_in_progress
+			country_event = previous_labor_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				40 = {
+					country_event = previous_labor_law.4
+				}
+				20 = {
+					country_event = previous_labor_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_labor_law.2
+	title = previous_labor_law.2.t
+	desc = previous_labor_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_labor_law.2a
+	}
+}
+country_event = {
+	id = previous_labor_law.3
+	title = previous_labor_law.3.t
+	desc = previous_labor_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_labor_law.3a
+	}
+}
+country_event = {
+	id = previous_labor_law.4
+	title = previous_labor_law.4.t
+	desc = previous_labor_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_labor_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_labor_law.5
+	title = previous_labor_law.5.t
+	desc = previous_labor_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_labor_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+### MILITARY
+
+add_namespace = next_conscription_law
+
+country_event = {
+	id = next_conscription_law.1
+
+	trigger = {
+		has_country_flag = next_conscription_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_conscription_in_progress
+			country_event = next_conscription_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			mobilize_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_conscription_in_progress
+			country_event = next_conscription_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					modifier = {
+						factor = 1.5
+						NOT = {
+							OR = {
+								has_idea = disarmed_nation
+								has_idea = volunteer_only
+							}
+						}
+					}
+					country_event = next_conscription_law.4
+				}
+				0 = {
+					modifier = {
+						add = 10
+						any_neighbor_country = {
+							has_war = yes
+						}
+					}
+					modifier = {
+						factor = 2
+						has_war = yes
+					}
+					country_event = next_conscription_law.5
+				}
+				20 = {
+					modifier = {
+						factor = 1.5
+						has_war = no
+					}
+					modifier = {
+						factor = 1.5
+						NOT = { any_neighbor_country = {
+							has_war = yes
+						} }
+					}
+					country_event = next_conscription_law.6
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_conscription_law.2
+	title = next_conscription_law.2.t
+	desc = next_conscription_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_conscription_law.2a
+	}
+}
+country_event = {
+	id = next_conscription_law.3
+	title = next_conscription_law.3.t
+	desc = next_conscription_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_conscription_law.3a
+	}
+}
+country_event = {
+	id = next_conscription_law.4
+	title = next_conscription_law.4.t
+	desc = next_conscription_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_conscription_law.4a
+		random_list = {
+			70 = {
+				modifier = {
+					factor = 1.5
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					any_neighbor_country = {
+						has_war = yes
+					}
+				}
+				set_temp_variable = { tt_temp = 0.1 }
+				custom_effect_tooltip = increase_law_progress
+				add_to_variable = { law_progress = tt_temp }
+			}
+			30 = {
+				modifier = {
+					factor = 1.5
+					NOT = {
+						OR = {
+							has_idea = disarmed_nation
+							has_idea = volunteer_only
+						}
+					}
+				}
+				set_temp_variable = { tt_temp = -0.15 }
+				custom_effect_tooltip = increase_law_progress
+				add_to_variable = { law_progress = tt_temp }
+			}
+		}
+	}
+	option = {
+		name = next_conscription_law.4b
+		random_list = {
+			70 = {
+				modifier = {
+					factor = 1.5
+					NOT = {
+						OR = {
+							has_idea = disarmed_nation
+							has_idea = volunteer_only
+						}
+					}
+				}
+				set_temp_variable = { tt_temp = -0.1 }
+				custom_effect_tooltip = increase_law_progress
+				add_to_variable = { law_progress = tt_temp }
+			}
+			30 = {
+				modifier = {
+					factor = 1.5
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					any_neighbor_country = {
+						has_war = yes
+					}
+				}
+				set_temp_variable = { tt_temp = 0.15 }
+				custom_effect_tooltip = increase_law_progress
+				add_to_variable = { law_progress = tt_temp }
+			}
+		}
+	}
+}
+country_event = {
+	id = next_conscription_law.5
+	title = next_conscription_law.5.t
+	desc = next_conscription_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_conscription_law.5a
+		set_temp_variable_to_random = tt_temp
+		divide_temp_variable = { tt_temp = 5 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_conscription_law.6
+	title = next_conscription_law.6.t
+	desc = next_conscription_law.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_conscription_law.6a
+		set_temp_variable_to_random = tt_temp
+		divide_temp_variable = { tt_temp = -7.5 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_conscription_law
+
+country_event = {
+	id = previous_conscription_law.1
+
+	trigger = {
+		has_country_flag = previous_conscription_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_conscription_in_progress
+			country_event = previous_conscription_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			demobilize_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_conscription_in_progress
+			country_event = previous_conscription_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				5 = {
+					modifier = {
+						add = 15
+						NOT = {
+							OR = {
+								has_idea = disarmed_nation
+								has_idea = volunteer_only
+								has_idea = limited_conscription
+							}
+						}
+					}
+					country_event = previous_conscription_law.4
+				}
+				5 = {
+					modifier = {
+						factor = 3
+						has_war = yes
+					}
+					modifier = {
+						factor = 2
+						any_neighbor_country = {
+							has_war = yes
+						}
+					}
+					country_event = previous_conscription_law.5
+				}
+				20 = {
+					country_event = previous_conscription_law.6
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_conscription_law.2
+	title = previous_conscription_law.2.t
+	desc = previous_conscription_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_conscription_law.2a
+	}
+}
+country_event = {
+	id = previous_conscription_law.3
+	title = previous_conscription_law.3.t
+	desc = previous_conscription_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_conscription_law.3a
+	}
+}
+country_event = {
+	id = previous_conscription_law.4
+	title = previous_conscription_law.4.t
+	desc = previous_conscription_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_conscription_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_conscription_law.5
+	title = previous_conscription_law.5.t
+	desc = previous_conscription_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_conscription_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_conscription_law.6
+	title = previous_conscription_law.6.t
+	desc = previous_conscription_law.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_conscription_law.6a
+		set_temp_variable_to_random = tt_temp
+		multiply_temp_variable = { tt_temp = 1.5 }
+		subtract_from_temp_variable = { tt_temp = 0.5 }
+		multiply_temp_variable = { tt_temp = 0.15 }
+		if = {
+			limit = {
+				has_war = yes
+			}
+			add_to_temp_variable = { tt_temp = -0.025 }
+		}
+		if = {
+			limit = {
+				any_neighbor_country = {
+					has_war = yes
+				}
+			}
+			add_to_temp_variable = { tt_temp = -0.025 }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_idea = volunteer_only
+					has_idea = limited_conscription
+				}
+			}
+			add_to_temp_variable = { tt_temp = -0.025 }
+		}
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+#Age of enlistment
+add_namespace = next_aoe_law
+
+country_event = {
+	id = next_aoe_law.1
+
+	trigger = {
+		has_country_flag = next_aoe_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_aoe_in_progress
+			country_event = next_aoe_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_aoe_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_aoe_in_progress
+			country_event = next_aoe_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					country_event = next_aoe_law.4
+				}
+				40 = {
+					country_event = next_aoe_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_aoe_law.2
+	title = next_aoe_law.2.t
+	desc = next_aoe_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_aoe_law.2a
+	}
+}
+country_event = {
+	id = next_aoe_law.3
+	title = next_aoe_law.3.t
+	desc = next_aoe_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_aoe_law.3a
+	}
+}
+country_event = {
+	id = next_aoe_law.4
+	title = next_aoe_law.4.t
+	desc = next_aoe_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_aoe_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_aoe_law.5
+	title = next_aoe_law.5.t
+	desc = next_aoe_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_aoe_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_aoe_law
+
+country_event = {
+	id = previous_aoe_law.1
+
+	trigger = {
+		has_country_flag = previous_aoe_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_aoe_in_progress
+			country_event = previous_aoe_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_aoe_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_aoe_in_progress
+			country_event = previous_aoe_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				40 = {
+					country_event = previous_aoe_law.4
+				}
+				20 = {
+					country_event = previous_aoe_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_aoe_law.2
+	title = previous_aoe_law.2.t
+	desc = previous_aoe_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_aoe_law.2a
+	}
+}
+country_event = {
+	id = previous_aoe_law.3
+	title = previous_aoe_law.3.t
+	desc = previous_aoe_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_aoe_law.3a
+	}
+}
+country_event = {
+	id = previous_aoe_law.4
+	title = previous_aoe_law.4.t
+	desc = previous_aoe_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_aoe_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_aoe_law.5
+	title = previous_aoe_law.5.t
+	desc = previous_aoe_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_aoe_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+#Centralization
+add_namespace = next_centralization_law
+
+country_event = {
+	id = next_centralization_law.1
+
+	trigger = {
+		has_country_flag = next_centralization_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_centralization_in_progress
+			country_event = next_centralization_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_centralization_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_centralization_in_progress
+			country_event = next_centralization_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				15 = {
+					country_event = next_centralization_law.4
+				}
+				15 = {
+					country_event = next_centralization_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_centralization_law.2
+	title = next_centralization_law.2.t
+	desc = next_centralization_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_centralization_law.2a
+	}
+}
+country_event = {
+	id = next_centralization_law.3
+	title = next_centralization_law.3.t
+	desc = next_centralization_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_centralization_law.3a
+	}
+}
+country_event = {
+	id = next_centralization_law.4
+	title = next_centralization_law.4.t
+	desc = next_centralization_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_centralization_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_centralization_law.5
+	title = next_centralization_law.5.t
+	desc = next_centralization_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_centralization_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_centralization_law
+
+country_event = {
+	id = previous_centralization_law.1
+
+	trigger = {
+		has_country_flag = previous_centralization_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_centralization_in_progress
+			country_event = previous_centralization_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_centralization_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_centralization_in_progress
+			country_event = previous_centralization_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				15 = {
+					country_event = previous_centralization_law.4
+				}
+				15 = {
+					country_event = previous_centralization_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_centralization_law.2
+	title = previous_centralization_law.2.t
+	desc = previous_centralization_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_centralization_law.2a
+	}
+}
+country_event = {
+	id = previous_centralization_law.3
+	title = previous_centralization_law.3.t
+	desc = previous_centralization_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_centralization_law.3a
+	}
+}
+country_event = {
+	id = previous_centralization_law.4
+	title = previous_centralization_law.4.t
+	desc = previous_centralization_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_centralization_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_centralization_law.5
+	title = previous_centralization_law.5.t
+	desc = previous_centralization_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_centralization_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+### POLICY
+#WAR ATTITUDE
+add_namespace = next_warfare_law
+
+country_event = {
+	id = next_warfare_law.1
+
+	trigger = {
+		has_country_flag = next_warfare_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_warfare_in_progress
+			country_event = next_warfare_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_warfare_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_warfare_in_progress
+			country_event = next_warfare_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				40 = {
+					country_event = next_warfare_law.4
+				}
+				30 = {
+					country_event = next_warfare_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_warfare_law.2
+	title = next_warfare_law.2.t
+	desc = next_warfare_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_warfare_law.2a
+	}
+}
+country_event = {
+	id = next_warfare_law.3
+	title = next_warfare_law.3.t
+	desc = next_warfare_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_warfare_law.3a
+	}
+}
+country_event = {
+	id = next_warfare_law.4
+	title = next_warfare_law.4.t
+	desc = next_warfare_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_warfare_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_warfare_law.5
+	title = next_warfare_law.5.t
+	desc = next_warfare_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_warfare_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_warfare_law
+
+country_event = {
+	id = previous_warfare_law.1
+
+	trigger = {
+		has_country_flag = previous_warfare_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_warfare_in_progress
+			country_event = previous_warfare_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_warfare_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_warfare_in_progress
+			country_event = previous_warfare_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				30 = {
+					country_event = previous_warfare_law.4
+				}
+				40 = {
+					country_event = previous_warfare_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_warfare_law.2
+	title = previous_warfare_law.2.t
+	desc = previous_warfare_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_warfare_law.2a
+	}
+}
+country_event = {
+	id = previous_warfare_law.3
+	title = previous_warfare_law.3.t
+	desc = previous_warfare_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_warfare_law.3a
+	}
+}
+country_event = {
+	id = previous_warfare_law.4
+	title = previous_warfare_law.4.t
+	desc = previous_warfare_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_warfare_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_warfare_law.5
+	title = previous_warfare_law.5.t
+	desc = previous_warfare_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_warfare_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+#DIPLOMACY
+add_namespace = next_diplomacy_law
+
+country_event = {
+	id = next_diplomacy_law.1
+
+	trigger = {
+		has_country_flag = next_diplomacy_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_diplomacy_in_progress
+			country_event = next_diplomacy_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_diplomacy_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_diplomacy_in_progress
+			country_event = next_diplomacy_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				30 = {
+					country_event = next_diplomacy_law.4
+				}
+				30 = {
+					country_event = next_diplomacy_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_diplomacy_law.2
+	title = next_diplomacy_law.2.t
+	desc = next_diplomacy_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_diplomacy_law.2a
+	}
+}
+country_event = {
+	id = next_diplomacy_law.3
+	title = next_diplomacy_law.3.t
+	desc = next_diplomacy_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_diplomacy_law.3a
+	}
+}
+country_event = {
+	id = next_diplomacy_law.4
+	title = next_diplomacy_law.4.t
+	desc = next_diplomacy_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_diplomacy_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_diplomacy_law.5
+	title = next_diplomacy_law.5.t
+	desc = next_diplomacy_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_diplomacy_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_diplomacy_law
+
+country_event = {
+	id = previous_diplomacy_law.1
+
+	trigger = {
+		has_country_flag = previous_diplomacy_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_diplomacy_in_progress
+			country_event = previous_diplomacy_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_diplomacy_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_diplomacy_in_progress
+			country_event = previous_diplomacy_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				30 = {
+					country_event = previous_diplomacy_law.4
+				}
+				30 = {
+					country_event = previous_diplomacy_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_diplomacy_law.2
+	title = previous_diplomacy_law.2.t
+	desc = previous_diplomacy_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_diplomacy_law.2a
+	}
+}
+country_event = {
+	id = previous_diplomacy_law.3
+	title = previous_diplomacy_law.3.t
+	desc = previous_diplomacy_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_diplomacy_law.3a
+	}
+}
+country_event = {
+	id = previous_diplomacy_law.4
+	title = previous_diplomacy_law.4.t
+	desc = previous_diplomacy_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_diplomacy_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_diplomacy_law.5
+	title = previous_diplomacy_law.5.t
+	desc = previous_diplomacy_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_diplomacy_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+#DIPLOMACY
+add_namespace = next_border_law
+
+country_event = {
+	id = next_border_law.1
+
+	trigger = {
+		has_country_flag = next_border_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = next_border_in_progress
+			country_event = next_border_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			inc_border_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = next_border_in_progress
+			country_event = next_border_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				30 = {
+					country_event = next_border_law.4
+				}
+				20 = {
+					country_event = next_border_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = next_border_law.2
+	title = next_border_law.2.t
+	desc = next_border_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_border_law.2a
+	}
+}
+country_event = {
+	id = next_border_law.3
+	title = next_border_law.3.t
+	desc = next_border_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_border_law.3a
+	}
+}
+country_event = {
+	id = next_border_law.4
+	title = next_border_law.4.t
+	desc = next_border_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_border_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = next_border_law.5
+	title = next_border_law.5.t
+	desc = next_border_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = next_border_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+
+add_namespace = previous_border_law
+
+country_event = {
+	id = previous_border_law.1
+
+	trigger = {
+		has_country_flag = previous_border_in_progress
+		NOT = { check_variable = { passing_law_time < 7 } }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { law_progress > 0 } }
+			}
+			clr_country_flag = passing_law
+			clr_country_flag = previous_border_in_progress
+			country_event = previous_border_law.3
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { law_progress < 1 } }
+			}
+			dec_border_law = yes
+			clr_country_flag = passing_law
+			clr_country_flag = previous_border_in_progress
+			country_event = previous_border_law.2
+			reduce_consciousness_from_reform = yes
+		}
+		else = {
+			random_list = {
+				20 = {
+					country_event = previous_border_law.4
+				}
+				30 = {
+					country_event = previous_border_law.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = previous_border_law.2
+	title = previous_border_law.2.t
+	desc = previous_border_law.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_border_law.2a
+	}
+}
+country_event = {
+	id = previous_border_law.3
+	title = previous_border_law.3.t
+	desc = previous_border_law.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_border_law.3a
+	}
+}
+country_event = {
+	id = previous_border_law.4
+	title = previous_border_law.4.t
+	desc = previous_border_law.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_border_law.4a
+		set_temp_variable = { tt_temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}
+country_event = {
+	id = previous_border_law.5
+	title = previous_border_law.5.t
+	desc = previous_border_law.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = previous_border_law.5a
+		set_temp_variable = { tt_temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress
+		add_to_variable = { law_progress = tt_temp }
+	}
+}

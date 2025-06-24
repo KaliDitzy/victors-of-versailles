@@ -1,0 +1,1284 @@
+@DIVIDE_REFORM_WILL = 5
+@DIVIDE_REFORM_WILL_FORCE = 2
+
+scripted_gui = {
+	vov_politics = {
+		context_type = player_context
+		parent_window_name = country_politics_idea_category_entry
+		window_name = vov_politicsview
+
+		visible = {
+			always = yes
+		}
+		triggers = {
+			open_reform_btn_click_enabled = {
+				NOT = { has_idea = no_elections }
+			}
+		}
+
+		effects = {
+			open_reform_btn_click = {
+				set_country_flag = politics_reforms_open
+			}
+		}
+	}
+	vov_reforms = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = vov_reformsview
+
+		visible = {
+			OR = {
+				is_ai = yes
+				has_country_flag = politics_reforms_open
+			}
+		}
+
+		effects = {
+			close_btn_click = {
+				clr_country_flag = politics_reforms_open
+			}
+
+			social_laws_btn_click = {
+				set_variable = { reforms_page = 0 }
+			}
+			economic_laws_btn_click = {
+				set_variable = { reforms_page = 1 }
+			}
+			military_laws_btn_click = {
+				set_variable = { reforms_page = 2 }
+			}
+			foreign_laws_btn_click = {
+				set_variable = { reforms_page = 3 }
+			}
+
+			force_reform_btn_click = {
+				force_reform = yes
+				divide_variable = { reform_will = @DIVIDE_REFORM_WILL_FORCE }
+			}
+
+			#SOCIAL
+			previous_suffrage_law_click = {
+				start_previous_suffrage_reform = yes
+			}
+			next_suffrage_law_click = {
+				start_next_suffrage_reform = yes
+			}
+			previous_property_law_click = {
+				start_previous_property_reform = yes
+			}
+			next_property_law_click = {
+				start_next_property_reform = yes
+			}
+			previous_acceptance_law_click = {
+				start_previous_acceptance_reform = yes
+			}
+			next_acceptance_law_click = {
+				start_next_acceptance_reform = yes
+			}
+
+			#ECONOMIC
+			previous_trade_law_click = {
+				start_previous_trade_reform = yes
+			}
+			next_trade_law_click = {
+				start_next_trade_reform = yes
+			}
+			previous_economy_law_click = {
+				start_previous_economy_reform = yes
+			}
+			next_economy_law_click = {
+				start_next_economy_reform = yes
+			}
+			previous_labor_law_click = {
+				start_previous_labor_reform = yes
+			}
+			next_labor_law_click = {
+				start_next_labor_reform = yes
+			}
+
+			#MILITARY
+			previous_conscription_law_click = {
+				start_previous_conscription_reform = yes
+			}
+			next_conscription_law_click = {
+				start_next_conscription_reform = yes
+			}
+			previous_aoe_law_click = {
+				start_previous_aoe_reform = yes
+			}
+			next_aoe_law_click = {
+				start_next_aoe_reform = yes
+			}
+			previous_centralization_law_click = {
+				start_previous_centralization_reform = yes
+			}
+			next_centralization_law_click = {
+				start_next_centralization_reform = yes
+			}
+
+			#POLICY
+			previous_warfare_law_click = {
+				start_previous_warfare_reform = yes
+			}
+			next_warfare_law_click = {
+				start_next_warfare_reform = yes
+			}
+			previous_diplomacy_law_click = {
+				start_previous_diplomacy_reform = yes
+			}
+			next_diplomacy_law_click = {
+				start_next_diplomacy_reform = yes
+			}
+			previous_border_law_click = {
+				start_previous_border_reform = yes
+			}
+			next_border_law_click = {
+				start_next_border_reform = yes
+			}
+		}
+
+		triggers = {
+			force_reform_btn_click_enabled = {
+				has_country_flag = passing_law
+				check_variable = { passing_law_time < 75 }
+			}
+
+			law1_bg_visible = {
+				OR = {
+					AND = {
+						NOT = {
+							has_idea = no_elections
+							has_idea = universal_suffrage
+						}
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						NOT = {
+							has_idea = closed_economy
+							has_idea = free_trade
+						}
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						NOT = {
+							has_idea = disarmed_nation
+							has_idea = scraping_the_barrel
+						}
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						NOT = {
+							has_idea = pacifism
+							has_idea = jingoism
+						}
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+			law1_bg_noleft_visible = {
+				OR = {
+					AND = {
+						has_idea = no_elections
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						has_idea = closed_economy
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						has_idea = disarmed_nation
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						has_idea = pacifism
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+			law1_bg_noright_visible = {
+				OR = {
+					AND = {
+						has_idea = universal_suffrage
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						has_idea = free_trade
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						has_idea = scraping_the_barrel
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						has_idea = jingoism
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+
+			law2_bg_visible = {
+				OR = {
+					AND = {
+						NOT = {
+							has_idea = feudalism
+							has_idea = property_abolished
+						}
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						NOT = {
+							has_idea = civilian_economy
+							has_idea = tot_economic_mobilisation
+						}
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						NOT = {
+							has_idea = aoe_children
+							has_idea = aoe_21
+						}
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						NOT = {
+							has_idea = diplomatic_isolation
+							has_idea = diplomatic_collaboration
+						}
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+			law2_bg_noleft_visible = {
+				OR = {
+					AND = {
+						has_idea = feudalism
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						has_idea = civilian_economy
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						has_idea = aoe_children
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						has_idea = diplomatic_isolation
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+			law2_bg_noright_visible = {
+				OR = {
+					AND = {
+						has_idea = property_abolished
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						has_idea = tot_economic_mobilisation
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						has_idea = aoe_21
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						has_idea = diplomatic_collaboration
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+
+			law3_bg_visible = {
+				OR = {
+					AND = {
+						NOT = {
+							has_idea = religious_discrimination
+							has_idea = no_discrimination
+						}
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						NOT = {
+							has_idea = child_labor_legal
+							has_idea = subsidized_unemployment
+						}
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						NOT = {
+							has_idea = civilian_irregulars
+							has_idea = hegemonic_military
+						}
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						NOT = {
+							has_idea = no_borders
+							has_idea = closed_borders
+						}
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+			law3_bg_noleft_visible = {
+				OR = {
+					AND = {
+						has_idea = religious_discrimination
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						has_idea = child_labor_legal
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						has_idea = civilian_irregulars
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						has_idea = no_borders
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+			law3_bg_noright_visible = {
+				OR = {
+					AND = {
+						has_idea = no_discrimination
+						check_variable = { reforms_page = 0 }
+					}
+					AND = {
+						has_idea = subsidized_unemployment
+						check_variable = { reforms_page = 1 }
+					}
+					AND = {
+						has_idea = hegemonic_military
+						check_variable = { reforms_page = 2 }
+					}
+					AND = {
+						has_idea = closed_borders
+						check_variable = { reforms_page = 3 }
+					}
+				}
+			}
+
+			### SOCIAL LAWS
+
+			#SUFFRAGE
+			suffrage_title_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			current_suffrage_law_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			current_suffrage_law_title_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			suffrage_regress_bar_visible = {
+				NOT = {
+					has_idea = no_elections
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_suffrage_law_chance_visible = {
+				NOT = {
+					has_idea = no_elections
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_suffrage_law_visible = {
+				NOT = {
+					has_idea = no_elections
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_suffrage_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			suffrage_progress_bar_visible = {
+				NOT = {
+					has_idea = universal_suffrage
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_suffrage_law_chance_visible = {
+				NOT = {
+					has_idea = universal_suffrage
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_suffrage_law_visible = {
+				NOT = {
+					has_idea = universal_suffrage
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_suffrage_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			#PROPERTY
+			property_title_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			current_property_law_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			current_property_law_title_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			property_regress_bar_visible = {
+				NOT = {
+					has_idea = feudalism
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_property_law_chance_visible = {
+				NOT = {
+					has_idea = feudalism
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_property_law_visible = {
+				NOT = {
+					has_idea = feudalism
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_property_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			property_progress_bar_visible = {
+				NOT = {
+					has_idea = property_abolished
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_property_law_chance_visible = {
+				NOT = {
+					has_idea = property_abolished
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_property_law_visible = {
+				NOT = {
+					has_idea = property_abolished
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_property_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			#ACCEPTANCE
+			acceptance_title_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			current_acceptance_law_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			current_acceptance_law_title_visible = {
+				check_variable = { reforms_page = 0 }
+			}
+			acceptance_regress_bar_visible = {
+				NOT = {
+					has_idea = religious_discrimination
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_acceptance_law_chance_visible = {
+				NOT = {
+					has_idea = religious_discrimination
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_acceptance_law_visible = {
+				NOT = {
+					has_idea = religious_discrimination
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			previous_acceptance_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			acceptance_progress_bar_visible = {
+				NOT = {
+					has_idea = no_discrimination
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_acceptance_law_chance_visible = {
+				NOT = {
+					has_idea = no_discrimination
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_acceptance_law_visible = {
+				NOT = {
+					has_idea = no_discrimination
+				}
+				check_variable = { reforms_page = 0 }
+			}
+			next_acceptance_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			
+			### ECONOMIC LAWS
+
+			#TRADE
+			trade_title_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			current_trade_law_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			current_trade_law_title_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			trade_regress_bar_visible = {
+				NOT = {
+					has_idea = closed_economy
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_trade_law_chance_visible = {
+				NOT = {
+					has_idea = closed_economy
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_trade_law_visible = {
+				NOT = {
+					has_idea = closed_economy
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_trade_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+					AND = {		
+						has_idea = export_focus
+						has_idea = GER_treaty_of_versailles
+					}
+				}
+			}
+			trade_progress_bar_visible = {
+				NOT = {
+					has_idea = free_trade
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_trade_law_chance_visible = {
+				NOT = {
+					has_idea = free_trade
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_trade_law_visible = {
+				NOT = {
+					has_idea = free_trade
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_trade_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			#ECONOMY
+			economy_title_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			current_economy_law_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			current_economy_law_title_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			economy_regress_bar_visible = {
+				NOT = {
+					has_idea = civilian_economy
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_economy_law_chance_visible = {
+				NOT = {
+					has_idea = civilian_economy
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_economy_law_visible = {
+				NOT = {
+					has_idea = civilian_economy
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_economy_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			economy_progress_bar_visible = {
+				NOT = {
+					has_idea = tot_economic_mobilisation
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_economy_law_chance_visible = {
+				NOT = {
+					has_idea = tot_economic_mobilisation
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_economy_law_visible = {
+				NOT = {
+					has_idea = tot_economic_mobilisation
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_economy_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+					has_idea = GER_treaty_of_versailles
+				}
+			}
+
+			#LABOR
+			labor_title_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			current_labor_law_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			current_labor_law_title_visible = {
+				check_variable = { reforms_page = 1 }
+			}
+			labor_regress_bar_visible = {
+				NOT = {
+					has_idea = child_labor_legal
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_labor_law_chance_visible = {
+				NOT = {
+					has_idea = child_labor_legal
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_labor_law_visible = {
+				NOT = {
+					has_idea = child_labor_legal
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			previous_labor_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			labor_progress_bar_visible = {
+				NOT = {
+					has_idea = subsidized_unemployment
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_labor_law_chance_visible = {
+				NOT = {
+					has_idea = subsidized_unemployment
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_labor_law_visible = {
+				NOT = {
+					has_idea = subsidized_unemployment
+				}
+				check_variable = { reforms_page = 1 }
+			}
+			next_labor_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			### MILITARY LAWS
+
+			#CONSCRIPTION
+			conscription_title_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			current_conscription_law_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			current_conscription_law_title_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			conscription_regress_bar_visible = {
+				NOT = {
+					has_idea = disarmed_nation
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_conscription_law_chance_visible = {
+				NOT = {
+					has_idea = disarmed_nation
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_conscription_law_visible = {
+				NOT = {
+					has_idea = disarmed_nation
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_conscription_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			conscription_progress_bar_visible = {
+				NOT = {
+					has_idea = scraping_the_barrel
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_conscription_law_chance_visible = {
+				NOT = {
+					has_idea = scraping_the_barrel
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_conscription_law_visible = {
+				NOT = {
+					has_idea = scraping_the_barrel
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_conscription_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+					has_idea = GER_treaty_of_versailles
+				}
+			}
+
+			#age of enlistment
+			aoe_title_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			current_aoe_law_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			current_aoe_law_title_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			aoe_regress_bar_visible = {
+				NOT = {
+					has_idea = aoe_children
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_aoe_law_chance_visible = {
+				NOT = {
+					has_idea = aoe_children
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_aoe_law_visible = {
+				NOT = {
+					has_idea = aoe_children
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_aoe_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+					AND = {
+						has_idea = aoe_18
+						has_idea = GER_treaty_of_versailles
+					}
+				}
+			}
+			aoe_progress_bar_visible = {
+				NOT = {
+					has_idea = aoe_21
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_aoe_law_chance_visible = {
+				NOT = {
+					has_idea = aoe_21
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_aoe_law_visible = {
+				NOT = {
+					has_idea = aoe_21
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_aoe_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			#centralization
+			centralization_title_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			current_centralization_law_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			current_centralization_law_title_visible = {
+				check_variable = { reforms_page = 2 }
+			}
+			centralization_regress_bar_visible = {
+				NOT = {
+					has_idea = civilian_irregulars
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_centralization_law_chance_visible = {
+				NOT = {
+					has_idea = civilian_irregulars
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_centralization_law_visible = {
+				NOT = {
+					has_idea = civilian_irregulars
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			previous_centralization_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			centralization_progress_bar_visible = {
+				NOT = {
+					has_idea = hegemonic_military
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_centralization_law_chance_visible = {
+				NOT = {
+					has_idea = hegemonic_military
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_centralization_law_visible = {
+				NOT = {
+					has_idea = hegemonic_military
+				}
+				check_variable = { reforms_page = 2 }
+			}
+			next_centralization_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+					AND = {
+						has_idea = national_military
+						has_idea = GER_treaty_of_versailles
+					}
+				}
+			}
+
+			### POLICY LAWS
+
+			# WARFARE ATTITUDE
+			warfare_title_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			current_warfare_law_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			current_warfare_law_title_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			warfare_regress_bar_visible = {
+				NOT = {
+					has_idea = pacifism
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_warfare_law_chance_visible = {
+				NOT = {
+					has_idea = pacifism
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_warfare_law_visible = {
+				NOT = {
+					has_idea = pacifism
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_warfare_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			warfare_progress_bar_visible = {
+				NOT = {
+					has_idea = jingoism
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_warfare_law_chance_visible = {
+				NOT = {
+					has_idea = jingoism
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_warfare_law_visible = {
+				NOT = {
+					has_idea = jingoism
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_warfare_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			# DIPLOMACY
+			diplomacy_title_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			current_diplomacy_law_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			current_diplomacy_law_title_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			diplomacy_regress_bar_visible = {
+				NOT = {
+					has_idea = diplomatic_isolation
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_diplomacy_law_chance_visible = {
+				NOT = {
+					has_idea = diplomatic_isolation
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_diplomacy_law_visible = {
+				NOT = {
+					has_idea = diplomatic_isolation
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_diplomacy_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			diplomacy_progress_bar_visible = {
+				NOT = {
+					has_idea = diplomatic_collaboration
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_diplomacy_law_chance_visible = {
+				NOT = {
+					has_idea = diplomatic_collaboration
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_diplomacy_law_visible = {
+				NOT = {
+					has_idea = diplomatic_collaboration
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_diplomacy_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+
+			# BORDER
+			border_title_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			current_border_law_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			current_border_law_title_visible = {
+				check_variable = { reforms_page = 3 }
+			}
+			border_regress_bar_visible = {
+				NOT = {
+					has_idea = no_borders
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_border_law_chance_visible = {
+				NOT = {
+					has_idea = no_borders
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_border_law_visible = {
+				NOT = {
+					has_idea = no_borders
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			previous_border_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+			border_progress_bar_visible = {
+				NOT = {
+					has_idea = closed_borders
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_border_law_chance_visible = {
+				NOT = {
+					has_idea = closed_borders
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_border_law_visible = {
+				NOT = {
+					has_idea = closed_borders
+				}
+				check_variable = { reforms_page = 3 }
+			}
+			next_border_law_click_enabled = {
+				NOT = {
+					has_country_flag = passing_law
+				}
+			}
+		}
+
+		properties = {
+			social_laws_btn = {
+				image = "[reforms_social_laws_btn]"
+			}
+			economic_laws_btn = {
+				image = "[reforms_economy_laws_btn]"
+			}
+			military_laws_btn = {
+				image = "[reforms_military_laws_btn]"
+			}
+			foreign_laws_btn = {
+				image = "[reforms_foreign_laws_btn]"
+			}
+			
+			#SOCIAL
+			previous_suffrage_law = {
+				image = "[reforms_previous_suffrage_law]"
+			}
+			current_suffrage_law = {
+				image = "[reforms_current_suffrage_law]"
+			}
+			next_suffrage_law = {
+				image = "[reforms_next_suffrage_law]"
+			}
+			suffrage_regress_bar = {
+				image = "[suffrage_regress_bar]"
+			}
+			suffrage_progress_bar = {
+				image = "[suffrage_progress_bar]"
+			}
+
+			previous_property_law = {
+				image = "[reforms_previous_property_law]"
+			}
+			current_property_law = {
+				image = "[reforms_current_property_law]"
+			}
+			next_property_law = {
+				image = "[reforms_next_property_law]"
+			}
+			property_regress_bar = {
+				image = "[property_regress_bar]"
+			}
+			property_progress_bar = {
+				image = "[property_progress_bar]"
+			}
+
+			previous_acceptance_law = {
+				image = "[reforms_previous_acceptance_law]"
+			}
+			current_acceptance_law = {
+				image = "[reforms_current_acceptance_law]"
+			}
+			next_acceptance_law = {
+				image = "[reforms_next_acceptance_law]"
+			}
+			acceptance_regress_bar = {
+				image = "[acceptance_regress_bar]"
+			}
+			acceptance_progress_bar = {
+				image = "[acceptance_progress_bar]"
+			}
+
+			#ECONOMIC
+			previous_trade_law = {
+				image = "[reforms_previous_trade_law]"
+			}
+			current_trade_law = {
+				image = "[reforms_current_trade_law]"
+			}
+			next_trade_law = {
+				image = "[reforms_next_trade_law]"
+			}
+			trade_regress_bar = {
+				image = "[trade_regress_bar]"
+			}
+			trade_progress_bar = {
+				image = "[trade_progress_bar]"
+			}
+
+			previous_economy_law = {
+				image = "[reforms_previous_economy_law]"
+			}
+			current_economy_law = {
+				image = "[reforms_current_economy_law]"
+			}
+			next_economy_law = {
+				image = "[reforms_next_economy_law]"
+			}
+			economy_regress_bar = {
+				image = "[economy_regress_bar]"
+			}
+			economy_progress_bar = {
+				image = "[economy_progress_bar]"
+			}
+
+			previous_labor_law = {
+				image = "[reforms_previous_labor_law]"
+			}
+			current_labor_law = {
+				image = "[reforms_current_labor_law]"
+			}
+			next_labor_law = {
+				image = "[reforms_next_labor_law]"
+			}
+			labor_regress_bar = {
+				image = "[labor_regress_bar]"
+			}
+			labor_progress_bar = {
+				image = "[labor_progress_bar]"
+			}
+
+			#MILITARY
+			previous_conscription_law = {
+				image = "[reforms_previous_conscription_law]"
+			}
+			current_conscription_law = {
+				image = "[reforms_current_conscription_law]"
+			}
+			next_conscription_law = {
+				image = "[reforms_next_conscription_law]"
+			}
+			conscription_regress_bar = {
+				image = "[conscription_regress_bar]"
+			}
+			conscription_progress_bar = {
+				image = "[conscription_progress_bar]"
+			}
+
+			previous_aoe_law = {
+				image = "[reforms_previous_aoe_law]"
+			}
+			current_aoe_law = {
+				image = "[reforms_current_aoe_law]"
+			}
+			next_aoe_law = {
+				image = "[reforms_next_aoe_law]"
+			}
+			aoe_regress_bar = {
+				image = "[aoe_regress_bar]"
+			}
+			aoe_progress_bar = {
+				image = "[aoe_progress_bar]"
+			}
+
+			previous_centralization_law = {
+				image = "[reforms_previous_centralization_law]"
+			}
+			current_centralization_law = {
+				image = "[reforms_current_centralization_law]"
+			}
+			next_centralization_law = {
+				image = "[reforms_next_centralization_law]"
+			}
+			centralization_regress_bar = {
+				image = "[centralization_regress_bar]"
+			}
+			centralization_progress_bar = {
+				image = "[centralization_progress_bar]"
+			}
+
+			#POLICY
+			previous_warfare_law = {
+				image = "[reforms_previous_warfare_law]"
+			}
+			current_warfare_law = {
+				image = "[reforms_current_warfare_law]"
+			}
+			next_warfare_law = {
+				image = "[reforms_next_warfare_law]"
+			}
+			warfare_regress_bar = {
+				image = "[warfare_regress_bar]"
+			}
+			warfare_progress_bar = {
+				image = "[warfare_progress_bar]"
+			}
+
+			previous_diplomacy_law = {
+				image = "[reforms_previous_diplomacy_law]"
+			}
+			current_diplomacy_law = {
+				image = "[reforms_current_diplomacy_law]"
+			}
+			next_diplomacy_law = {
+				image = "[reforms_next_diplomacy_law]"
+			}
+			diplomacy_regress_bar = {
+				image = "[diplomacy_regress_bar]"
+			}
+			diplomacy_progress_bar = {
+				image = "[diplomacy_progress_bar]"
+			}
+
+			previous_border_law = {
+				image = "[reforms_previous_border_law]"
+			}
+			current_border_law = {
+				image = "[reforms_current_border_law]"
+			}
+			next_border_law = {
+				image = "[reforms_next_border_law]"
+			}
+			border_regress_bar = {
+				image = "[border_regress_bar]"
+			}
+			border_progress_bar = {
+				image = "[border_progress_bar]"
+			}
+		}
+	}
+}

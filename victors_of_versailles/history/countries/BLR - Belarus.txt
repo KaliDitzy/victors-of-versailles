@@ -1,0 +1,13 @@
+capital = 206
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 20
+	fascism = 2
+	neutrality = 68
+}

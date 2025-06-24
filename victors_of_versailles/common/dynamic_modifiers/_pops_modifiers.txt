@@ -1,0 +1,5 @@
+pop_modifiers = {
+	icon = GFX_idea_unknown
+	stability_weekly = var:pop_stability_weekly
+	war_support_weekly = var:pop_war_support_weekly
+}

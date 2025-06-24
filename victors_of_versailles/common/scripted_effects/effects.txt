@@ -1,0 +1,48 @@
+load_generic_units = {
+	load_oob = generic
+				
+	every_owned_state = {
+		limit = {
+			any_neighbor_state = {
+				owner = {
+					NOT = { tag = PREV.PREV.PREV }
+				}
+			}
+		}
+		create_unit = {
+			division = "name = \"Infantry Division\" division_template = \"Infantry\" start_experience_factor = 0.3"
+			owner = PREV
+		}
+	}
+	every_owned_state = {
+		limit = {
+			any_neighbor_state = {
+				owner = {
+					has_war_with = PREV.PREV.PREV
+				}
+			}
+		}
+		create_unit = {
+			division = "name = \"Infantry Division\" division_template = \"Infantry\" start_experience_factor = 0.3"
+			owner = PREV
+		}
+		create_unit = {
+			division = "name = \"Infantry Division\" division_template = \"Infantry\" start_experience_factor = 0.3"
+			owner = PREV
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"Infantry Division\" division_template = \"Infantry\" start_experience_factor = 0.6"
+			owner = PREV
+		}
+		create_unit = {
+			division = "name = \"Infantry Division\" division_template = \"Infantry\" start_experience_factor = 0.5"
+			owner = PREV
+		}
+		create_unit = {
+			division = "name = \"Infantry Division\" division_template = \"Infantry\" start_experience_factor = 0.4"
+			owner = PREV
+		}
+	}
+}

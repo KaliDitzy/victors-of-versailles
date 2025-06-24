@@ -1,0 +1,189 @@
+ideas = {
+	diplomatic_policy = {
+		law = yes
+		use_list_view = yes
+
+		diplomatic_isolation = {
+			level = 5
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				opinion_gain_monthly_factor = -0.5
+				civilian_intel_to_others = -20
+				political_power_cost = -0.35
+				join_faction_tension = 0.7
+				request_lease_tension = 0.7
+			}
+			cancel_if_invalid = no
+		}
+		cold_diplomacy = {
+			level = 4
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				opinion_gain_monthly_factor = -0.25
+				civilian_intel_to_others = -10
+				political_power_cost = -0.15
+				join_faction_tension = 0.3
+				request_lease_tension = 0.3
+			}
+			cancel_if_invalid = no
+		}
+		balanced_diplomacy = {
+			level = 3
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+		warm_diplomacy = {
+			level = 2
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				opinion_gain_monthly_factor = 0.25
+				civilian_intel_to_others = 10
+				political_power_cost = 0.15
+				join_faction_tension = -0.15
+				request_lease_tension = -0.15
+			}
+			cancel_if_invalid = no
+		}
+		diplomatic_collaboration = {
+			level = 1
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				opinion_gain_monthly_factor = 0.5
+				civilian_intel_to_others = 20
+				political_power_cost = 0.35
+				join_faction_tension = -0.3
+				request_lease_tension = -0.3
+			}
+			cancel_if_invalid = no
+		}
+	}
+	warfare_attitude = {
+		law = yes
+		use_list_view = yes
+
+		pacifism = {
+			level = 4
+			cost = 150
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				stability_weekly = 0.004
+				justify_war_goal_time = 0.4
+			}
+			cancel_if_invalid = no
+		}
+		retaliatory = {
+			level = 3
+			cost = 200
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				stability_weekly = 0.002
+			}
+			cancel_if_invalid = no
+		}
+		interventionism = {
+			level = 2
+			cost = 250
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				war_support_weekly = -0.002
+				justify_war_goal_time = -0.2
+			}
+			cancel_if_invalid = no
+		}
+		jingoism = {
+			level = 1
+			cost = 300
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				war_support_weekly = -0.004
+				justify_war_goal_time = -0.5
+			}
+			cancel_if_invalid = no
+		}
+	}
+	border_policy = {
+		law = yes
+		use_list_view = yes
+
+		no_borders = {
+			level = 4
+			removal_cost = -1
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				monthly_population = 0.025
+			}
+			cancel_if_invalid = no
+		}
+		open_borders = {
+			level = 3
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+			}
+			cancel_if_invalid = no
+		}
+		emigration_only = {
+			level = 2
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				monthly_population = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		closed_borders = {
+			level = 1
+			removal_cost = -1
+			default = yes
+			available = {
+				has_idea = no_elections
+			}
+			modifier = {
+				monthly_population = -0.025
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

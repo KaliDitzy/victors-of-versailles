@@ -1,0 +1,15 @@
+characters = {
+	FRA_raymond_poincare = {
+		name = FRA_raymond_poincare
+		portraits = {
+			civilian = {
+				large = GFX_portrait_FRA_raymond_poincare
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}

@@ -1,0 +1,155 @@
+﻿l_english:
+  increase_law_progress: "Enactment progress will change by [?tt_temp|+%]."
+  force_reform: "The current active reform will be forced through legislation."
+
+  dec_suffrage_law: "The current §YSuffrage§! law will be set back by one step."
+  inc_suffrage_law: "The current §YSuffrage§! law will be set forward by one step."
+  dec_property_law: "The current §YProperty§! law will be set back by one step."
+  inc_property_law: "The current §YProperty§! law will be set forward by one step."
+  dec_acceptance_law: "The current §YAcceptance§! will be set back by one step."
+  inc_acceptance_law: "The current §YAcceptance§! will be set forward by one step."
+
+  dec_trade_law: "The current §YSuffrage§! law will be set back by one step."
+  inc_trade_law: "The current §YSuffrage§! law will be set forward by one step."
+  demobilize_law: "The current §YMobilization§! law will be set back by one step."
+  mobilize_law: "The current §YMobilization§! law will be set forward by one step."
+
+  dec_conscription_law: "The current §YConscription§! law will be set back by one step."
+  inc_conscription_law: "The current §YConscription§! law will be set forward by one step."
+  dec_aoe_law: "The current §YAge of Enlistment§! law will be decreased by one step."
+  inc_aoe_law: "The current §YAge of Enlistment§! law will be increased by one step."
+
+  dec_warfare_law: "The current §YWar Atttitude§! will be reduced by one step."
+  inc_warfare_law: "The current §YWar Attitude§! will be escalated by one step."
+  dec_diplomacy_law: "The current §YDiplomatic§! foreign policy will become colder by one step."
+  inc_diplomacy_law: "The current §YDiplomatic§! foreign policy will become warmer by one step."
+
+  enactment_progress: "§Y[?law_progress|%0]§!"
+
+  #SOCIAL
+  next_suffrage_will: "20%"
+  next_suffrage_law.2.t: "[reforms_current_suffrage_law_title] Complete"
+  next_suffrage_law.3.t: "[reforms_next_suffrage_law_title] Failed"
+
+  previous_suffrage_will: "40%"
+  previous_suffrage_law.2.t: "[reforms_current_suffrage_law_title] Complete"
+  previous_suffrage_law.3.t: "[reforms_previous_suffrage_law_title] Failed"
+
+  next_property_will: "20%"
+  next_property_law.2.t: "[reforms_current_property_law_title] Complete"
+  next_property_law.3.t: "[reforms_next_property_law_title] Failed"
+
+  previous_property_will: "30%"
+  previous_property_law.2.t: "[reforms_current_property_law_title] Complete"
+  previous_property_law.3.t: "[reforms_previous_property_law_title] Failed"
+
+  next_acceptance_will: "10%"
+  next_acceptance_law.2.t: "[reforms_current_acceptance_law_title] Complete"
+  next_acceptance_law.3.t: "[reforms_next_acceptance_law_title] Failed"
+
+  previous_acceptance_will: "20%"
+  previous_acceptance_law.2.t: "[reforms_current_acceptance_law_title] Complete"
+  previous_acceptance_law.3.t: "[reforms_previous_acceptance_law_title] Failed"
+
+  #ECONOMIC
+  next_trade_will: "60%"
+  next_trade_law.2.t: "[reforms_current_trade_law_title] Complete"
+  next_trade_law.3.t: "[reforms_next_trade_law_title] Failed"
+
+  previous_trade_will: "40%"
+  previous_trade_law.2.t: "[reforms_current_trade_law_title] Complete"
+  previous_trade_law.3.t: "[reforms_previous_trade_law_title] Failed"
+
+  next_economy_will: "40%"
+  next_economy_law.2.t: "[reforms_current_economy_law_title] Complete"
+  next_economy_law.3.t: "[reforms_next_economy_law_title] Failed"
+
+  previous_economy_will: "60%"
+  previous_economy_law.2.t: "[reforms_current_economy_law_title] Complete"
+  previous_economy_law.3.t: "[reforms_previous_economy_law_title] Failed"
+
+  next_labor_will: "20%"
+  next_labor_law.2.t: "[reforms_current_labor_law_title] Complete"
+  next_labor_law.3.t: "[reforms_next_labor_law_title] Failed"
+
+  previous_labor_will: "40%"
+  previous_labor_law.2.t: "[reforms_current_labor_law_title] Complete"
+  previous_labor_law.3.t: "[reforms_previous_labor_law_title] Failed"
+
+  #MILITARY
+  next_conscription_will: "40%"
+  next_conscription_law.2.t: "[reforms_current_conscription_law_title] Complete"
+  next_conscription_law.3.t: "[reforms_next_conscription_law_title] Failed"
+  next_conscription_law.4.t: "Economic Concerns of Conscription"
+  next_conscription_law.4.d: "Concerns are rising regarding the long-term economic costs of intensifying conscription."
+  next_conscription_law.4a: "Our expected gains will outweigh the drawbacks."
+  next_conscription_law.4b: "It was a calculated risk."
+  next_conscription_law.5.t: "National Defense Conference"
+  next_conscription_law.5.d: "The concerning state of affairs has led to the organization of a national defense conference, where both government and civilian attendees have come to show their support for the defense effort."
+  next_conscription_law.5a: "We thank them for their support."
+  next_conscription_law.6.t: "Anti-War Criticism"
+  next_conscription_law.6.d: "The suggestion of increasing conscription laws are gaining significant criticism due to a number of points. Many are saying that an increase in national conscription is unfounded because we have no need to defend ourselves at this time."
+  next_conscription_law.6a: "But what about 10 years from now?"
+
+  previous_conscription_will: "60%"
+  previous_conscription_law.2.t: "[reforms_current_conscription_law_title] Complete"
+  previous_conscription_law.3.t: "[reforms_previous_conscription_law_title] Failed"
+  previous_conscription_law.4.t: "Removing the Load of Conscription"
+  previous_conscription_law.4.d: "Many people believe in a new era of economic stability without the weight of high military spending."
+  previous_conscription_law.4a: "We hope for it so."
+  previous_conscription_law.5.t: "Critics Slam Lightening Conscription"
+  previous_conscription_law.5.d: "Many politicians and citizens are slamming our move to decrease conscription, given the circumstances."
+  previous_conscription_law.5a: "Can't they see we wish for peace?"
+  previous_conscription_law.6.t: "Population Debates Demilitarization"
+  previous_conscription_law.6.d: "Citizens are debating regarding the benefits and downsides of decreasing military spending."
+  previous_conscription_law.6a: "Interesting."
+
+  next_aoe_will: "40%"
+  next_aoe_law.2.t: "[reforms_current_aoe_law_title] Complete"
+  next_aoe_law.3.t: "[reforms_next_aoe_law_title] Failed"
+
+  previous_aoe_will: "60%"
+  previous_aoe_law.2.t: "[reforms_current_aoe_law_title] Complete"
+  previous_aoe_law.3.t: "[reforms_previous_aoe_law_title] Failed"
+
+  next_centralization_will: "15%"
+  next_centralization_law.2.t: "[reforms_current_centralization_law_title] Complete"
+  next_centralization_law.3.t: "[reforms_next_centralization_law_title] Failed"
+
+  previous_centralization_will: "15%"
+  previous_centralization_law.2.t: "[reforms_current_centralization_law_title] Complete"
+  previous_centralization_law.3.t: "[reforms_previous_centralization_law_title] Failed"
+
+  #POLICY
+  next_warfare_will: "30%"
+  next_warfare_law.2.t: "[reforms_current_warfare_law_title] Complete"
+  next_warfare_law.3.t: "[reforms_next_warfare_law_title] Failed"
+
+  previous_warfare_will: "40%"
+  previous_warfare_law.2.t: "[reforms_current_warfare_law_title] Complete"
+  previous_warfare_law.3.t: "[reforms_previous_warfare_law_title] Failed"
+
+  next_diplomacy_will: "30%"
+  next_diplomacy_law.2.t: "[reforms_current_diplomacy_law_title] Complete"
+  next_diplomacy_law.3.t: "[reforms_next_diplomacy_law_title] Failed"
+
+  previous_diplomacy_will: "30%"
+  previous_diplomacy_law.2.t: "[reforms_current_diplomacy_law_title] Complete"
+  previous_diplomacy_law.3.t: "[reforms_previous_diplomacy_law_title] Failed"
+
+  next_border_will: "30%"
+  next_border_law.2.t: "[reforms_current_border_law_title] Complete"
+  next_border_law.3.t: "[reforms_next_border_law_title] Failed"
+
+  previous_border_will: "20%"
+  previous_border_law.2.t: "[reforms_current_border_law_title] Complete"
+  previous_border_law.3.t: "[reforms_previous_border_law_title] Failed"
+
+  ### ELECTIONS STUFF
+  no_current_election_6y: "No current election\n6 years left"
+  no_current_election_5y: "No current election\n5 years left"
+  no_current_election_4y: "No current election\n4 years left"
+  no_current_election_3y: "No current election\n3 years left"
+  no_current_election_2y: "No current election\n2 years left"
+  no_current_election: "No current election\n[?days_until_election] days left"
+  election_in_progress: "Election in progress\n[?election_days_left] days left"

@@ -1,0 +1,102 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                random_list = {
+                    10 = {
+                        add_ideas = personality_warmonger
+                    }
+                    10 = {
+                        add_ideas = personality_pacifist
+                    }
+                    10 = {
+                        add_ideas = personality_diplomat
+                    }
+                    10 = {
+                        add_ideas = personality_logistician
+                    }
+                    10 = {
+                        add_ideas = personality_technocracy
+                    }
+                    5 = {
+                        add_ideas = personality_none
+                    }
+                }
+            }
+        }
+    }
+    on_daily = {
+        effect = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_idea = personality_warmonger
+                        has_idea = personality_pacifist
+                        has_idea = personality_diplomat
+                        has_idea = personality_logistician
+                        has_idea = personality_technocracy
+                        has_idea = personality_none
+                     }
+                }
+                random_list = {
+                    10 = {
+                        add_ideas = personality_warmonger
+                    }
+                    10 = {
+                        add_ideas = personality_pacifist
+                    }
+                    10 = {
+                        add_ideas = personality_diplomat
+                    }
+                    10 = {
+                        add_ideas = personality_logistician
+                    }
+                    10 = {
+                        add_ideas = personality_technocracy
+                    }
+                    5 = {
+                        add_ideas = personality_none
+                    }
+                }
+            }
+        }
+    }
+    on_monthly = {
+        effect = {
+            random_list = {
+                1 = {
+                    remove_ideas = {
+                        personality_warmonger
+                        personality_pacifist
+                        personality_diplomat
+                        personality_logistician
+                        personality_technocracy
+                        personality_none
+                    }
+                    random_list = {
+                        10 = {
+                            add_ideas = personality_warmonger
+                        }
+                        10 = {
+                            add_ideas = personality_pacifist
+                        }
+                        10 = {
+                            add_ideas = personality_diplomat
+                        }
+                        10 = {
+                            add_ideas = personality_logistician
+                        }
+                        10 = {
+                            add_ideas = personality_technocracy
+                        }
+                        5 = {
+                            add_ideas = personality_none
+                        }
+                    }
+                }
+                11 = {
+                }
+            }
+        }
+    }
+}

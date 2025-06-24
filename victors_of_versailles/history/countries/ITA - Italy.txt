@@ -1,0 +1,19 @@
+﻿capital = 2 # Rome
+
+set_major = yes
+
+set_convoys = 200
+
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 20
+	fascism = 2
+	communism = 5
+	neutrality = 73
+}
+
+recruit_character = ITA_vittorio_emanuele_iii
+promote_character = ITA_vittorio_emanuele_iii

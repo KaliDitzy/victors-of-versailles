@@ -1,0 +1,245 @@
+calculate_unity_penalty_from_pops = {
+	set_temp_variable = { weekly = militancy }
+	subtract_from_temp_variable = { weekly = 0.3 }
+	divide_temp_variable = { weekly = -100 }
+	set_variable = { pop_stability_weekly = weekly }
+
+	set_temp_variable = { weekly = consciousness }
+	subtract_from_temp_variable = { weekly = 0.3 }
+	divide_temp_variable = { weekly = -100 }
+	set_variable = { pop_war_support_weekly = weekly }
+}
+
+civil_war_from_pops = {
+	clear_temp_array = involved_states
+	for_each_scope_loop = {
+		array = owned_controlled_states
+		if = {
+			limit = {
+				NOT = { check_variable = { militancy < 0.3 } }
+			}
+			add_to_temp_array = { involved_states = THIS }
+		}
+	}
+	if = { ### DEMOCRATIC
+		limit = {
+			has_government = democratic
+			communism > party_popularity@fascism
+			communism > party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = communism
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+				subtract_from_variable = { consciousness = 0.2 }
+			}
+		}
+	}
+	else_if = { ### DEMOCRATIC
+		limit = {
+			has_government = democratic
+			fascism > party_popularity@communism
+			fascism > party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### DEMOCRATIC
+		limit = {
+			has_government = democratic
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	if = { ### COMMUNISM
+		limit = {
+			has_government = communism
+			democratic > party_popularity@fascism
+			democratic > party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = democratic
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### COMMUNISM
+		limit = {
+			has_government = communism
+			fascism > party_popularity@democratic
+			fascism > party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### COMMUNISM
+		limit = {
+			has_government = communism
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	if = { ### FASCISM
+		limit = {
+			has_government = fascism
+			democratic > party_popularity@communism
+			democratic > party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = democratic
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### FASCISM
+		limit = {
+			has_government = fascism
+			communism > party_popularity@democratic
+			communism > party_popularity@neutrality
+		}
+		start_civil_war = {
+			ideology = communism
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### FASCISM
+		limit = {
+			has_government = fascism
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	if = { ### NEUTRALITY
+		limit = {
+			has_government = neutrality
+			democratic > party_popularity@communism
+			democratic > party_popularity@fascism
+		}
+		start_civil_war = {
+			ideology = democratic
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### NEUTRALITY
+		limit = {
+			has_government = neutrality
+			communism > party_popularity@democratic
+			communism > party_popularity@fascism
+		}
+		start_civil_war = {
+			ideology = communism
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+	else_if = { ### NEUTRALITY
+		limit = {
+			has_government = neutrality
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = var:militancy
+			states = all
+			states_filter = {
+				is_in_array = { involved_states = THIS }
+				is_capital = no
+			}
+			every_controlled_state = {
+				subtract_from_variable = { militancy = 0.2 }
+			}
+		}
+	}
+}

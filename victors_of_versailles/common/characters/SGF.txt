@@ -1,0 +1,28 @@
+characters = {
+	SGF_constantin_fehrenbach = {
+		name = SGF_constantin_fehrenbach
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SGF_constantin_fehrenbach
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	SGF_adolf_hitler = {
+		name = SGF_adolf_hitler
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SGF_adolf_hitler
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}

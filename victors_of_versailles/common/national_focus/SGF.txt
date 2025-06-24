@@ -1,0 +1,852 @@
+@FLAVOR = 0.42857142857
+@TINY = 2
+@MINOR = 3
+@AVERAGE = 5
+@MAJOR = 10
+@SUPERMAJOR = 15
+
+focus_tree = {
+	id = SGF_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 40
+			original_tag = SGF
+		}
+	}
+	
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 2048 y = 64 }
+
+	initial_show_position = {
+		focus = SGF_aftermath_of_versailles
+	}
+
+	focus = {
+		id = SGF_aftermath_of_versailles
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 0
+		cost = @MINOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = SGF_unlock_civil_war_decisions
+			set_country_flag = SGF_civil_war_decisions
+		}
+	}
+	focus = {
+		id = SGF_steadfast_ahead
+		icon = GFX_goal_generic_neutrality_focus
+		relative_position_id = SGF_aftermath_of_versailles
+		x = -2
+		y = 1
+		offset = { 
+			x = 2
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SGF_steadfast_ahead
+			}
+		}
+		cost = @TINY
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+
+				NOT = { 
+					has_completed_focus = SGF_the_opposition
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SGF_the_opposition
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_aftermath_of_versailles
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SGF_become_republicans
+			set_country_flag = SGF_becoming_republican
+
+			hidden_effect = { country_event = vov_hidden.1 } # refresh focus visibility
+		}
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	focus = {
+		id = SGF_the_opposition
+		icon = GFX_SOV_the_new_soviet_woman_ccp_2d_sov_compatibility
+		relative_position_id = SGF_aftermath_of_versailles
+		x = 2
+		y = 1
+		offset = { 
+			x = -2
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SGF_the_opposition
+			}
+		}
+		cost = @TINY
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+
+				NOT = { 
+					has_completed_focus = SGF_steadfast_ahead
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SGF_steadfast_ahead
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_aftermath_of_versailles
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SGF_become_bavarian_communists
+			set_country_flag = SGF_becoming_communist
+
+			hidden_effect = { country_event = vov_hidden.1 } # refresh focus visibility
+		}
+	}
+
+	focus = {
+		id = SGF_censor_communist_sympathizers
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = SGF_steadfast_ahead
+		x = -1
+		y = 1
+		cost = @MINOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_steadfast_ahead
+		}
+		available = {
+			NOT = { has_completed_focus = SGF_the_1920_elections }
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = SGF_permit_right_paramilitaries
+		icon = GFX_SOV_demand_eastern_poland_ccp_2d_sov_compatibility
+		relative_position_id = SGF_steadfast_ahead
+		x = 1
+		y = 1
+		cost = @MINOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_steadfast_ahead
+		}
+		available = {
+			NOT = { has_completed_focus = SGF_the_1920_elections }
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SGF_recruit_nazi_paramilitary
+		}
+	}
+
+	focus = {
+		id = SGF_gather_communist_support
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = SGF_the_opposition
+		x = -1
+		y = 1
+		cost = @MINOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_the_opposition
+		}
+		available = {
+			NOT = { has_completed_focus = SGF_the_1920_elections }
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			# increase reform will?
+		}
+	}
+	focus = {
+		id = SGF_strengthen_bavarian_soviet
+		icon = GFX_focus_POL_sanation_left
+		relative_position_id = SGF_the_opposition
+		x = 1
+		y = 1
+		cost = @MINOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_the_opposition
+		}
+		available = {
+			NOT = { has_completed_focus = SGF_the_1920_elections }
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SGF_dec_suffrage_law_in_cw
+		}
+	}
+
+	focus = {
+		id = SGF_the_1920_elections
+		icon = GFX_focus_generic_election
+		x = 0
+		y = 3
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_censor_communist_sympathizers
+			focus = SGF_permit_right_paramilitaries
+			focus = SGF_gather_communist_support
+			focus = SGF_strengthen_bavarian_soviet
+		}
+		bypass = {
+			NOT = {
+				has_global_flag = SGF_pre_election
+			}
+		}
+
+		completion_reward = {
+			clr_global_flag = SGF_pre_election
+			set_variable = { days_until_election = var:days_between_elections }
+			
+			if = {
+				limit = {
+					has_country_flag = SGF_becoming_republican
+				}
+				country_event = SGF_focus.1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = SGF_becoming_communist
+				}
+				country_event = SGF_focus.2
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = { days_until_election < 70 }
+				add = 50
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_south_german_soviet_republic
+		icon = GFX_focus_generic_soviet_politics
+		relative_position_id = SGF_the_1920_elections
+		x = 1
+		y = 2
+		offset = { 
+			x = -1
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SGF_south_german_soviet_republic
+			}
+		}
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+
+				NOT = { 
+					has_completed_focus = SGF_postwar_recovery
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SGF_postwar_recovery
+		}
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_the_1920_elections
+		}
+		available = {
+			has_government = communism
+			has_civil_war = no
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_cosmetic_tag = SGF_republican }
+				}
+				set_cosmetic_tag = SGF_republican
+			}
+			set_capital = { state = 52 }
+			add_political_power = 50
+
+			hidden_effect = { country_event = vov_hidden.1 } # refresh focus visibility
+		}
+	}
+	focus = {
+		id = SGF_postwar_recovery
+		icon = GFX_focus_generic_economic_recovery
+		relative_position_id = SGF_the_1920_elections
+		x = -9
+		y = 2
+		offset = { 
+			x = 9
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SGF_postwar_recovery
+			}
+		}
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+
+				NOT = { 
+					has_completed_focus = SGF_south_german_soviet_republic
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SGF_south_german_soviet_republic
+		}
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_the_1920_elections
+		}
+		available = {
+			NOT = { has_government = communism }
+			has_civil_war = no
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_cosmetic_tag = SGF_republican }
+				}
+				set_cosmetic_tag = SGF_republican
+			}
+			set_capital = { state = 52 }
+			add_political_power = 50
+
+			hidden_effect = { country_event = vov_hidden.1 } # refresh focus visibility
+		}
+	}
+
+	focus = {
+		id = SGF_invest_in_agriculture
+		icon = GFX_focus_generic_agricultural_subsidies
+		relative_position_id = SGF_postwar_recovery
+		x = -3
+		y = 1
+		cost = @MAJOR
+		search_filters = { FOCUS_FILTER_INDUSTRIAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_postwar_recovery
+		}
+
+		completion_reward = {
+			53 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			54 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_stuttgart_industry
+		icon = GFX_focus_generic_industry_2
+		relative_position_id = SGF_invest_in_agriculture
+		x = -1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_INDUSTRIAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_invest_in_agriculture
+		}
+
+		completion_reward = {
+			50 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SGF_munich_industry
+		icon = GFX_focus_generic_industry_1
+		relative_position_id = SGF_invest_in_agriculture
+		x = 1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_INDUSTRIAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_invest_in_agriculture
+		}
+
+		completion_reward = {
+			52 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_replenish_the_freiwilligenkrafte
+		icon = GFX_focus_generic_military_industry
+		relative_position_id = SGF_invest_in_agriculture
+		x = 0
+		y = 2
+		cost = @MAJOR
+		search_filters = { FOCUS_FILTER_INDUSTRIAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_stuttgart_industry
+		}
+		prerequisite = {
+			focus = SGF_munich_industry
+		}
+
+		completion_reward = {
+			52 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_seek_french_investments
+		icon = GFX_focus_chi_reach_out_to_france
+		relative_position_id = SGF_replenish_the_freiwilligenkrafte
+		x = -1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_INDUSTRIAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_replenish_the_freiwilligenkrafte
+		}
+
+		completion_reward = {
+			# french get event saying "hi i want civs"
+		}
+	}
+	focus = {
+		id = SGF_seek_british_investments
+		icon = GFX_focus_chi_british_cooperation
+		relative_position_id = SGF_replenish_the_freiwilligenkrafte
+		x = 1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_INDUSTRIAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_replenish_the_freiwilligenkrafte
+		}
+
+		completion_reward = {
+			# british get event saying "hi i want civs"
+		}
+	}
+
+	focus = {
+		id = SGF_reunite_the_nation
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = SGF_postwar_recovery
+		x = 0
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_postwar_recovery
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			every_core_state = {
+				subtract_from_variable = { consciousness = 0.15 }
+				hidden_effect = {
+					clamp_variable = {
+						var = consciousness
+						min = 0
+						max = 1
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_quell_militants
+		icon = GFX_goal_generic_military_sphere
+		relative_position_id = SGF_reunite_the_nation
+		x = 0
+		y = 2
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_reunite_the_nation
+		}
+
+		completion_reward = {
+			every_core_state = {
+				subtract_from_variable = { militancy = 0.05 }
+				hidden_effect = {
+					clamp_variable = {
+						var = militancy
+						min = 0
+						max = 1
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_renegotiate_versailles
+		icon = GFX_focus_generic_treaty
+		relative_position_id = SGF_quell_militants
+		x = 0
+		y = 2
+		cost = @MAJOR
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SGF_quell_militants
+		}
+		bypass = {
+			OR = {
+				FRA = { exists = no }
+				RHI = { exists = no }
+			}
+		}
+
+		completion_reward = {
+			# french get a message saying please give us the rhineland
+		}
+	}
+
+	focus = {
+		id = SGF_national_defense_program
+		icon = GFX_SOV_rehabilitated_military_ccp_2d_sov_compatibility
+		relative_position_id = SGF_postwar_recovery
+		x = 5
+		y = 1
+		cost = @MAJOR
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
+			FOCUS_FILTER_AIR_XP
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_postwar_recovery
+		}
+
+		completion_reward = {
+			army_experience = 30
+			air_experience = 30
+		}
+	}
+
+	focus = {
+		id = SGF_army_reform
+		icon = GFX_focus_chi_army_reform
+		relative_position_id = SGF_national_defense_program
+		x = -2
+		y = 1
+		cost = @MAJOR
+		search_filters = {
+			FOCUS_FILTER_ARMY_XP
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_national_defense_program
+		}
+
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = SGF_air_reform
+		icon = GFX_goal_generic_air_fighter
+		relative_position_id = SGF_national_defense_program
+		x = 2
+		y = 1
+		cost = @MAJOR
+		search_filters = {
+			FOCUS_FILTER_AIR_XP
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_national_defense_program
+		}
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_infantry_program
+		icon = GFX_goal_generic_axis_build_infantry
+		relative_position_id = SGF_army_reform
+		x = -1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_army_reform
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = SGF_panzer_program
+		icon = GFX_goal_panzerwaffe
+		relative_position_id = SGF_army_reform
+		x = 1
+		y = 1
+		cost = @AVERAGE
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_army_reform
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_flexible_air_force
+		icon = GFX_focus_generic_multi_role_aircraft
+		relative_position_id = SGF_air_reform
+		x = -1
+		y = 1
+		cost = @MAJOR
+		search_filters = {
+			FOCUS_FILTER_AIR_XP
+			FOCUS_FILTER_RESEARCH
+		}
+		mutually_exclusive = {
+			focus = SGF_offensive_air_force
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_air_reform
+		}
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+	focus = {
+		id = SGF_offensive_air_force
+		icon = GFX_SOV_long_range_aircraft_ccp_2d_sov_compatibility
+		relative_position_id = SGF_air_reform
+		x = 1
+		y = 1
+		cost = @MAJOR
+		search_filters = {
+			FOCUS_FILTER_AIR_XP
+			FOCUS_FILTER_RESEARCH
+		}
+		mutually_exclusive = {
+			focus = SGF_flexible_air_force
+		}
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_air_reform
+		}
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = medium_air
+			}
+		}
+	}
+
+	focus = {
+		id = SGF_combined_arms
+		icon = GFX_focus_generic_tank_air_support
+		relative_position_id = SGF_national_defense_program
+		x = 0
+		y = 3
+		cost = @MAJOR
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SGF_infantry_program
+			focus = SGF_panzer_program
+		}
+		prerequisite = {
+			focus = SGF_flexible_air_force
+			focus = SGF_offensive_air_force
+		}
+
+		completion_reward = {
+			army_experience = 30
+			air_experience = 30
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+}

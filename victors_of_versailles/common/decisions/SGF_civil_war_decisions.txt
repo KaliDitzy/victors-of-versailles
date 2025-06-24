@@ -1,0 +1,133 @@
+SGF_civil_war_decisions = {
+	SGF_DEBUG_do_elections = {
+		visible = {
+			is_debug = yes
+			has_global_flag = SGF_pre_election
+		}
+		complete_effect = {
+			set_variable = { days_until_election = 35 }
+		}
+	}
+	SGF_election_imminent = {
+		activation = {
+			has_global_flag = SGF_pre_election
+			NOT = { check_variable = { days_until_election > 30 } }
+		}
+		cancel_trigger = {
+			has_completed_focus = SGF_the_1920_elections
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		days_mission_timeout = 29
+		timeout_effect = {
+			clr_global_flag = SGF_pre_election
+			set_variable = { days_until_election = var:days_between_elections }
+			
+			if = {
+				limit = {
+					has_country_flag = SGF_becoming_republican
+				}
+				country_event = SGF_focus.1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = SGF_becoming_communist
+				}
+				country_event = SGF_focus.2
+			}
+			else = {
+				random_list = {
+					1 = {
+						modifier = {
+							factor = party_popularity@democratic
+						}
+						country_event = SGF_focus.1
+					}
+					1 = {
+						modifier = {
+							factor = party_popularity@communism
+						}
+						country_event = SGF_focus.2
+					}
+				}
+			}
+		}
+	}
+	SGF_expand_cw_size = {
+		icon = GFX_decision_infiltrate_state
+		visible = {
+			has_global_flag = SGF_pre_election
+			has_country_flag = SGF_civil_war_decisions
+			check_variable = { SGF_cw_size < 3 }
+		}
+		cost = 45
+		days_remove = 90
+		days_re_enable = 14
+		modifier = {
+			political_power_factor = -0.15
+		}
+		remove_effect = {
+			custom_effect_tooltip = SGF_expand_cw_size_tt
+			add_to_variable = { SGF_cw_size = 1 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = { days_until_election > 90 }
+				add = 5
+			}
+		}
+	}
+	SGF_expand_army_size = {
+		icon = GFX_decision_generic_military
+		visible = {
+			has_global_flag = SGF_pre_election
+			has_country_flag = SGF_civil_war_decisions
+		}
+		cost = 15
+		days_remove = 45
+		days_re_enable = 7
+		modifier = {
+			political_power_factor = -0.15
+		}
+		remove_effect = {
+			custom_effect_tooltip = SGF_expand_army_size_tt
+			subtract_from_variable = { SGF_army_size = 0.1 }
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				check_variable = { SGF_cw_size < 1 }
+				add = -10
+			}
+			modifier = {
+				check_variable = { days_until_election > 45 }
+				add = 5
+			}
+		}
+	}
+	SGF_seek_soviet_russian_support = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_global_flag = SGF_pre_election
+			has_country_flag = SGF_civil_war_decisions
+			has_completed_focus = SGF_the_opposition
+		}
+		fire_only_once = yes
+		cost = 30
+		complete_effect = {
+			# soviets send equipment if they accept
+			SOV = {
+				country_event = SOV.1
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = { days_until_election > 70 }
+				add = 10
+			}
+		}
+	}
+}

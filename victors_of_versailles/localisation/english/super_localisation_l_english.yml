@@ -1,0 +1,14 @@
+﻿l_english:
+  sp_event_ww2: "The Second World War"
+  sp_event_ww2_q: "Those who want to live, let them fight, and those who do not want to fight in this world of eternal struggle do not deserve to live.\n- Adolf Hitler"
+  sp_event_ww2_r: "Here we go again..."
+  sp_event_ww3: "The Third World War"
+  sp_event_ww3_q: "And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him.\n- John the Apostle"
+  sp_event_ww3_r: "The end times have come."
+
+  sp_event_RCW_soviet_victory: "The Red Army Triumphs"
+  sp_event_RCW_soviet_victory_q: "All efforts and all attention should now be concentrated on the next step — the search after forms of the transition or the approach to the proletarian revolution.\n- Vladimir Lenin"
+  sp_event_RCW_soviet_victory_r: "Oh no..."
+  sp_event_RCW_white_victory: "The White Army Triumphs"
+  sp_event_RCW_white_victory_q: "I am fighting not for power, but for Russia. Against the madness of Bolshevism, we must raise the banner of national unity and law.\n- Anton Denikin"
+  sp_event_RCW_white_victory_r: "A repeat of 1871."

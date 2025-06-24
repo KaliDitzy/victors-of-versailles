@@ -1,0 +1,21 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_global_flag = SGF_pre_election
+			set_global_flag = {
+				flag = days_since_last_great_war
+				value = 1984
+			}
+
+			every_country = {
+				limit = {
+					NOT = {
+						original_tag = SGF
+					}
+				}
+
+				load_generic_units = yes
+			}
+		}
+	}
+}

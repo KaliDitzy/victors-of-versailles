@@ -1,0 +1,1 @@
+KUR_colonial_balance_category = { allowed = { original_tag = KUR } priority = 10000 }

@@ -1,0 +1,75 @@
+KUR_colonial_balance = {
+    initial_value = -0.15
+    left_side = KUR_colonial_authority
+    right_side = KUR_separatists
+    decision_category = KUR_colonial_balance_category
+    range = {
+        id = KUR_colonial_balanced
+        min = -0.1
+        max = 0.1
+		modifier = {
+			power_balance_weekly = -0.01
+		}
+    }
+
+    side = {
+        id = KUR_colonial_authority
+        icon = GFX_bop_KUR_colonial_authority
+        range = {
+            id = KUR_colonial_dominance
+            min = -1
+            max = -0.8
+			modifier = {
+				power_balance_weekly = -0.08
+			}
+            on_activate = {
+                FRA = {
+                    if = {
+                        limit = {
+                            OR = {
+                                has_dlc = "Together for Victory"
+                                has_dlc = "Man the Guns"
+                            }
+                        }
+                        set_autonomy = {
+                            target = KUR
+                            autonomous_state = autonomy_integrated_puppet
+                            freedom_level = 0.5
+                        }
+                        else = {
+                            puppet = KUR
+                        }
+                    }
+                }
+            }
+        }
+		range = {
+            id = KUR_leaning_colonial
+            min = -0.8
+            max = -0.1
+			modifier = {
+				power_balance_weekly = -0.02
+			}
+        }
+    }
+    side = {
+        id = KUR_separatists
+        icon = GFX_bop_KUR_separatists
+		range = {
+            id = KUR_leaning_separation
+            min = 0.1
+            max = 0.8
+			modifier = {
+				power_balance_weekly = -0.005
+			}
+        }
+        range = {
+            id = KUR_imminent_separation
+            min = 0.8
+            max = 1
+			modifier = {
+				power_balance_weekly = -0.00125
+			}
+        }
+    }
+}

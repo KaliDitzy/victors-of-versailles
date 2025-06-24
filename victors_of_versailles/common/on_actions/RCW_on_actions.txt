@@ -1,0 +1,246 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_global_flag = RCW_active
+			SOV = {
+				add_dynamic_modifier = { modifier = RCW_modifier }
+			}
+			RSE = {
+				add_dynamic_modifier = { modifier = RCW_modifier }
+			}
+			#SOV = {
+			#	every_controlled_state = {
+			#		limit = {
+			#			any_neighbor_state = {
+			#				owner = {
+			#					OR = {
+			#						original_tag = RSE
+			#						original_tag = UKR
+			#						original_tag = BLR
+			#					}
+			#				}
+			#			}
+			#		}
+			#		create_unit = {
+			#			division = "name = \"Infantry Division\" division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3"
+			#			owner = SOV
+			#		}
+			#		create_unit = {
+			#			division = "name = \"Infantry Division\" division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3"
+			#			owner = SOV
+			#		}
+			#		create_unit = {
+			#			division = "name = \"Infantry Division\" division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3"
+			#			owner = SOV
+			#		}
+			#		create_unit = {
+			#			division = "name = \"Infantry Division\" division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3"
+			#			owner = SOV
+			#		}
+			#	}
+			#}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = RSE
+					has_global_flag = RCW_active
+				}
+				SOV = {
+					every_country = {
+						limit = {
+							original_tag = RSE
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = RCW_modifier
+					}
+				}
+				RSE = {
+					every_core_state = {
+						remove_core_of = RSE
+					}
+				}
+
+				clr_global_flag = RCW_active
+
+				## Soviet victory super event
+				every_country = {
+					set_variable = { current_super_event = 2 }
+				}
+				play_song = "super_RCW_soviet_victory"
+			}
+			else_if = {
+				limit = {
+					original_tag = SOV
+					has_global_flag = RCW_active
+				}
+				RSE = {
+					every_country = {
+						limit = {
+							original_tag = SOV
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = RCW_modifier
+					}
+					set_cosmetic_tag = RSE_postwar
+				}
+				SOV = {
+					every_core_state = {
+						remove_core_of = SOV
+					}
+				}
+
+				clr_global_flag = RCW_active
+
+				## White victory super event
+				every_country = {
+					set_variable = { current_super_event = 3 }
+				}
+				play_song = "super_RCW_white_victory"
+			}
+			else_if = {
+				limit = {
+					original_tag = BLR
+					FROM = {
+						has_country_flag = RCW_reclaiming_BLR
+					}
+				}
+				clr_country_flag = RCW_reclaiming_BLR
+				FROM = {
+					every_country = {
+						limit = {
+							original_tag = BLR
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = UKR
+					FROM = {
+						OR = {
+							original_tag = MKH
+							has_country_flag = RCW_reclaiming_UKR
+						}
+					}
+				}
+				clr_country_flag = RCW_reclaiming_UKR
+				FROM = {
+					every_country = {
+						limit = {
+							original_tag = UKR
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = MKH
+					FROM = {
+						OR = {
+							original_tag = UKR
+							has_country_flag = RCW_reclaiming_MKH
+						}
+					}
+				}
+				clr_country_flag = RCW_reclaiming_MKH
+				FROM = {
+					every_country = {
+						limit = {
+							original_tag = MKH
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = POL
+					FROM = {
+						has_country_flag = RCW_reclaiming_POL
+					}
+				}
+				clr_country_flag = RCW_reclaiming_POL
+				FROM = {
+					every_country = {
+						limit = {
+							original_tag = POL
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = FIN
+					FROM = {
+						has_country_flag = RCW_reclaiming_FIN
+					}
+				}
+				clr_country_flag = RCW_reclaiming_FIN
+				FROM = {
+					every_country = {
+						limit = {
+							original_tag = FIN
+						}
+						PREV = {
+							annex_country = {
+								target = PREV
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						original_tag = EST
+						original_tag = LAT
+						original_tag = LIT
+					}
+					FROM = {
+						has_country_flag = RCW_reclaiming_baltics
+					}
+				}
+				clr_country_flag = RCW_reclaiming_baltics
+				FROM = {
+					annex_country = { #idk how to deal with this, I think i may have to split up the baltics
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+}

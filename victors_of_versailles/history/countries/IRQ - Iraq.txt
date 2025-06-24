@@ -1,0 +1,3 @@
+﻿capital = 291
+
+set_cosmetic_tag = SYR_mandate

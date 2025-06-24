@@ -1,0 +1,3 @@
+capital = 439
+
+set_cosmetic_tag = RAJ_UK

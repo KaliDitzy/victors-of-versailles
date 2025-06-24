@@ -1,0 +1,27 @@
+
+state={
+	id=1017
+	name="STATE_1017" # Saar
+	manpower = 812000
+	
+	state_category = city
+	resources={}
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+        add_core_of = NGF
+        add_core_of = RHI
+		add_core_of = PRE
+
+		victory_points = { 
+			11531 5 # Saarbrücken
+		}
+	}
+
+	provinces={
+		11531
+	}
+
+	local_supplies=14.0 
+}

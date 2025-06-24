@@ -1,0 +1,48 @@
+add_namespace = SOV
+add_namespace = SOV_focus
+
+country_event = {
+	id = SOV.1
+	title = SOV.1.t
+	desc = SOV.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = SOV.1a
+		hidden_effect = { SGF = { set_country_flag = SGF_soviet_russian_support } }
+		custom_effect_tooltip = SOV_sending_equipment_to_SGF
+		effect_tooltip = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 1500
+				target = SGF
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = SOV.1b
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.35
+				add = 2
+			}
+			modifier = {
+				surrender_progress > 0.5
+				add = 2
+			}
+			modifier = {
+				surrender_progress > 0.65
+				add = 2
+			}
+		}
+	}
+}

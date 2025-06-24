@@ -1,0 +1,56 @@
+﻿capital = 16 # Paris/Ile de France
+
+set_major = yes
+
+set_research_slots = 3
+
+set_convoys = 300
+
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 64
+	fascism = 1
+	neutrality = 15
+	communism = 20
+}
+
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = ARM
+		autonomous_state = autonomy_colony
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = AZR
+		autonomous_state = autonomy_colony
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = GEO
+		autonomous_state = autonomy_colony
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = RHI
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.5
+	}
+	else = {
+		puppet = ARM
+		puppet = AZR
+		puppet = GEO
+		puppet = RHI
+	}
+}
+
+recruit_character = FRA_raymond_poincare
+promote_character = FRA_raymond_poincare

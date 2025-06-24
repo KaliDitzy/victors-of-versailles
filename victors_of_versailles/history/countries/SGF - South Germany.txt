@@ -1,0 +1,84 @@
+capital = 52
+
+set_major = yes
+
+starting_train_buffer = 2
+set_fuel_ratio = 0.8
+
+set_research_slots = 3
+set_convoys = 50
+set_stability = 0.5
+set_war_support = 0.4
+
+## POLITICS
+set_country_flag = has_conservatism_party
+set_variable = { conservatism_leader = token:SGF_constantin_fehrenbach }
+set_variable = { conservatism_suffrage = token:men_only }
+set_variable = { conservatism_property = token:private_property }
+set_variable = { conservatism_acceptance = token:racial_discrimination }
+set_variable = { conservatism_warfare = token:retaliatory }
+
+#set_country_flag = has_nazism_party
+#set_variable = { nazism_leader = token:SGF_adolf_hitler }
+#set_variable = { nazism_suffrage = token:no_elections }
+#set_variable = { nazism_property = token:state_property }
+#set_variable = { nazism_acceptance = token:racial_discrimination }
+#set_variable = { nazism_warfare = token:interventionism }
+
+set_variable = { days_until_election = 300 }
+set_variable = { days_between_elections = 1200 }
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 40
+	communism = 30
+	fascism = 5
+	neutrality = 25
+}
+set_country_flag = defined_politics
+
+add_ideas = {
+	limited_womens_suffrage
+	private_property
+	racial_discrimination
+
+	civilian_economy
+	export_focus
+	child_labor_legal
+
+	disarmed_nation
+	aoe_18
+	national_military
+
+	pacifism
+	balanced_diplomacy
+}
+
+add_timed_idea = {
+	idea = GER_knocked_dizzy
+	days = 900
+}
+
+add_timed_idea = {
+	idea = GER_turnip_winter_aftermath
+	days = 1200
+}
+
+add_ideas = {
+	GER_treaty_of_versailles
+}
+
+set_variable = { SGF_army_size = 0.7 }
+
+recruit_character = SGF_constantin_fehrenbach
+
+promote_character = SGF_constantin_fehrenbach
+
+set_technology = {
+	infantry_weapons = 1
+	tech_trucks = 1
+}
+
+set_oob = SGF

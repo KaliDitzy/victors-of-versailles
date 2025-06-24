@@ -1,0 +1,28 @@
+﻿capital = 195
+
+set_major = yes
+
+set_cosmetic_tag = RSE_white
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 2
+	fascism = 10
+	neutrality = 88
+}
+
+add_ideas = {
+	no_elections
+}
+
+set_variable = { RCW_surrender_limit = -0.1 }
+
+recruit_character = RSE_anton_denikin
+promote_character = RSE_anton_denikin
+
+#set_oob = RSE

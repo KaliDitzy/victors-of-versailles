@@ -1,0 +1,13 @@
+RCW_decisions = {
+	icon = GFX_decision_category_power_struggle
+	allowed = {
+		OR = {
+			original_tag = RSE
+			original_tag = SOV
+		}
+	}
+	visible = {
+		has_global_flag = RCW_active
+	}
+	priority = 500
+}

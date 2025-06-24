@@ -1,0 +1,13 @@
+add_namespace = vov_hidden
+
+country_event = {
+	id = vov_hidden.1
+
+	hidden = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		mark_focus_tree_layout_dirty = yes
+	}
+}

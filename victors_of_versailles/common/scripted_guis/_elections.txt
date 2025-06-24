@@ -1,0 +1,48 @@
+scripted_gui = {
+	vov_politics_elections = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = vov_politics_elections
+
+		visible = {
+			always = yes
+		}
+
+		triggers = {
+			snap_election_btn_visible = {
+				NOT = {
+					has_idea = no_elections
+				}
+			}
+			snap_election_btn_click_enabled = {
+				NOT = {
+					has_country_flag = election_active
+					has_idea = wealth_voting
+					has_idea = upper_class_voting
+					
+					AND = {
+						original_tag = SGF
+						has_global_flag = SGF_pre_election
+					}
+				}
+			}
+		}
+
+		effects = {
+			snap_election_btn_click = {
+				prepare_elections = yes
+				set_country_flag = election_active
+				set_variable = { election_days_left = 30 }
+			}
+		}
+	}
+	#vov_diplomacy_elections = {
+	#	context_type = selected_country_context
+	#	parent_window_name = countrydiplomacyview
+	#	window_name = vov_diplomacy_elections
+	#
+	#	visible = {
+	#		always = yes
+	#	}
+	#}
+}

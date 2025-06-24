@@ -1,0 +1,18 @@
+capital = 202
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 88
+	fascism = 2
+	neutrality = 10
+}
+
+declare_war_on = {
+	target = MKH
+	type = civil_war
+}

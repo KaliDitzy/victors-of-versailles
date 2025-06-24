@@ -1,0 +1,114 @@
+capital = 126
+
+set_major = yes
+
+set_research_slots = 4
+
+set_stability = 0.6
+set_war_support = 0.1
+
+set_convoys = 1000
+
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 93
+	neutrality = 2
+	communism = 5
+}
+
+# DIPLOMACY
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = MAL
+		autonomous_state = autonomy_integrated_puppet
+	}
+	set_autonomy = {
+		target = RAJ
+		autonomous_state = autonomy_colony
+		freedom_level = 0.35
+	}
+	set_autonomy = {
+		target = OMA
+		autonomous_state = autonomy_colony
+		freedom_level = 0.35
+	}
+	set_autonomy = {
+		target = CAN
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = SAF
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.4
+	}
+	set_autonomy = {
+		target = AST
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = NZL
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = BRM
+		autonomous_state = autonomy_colony
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = PAL
+		autonomous_state = autonomy_integrated_puppet
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = JOR
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = KUW
+		autonomous_state = autonomy_integrated_puppet
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = LEB
+		autonomous_state = autonomy_integrated_puppet
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = SYR
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.5
+	}
+	set_autonomy = {
+		target = IRQ
+		autonomous_state = autonomy_dominion
+		freedom_level = 0.5
+	}
+
+	else = {
+		puppet = MAL
+		puppet = RAJ
+		puppet = JOR
+		puppet = PAL
+		puppet = KUW
+		puppet = OMA
+		puppet = LEB
+		puppet = SYR
+		puppet = IRQ
+	}
+}
+
+recruit_character = ENG_david_lloyd_george
+promote_character = ENG_david_lloyd_george

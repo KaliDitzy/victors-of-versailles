@@ -1,0 +1,34 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_idea_no_elections"
+        textureFile = "gfx/interface/ideas/generic/idea_no_elections.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_upper_class_voting"
+        textureFile = "gfx/interface/ideas/generic/idea_upper_class_voting.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_wealth_voting"
+        textureFile = "gfx/interface/ideas/generic/idea_wealth_voting.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_men_only"
+        textureFile = "gfx/interface/ideas/generic/idea_men_only.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_limited_womens_suffrage"
+        textureFile = "gfx/interface/ideas/generic/idea_limited_womens_suffrage.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_womens_suffrage_law"
+        textureFile = "gfx/interface/ideas/generic/idea_womens_suffrage_law.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_minority_suffrage"
+        textureFile = "gfx/interface/ideas/generic/idea_minority_suffrage.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_universal_suffrage"
+        textureFile = "gfx/interface/ideas/generic/idea_universal_suffrage.dds"
+	}
+}

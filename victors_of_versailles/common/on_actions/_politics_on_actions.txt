@@ -1,0 +1,35 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					check_variable = { passing_law_time > 0 }
+				}
+				subtract_from_variable = { passing_law_time = 1 }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = passing_law
+				}
+				force_reform = yes
+			}
+
+			if = {
+				limit = {
+					check_variable = { reform_will < 1 }
+				}
+				add_to_variable = { reform_will = 0.002 }
+				clamp_variable = {
+					var = reform_will
+					min = 0
+					max = 1
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			ai_do_reform = yes
+		}
+	}
+}

@@ -1,0 +1,45 @@
+capital = 64
+
+set_major = yes
+
+starting_train_buffer = 2
+set_fuel_ratio = 0.8
+
+# Starting Stats of various kinds
+set_research_slots = 4
+set_convoys = 200
+set_stability = 0.45
+set_war_support = 0.6
+
+set_politics = {
+	ruling_party = democratic
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 45
+	fascism = 10
+	communism = 25
+	neutrality = 20
+}
+
+add_ideas = {
+	disarmed_nation
+}
+
+add_timed_idea = {
+	idea = GER_knocked_dizzy
+	days = 900
+}
+
+add_timed_idea = {
+	idea = GER_turnip_winter_aftermath
+	days = 1200
+}
+
+add_ideas = {
+	GER_treaty_of_versailles
+	NGF_shattered_dreams
+}
+
+recruit_character = NGF_gustav_bauer
+promote_character = NGF_gustav_bauer

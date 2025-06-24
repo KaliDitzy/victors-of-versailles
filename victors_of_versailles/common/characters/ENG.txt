@@ -1,0 +1,15 @@
+characters = {
+	ENG_david_lloyd_george = {
+		name = ENG_david_lloyd_george
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ENG_david_lloyd_george
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}

@@ -1,0 +1,37 @@
+ideas = {
+	country = {
+		GER_knocked_dizzy = {
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.05
+				political_power_factor = -0.35
+			}
+		}
+		GER_treaty_of_versailles = {
+			picture = GER_treaty_of_versailles
+			rule = {
+				can_send_volunteers = no
+			}
+			modifier = {
+				justify_war_goal_time = 0.5
+				conscription = -0.005
+				production_speed_arms_factory_factor = -0.15
+			}
+		}
+		GER_turnip_winter_aftermath = {
+			modifier = {
+				consumer_goods_factor = 0.35
+				monthly_population = -0.2
+				stability = -0.05
+				stability_weekly = -0.005
+				conscription_factor = -0.2
+			}
+		}
+		NGF_shattered_dreams = {
+			modifier = {
+				war_support_factor = -0.15
+				surrender_limit = -0.2
+			}
+		}
+	}
+}

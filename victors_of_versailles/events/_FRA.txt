@@ -1,0 +1,54 @@
+add_namespace = FRA
+add_namespace = FRA_focus
+
+country_event = {
+	id = FRA.1
+	title = FRA.1.t
+	desc = FRA.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = FRA.1a
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = FRA.1b
+		every_country = {
+			limit = {
+				original_tag = SGF
+			}
+			PREV = {
+				declare_war_on = {
+					target = PREV
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				threat > 0.1
+				add = 1
+			}
+			modifier = {
+				threat > 0.2
+				add = 1
+			}
+			modifier = {
+				threat > 0.4
+				add = 1
+			}
+			modifier = {
+				threat > 0.6
+				add = 1
+			}
+			modifier = {
+				threat > 0.8
+				add = 1
+			}
+		}
+	}
+}

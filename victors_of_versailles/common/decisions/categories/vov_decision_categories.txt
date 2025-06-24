@@ -1,0 +1,3 @@
+civil_war_crisis = { priority = 1000 }
+coup_crisis = { priority = 900 }
+pop_decisions = { priority = 250 }

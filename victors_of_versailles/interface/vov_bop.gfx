@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_bop_KUR_colonial_authority"
+        texturefile = "gfx/interface/bop/bop_KUR_colonial_authority.dds"
+	}
+    spriteType = {
+        name = "GFX_bop_KUR_separatists"
+        texturefile = "gfx/interface/bop/bop_KUR_separatists.dds"
+	}
+}
