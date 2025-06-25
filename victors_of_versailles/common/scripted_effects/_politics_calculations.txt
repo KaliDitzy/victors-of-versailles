@@ -1,0 +1,71 @@
+calculate_reform_will = {
+	### SOCIAL
+	# SUFFRAGE
+	set_variable = { next_suffrage_will = next_suffrage_will_base }
+	if = {
+		limit = {
+			has_government = democratic
+		}
+		multiply_variable = { next_suffrage_will = 2 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = no_elections
+				has_idea = upper_class_voting
+				has_idea = wealth_voting
+			}
+		}
+		multiply_variable = { next_suffrage_will = 1.5 }
+	}
+	set_temp_variable = { consciousness_influence = 0.7 }
+	add_to_temp_variable = { consciousness_influence = consciousness }
+	multiply_variable = { next_suffrage_will = consciousness_influence }
+	
+	add_to_variable = { next_suffrage_will = reform_will }
+	clamp_variable = {
+		var = next_suffrage_will
+		min = 0
+		max = 1
+	}
+
+	set_variable = { previous_suffrage_will = previous_suffrage_will_base }
+	if = {
+		limit = {
+			NOT = { has_government = democratic }
+		}
+		multiply_variable = { previous_suffrage_will = 2 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = womens_suffrage_law
+				has_idea = minority_suffrage
+				has_idea = universal_suffrage
+			}
+		}
+		multiply_variable = { previous_suffrage_will = 1.5 }
+	}
+	set_temp_variable = { consciousness_influence = 0.7 }
+	add_to_temp_variable = { consciousness_influence = consciousness }
+	divide_variable = { previous_suffrage_will = consciousness_influence }
+
+	add_to_variable = { previous_suffrage_will = reform_will }
+	clamp_variable = {
+		var = previous_suffrage_will
+		min = 0
+		max = 1
+	}
+}
+
+calculate_unity_penalty_from_pops = {
+	set_temp_variable = { weekly = militancy }
+	subtract_from_temp_variable = { weekly = 0.3 }
+	divide_temp_variable = { weekly = -100 }
+	set_variable = { pop_stability_weekly = weekly }
+
+	set_temp_variable = { weekly = consciousness }
+	subtract_from_temp_variable = { weekly = 0.3 }
+	divide_temp_variable = { weekly = -100 }
+	set_variable = { pop_war_support_weekly = weekly }
+}

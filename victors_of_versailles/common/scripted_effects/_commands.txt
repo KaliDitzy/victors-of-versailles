@@ -1,0 +1,3 @@
+d_force_reform = {
+	force_reform = yes
+}

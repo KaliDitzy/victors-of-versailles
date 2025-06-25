@@ -14,6 +14,20 @@ on_actions = {
 					}
 				}
 
+				if = {
+					limit = {
+						check_variable = { next_suffrage_will_base = 0 }
+					}
+					set_variable = { next_suffrage_will_base = 0.2 }
+				}
+				if = {
+					limit = {
+						check_variable = { previous_suffrage_will_base = 0 }
+					}
+					set_variable = { previous_suffrage_will_base = 0.4 }
+				}
+				calculate_reform_will = yes
+
 				load_generic_units = yes
 			}
 		}

@@ -192,11 +192,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			TUR = {
-				declare_war_on = {
-					target = OTT
-					type = civil_war
-				}
+			set_cosmetic_tag = TUR
+			declare_war_on = {
+				target = OTT
+				type = civil_war
 			}
 		}
 	}

@@ -1,6 +1,18 @@
 on_actions = {
 	on_daily = {
 		effect = {
+			### WILL
+			set_temp_variable = { will = consciousness }
+			divide_temp_variable = { will = 100 }
+			add_to_variable = { reform_will = will }
+			clamp_variable = { 
+				var = reform_will
+				min = 0
+				max = 0.25
+			}
+			calculate_reform_will = yes
+
+			### REFORMS
 			if = {
 				limit = {
 					check_variable = { passing_law_time > 0 }

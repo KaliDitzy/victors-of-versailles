@@ -1,15 +1,3 @@
-calculate_unity_penalty_from_pops = {
-	set_temp_variable = { weekly = militancy }
-	subtract_from_temp_variable = { weekly = 0.3 }
-	divide_temp_variable = { weekly = -100 }
-	set_variable = { pop_stability_weekly = weekly }
-
-	set_temp_variable = { weekly = consciousness }
-	subtract_from_temp_variable = { weekly = 0.3 }
-	divide_temp_variable = { weekly = -100 }
-	set_variable = { pop_war_support_weekly = weekly }
-}
-
 civil_war_from_pops = {
 	clear_temp_array = involved_states
 	for_each_scope_loop = {
@@ -289,4 +277,5 @@ civil_war_from_pops = {
 			}
 		}
 	}
+	calculate_reform_will = yes
 }

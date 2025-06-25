@@ -141,88 +141,6 @@ political_actions = {
 
 economy_decisions = {
 
-	dismantle_maginot = {
-
-		icon = generic_construction
-
-		allowed = {
-			NOT = { OR = { original_tag = GER original_tag = FRA } }
-		}
-
-		cost = 50
-		fire_only_once = yes
-
-		days_remove = 200
-
-		available = {
-			controls_state = 28
-			if = {
-				limit = {
-					FRA = { has_completed_focus = FRA_extend_the_maginot_line }
-				}
-				controls_state = 18
-				controls_state = 29
-			}
-		}
-
-		visible = {
-			FRA = {
-				any_owned_state = {
-					is_controlled_by = ROOT
-				}
-			}
-			NOT = { is_in_faction_with = FRA }
-		}
-
-		modifier = {
-			civilian_factory_use = 5
-		}
-
-		complete_effect = {
-			28 = {
-				set_building_level = {
-					type = bunker
-					level = 2
-					province = {
-						all_provinces = yes
-						level > 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					FRA = { has_completed_focus = FRA_extend_the_maginot_line }
-				}
-				18 = {
-					set_building_level = {
-						type = bunker
-						level = 2
-						province = {
-							all_provinces = yes
-							level > 2
-						}
-					}
-				}
-				29 = {
-					set_building_level = {
-						type = bunker
-						level = 2
-						province = {
-							all_provinces = yes
-							level > 2
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_idea = FRA_protected_by_the_maginot_line
-				}
-				remove_ideas = FRA_protected_by_the_maginot_line
-			}
-		}
-	}
-
 	restructure_supply_system = { #one time boost to get a few cheap supply hubs
 
 		icon = GFX_decision_generic_construction
@@ -1915,17 +1833,6 @@ war_measures = {
 
 		allowed = {
 			has_dlc = "Arms Against Tyranny"
-			NOT = {
-				OR = {
-					tag = ENG #has a focus
-					tag = USA #has a focus
-					tag = SOV #has a focus
-					tag = JAP #has a focus
-					tag = AST #has a focus
-					tag = FRA #has a focus
-					tag = GER #has a focus
-				}
-			}
 		}
 
 		available = {
@@ -1934,31 +1841,6 @@ war_measures = {
 		visible = {
 			is_major = yes
 			date > 1940.1.1
-			IF = {
-				limit = {
-					has_dlc = "Trial of Allegiance"
-				}
-				NOT = {
-					OR = {
-						tag = CHL #has a focus
-						tag = BRA #has a focus
-						tag = ARG #has a focus
-						tag = URG #has a focus
-						tag = PAR #has a focus
-					}
-				}
-			}
-			IF = {
-				limit = {
-					has_dlc = "Gotterdammerung"
-				}
-				NOT = {
-					OR = {
-						tag = BEL #has a focus
-						tag = COG #has a focus
-					}
-				}
-			}
 		}
 
 		fire_only_once = yes
@@ -2005,12 +1887,6 @@ foreign_politics = {
         	NOT = { has_war_with = FROM }
         	any_enemy_country = {
 				has_attache_from = FROM
-			}
-			NOT = {
-				AND = {
-					original_tag = SPR
-					has_completed_focus = SPR_regional_defense_council_of_aragon
-				}
 			}
 		}
 

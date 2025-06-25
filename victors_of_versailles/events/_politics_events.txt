@@ -37,10 +37,16 @@ country_event = {
 		}
 		else = {
 			random_list = {
-				20 = {
+				1 = {
+					modifier = {
+						factor = var:next_suffrage_will
+					}
 					country_event = next_suffrage_law.4
 				}
-				40 = {
+				1 = {
+					modifier = {
+						factor = var:previous_suffrage_will
+					}
 					country_event = next_suffrage_law.5
 				}
 			}
@@ -135,10 +141,16 @@ country_event = {
 		}
 		else = {
 			random_list = {
-				40 = {
+				1 = {
+					modifier = {
+						factor = var:previous_suffrage_will
+					}
 					country_event = previous_suffrage_law.4
 				}
-				20 = {
+				1 = {
+					modifier = {
+						factor = var:next_suffrage_will
+					}
 					country_event = previous_suffrage_law.5
 				}
 			}

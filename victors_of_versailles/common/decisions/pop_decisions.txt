@@ -1,6 +1,10 @@
 coup_crisis = {
 	imminent_democratic_takeover = {
 		activation = {
+			OR = {
+				has_idea = no_elections
+				has_idea = upper_class_voting
+			}
 			NOT = { has_government = democratic }
 			has_civil_war = no
 
@@ -33,6 +37,10 @@ coup_crisis = {
 		}
 		cancel_trigger = {
 			NOT = {
+				OR = {
+					has_idea = no_elections
+					has_idea = upper_class_voting
+				}
 				NOT = { has_government = democratic }
 				has_civil_war = no
 
@@ -93,14 +101,13 @@ coup_crisis = {
 	}
 	imminent_communism_takeover = {
 		activation = {
-			NOT = { has_government = communism }
-			has_civil_war = no
-
-			# SOCIAL
-			OR = { # SUFFRAGE
+			OR = {
 				has_idea = no_elections
 				has_idea = upper_class_voting
 			}
+			NOT = { has_government = communism }
+			has_civil_war = no
+
 			OR = { # PROPERTY
 				has_idea = state_property
 				has_idea = property_abolished
@@ -121,14 +128,13 @@ coup_crisis = {
 		}
 		cancel_trigger = {
 			NOT = {
-				NOT = { has_government = communism }
-				has_civil_war = no
-
-				# SOCIAL
-				OR = { # SUFFRAGE
+				OR = {
 					has_idea = no_elections
 					has_idea = upper_class_voting
 				}
+				NOT = { has_government = communism }
+				has_civil_war = no
+
 				OR = { # PROPERTY
 					has_idea = state_property
 					has_idea = property_abolished
@@ -177,15 +183,13 @@ coup_crisis = {
 	}
 	imminent_fascism_takeover = {
 		activation = {
+			OR = {
+				has_idea = no_elections
+				has_idea = upper_class_voting
+			}
 			NOT = { has_government = fascism }
 			has_civil_war = no
 
-			# SOCIAL
-			OR = { # SUFFRAGE
-				has_idea = no_elections
-				has_idea = upper_class_voting
-				has_idea = wealth_voting
-			}
 			OR = { # PROPERTY
 				has_idea = private_property
 				has_idea = state_property
@@ -209,15 +213,13 @@ coup_crisis = {
 		}
 		cancel_trigger = {
 			NOT = {
+				OR = {
+					has_idea = no_elections
+					has_idea = upper_class_voting
+				}
 				NOT = { has_government = fascism }
 				has_civil_war = no
 
-				# SOCIAL
-				OR = { # SUFFRAGE
-					has_idea = no_elections
-					has_idea = upper_class_voting
-					has_idea = wealth_voting
-				}
 				OR = { # PROPERTY
 					has_idea = private_property
 					has_idea = state_property
@@ -269,16 +271,13 @@ coup_crisis = {
 	}
 	imminent_neutrality_takeover = {
 		activation = {
+			OR = {
+				has_idea = no_elections
+				has_idea = upper_class_voting
+			}
 			NOT = { has_government = neutrality }
 			has_civil_war = no
 
-			# SOCIAL
-			OR = { # SUFFRAGE
-				has_idea = no_elections
-				has_idea = upper_class_voting
-				has_idea = wealth_voting
-				has_idea = men_only
-			}
 			OR = { # PROPERTY
 				has_idea = feudalism
 				has_idea = limited_private_property
@@ -304,16 +303,13 @@ coup_crisis = {
 		}
 		cancel_trigger = {
 			NOT = {
+				OR = {
+					has_idea = no_elections
+					has_idea = upper_class_voting
+				}
 				NOT = { has_government = neutrality }
 				has_civil_war = no
 
-				# SOCIAL
-				OR = { # SUFFRAGE
-					has_idea = no_elections
-					has_idea = upper_class_voting
-					has_idea = wealth_voting
-					has_idea = men_only
-				}
 				OR = { # PROPERTY
 					has_idea = feudalism
 					has_idea = limited_private_property
@@ -387,8 +383,10 @@ civil_war_crisis = {
 			has_civil_war = no
 			NOT = {
 				set_temp_variable = { temp = 0.5 }
-				custom_trigger_tooltip = { tooltip = pop_militancy_less_than_tt }
-				check_variable = { militancy < temp }
+				custom_trigger_tooltip = {
+					tooltip = pop_militancy_less_than_tt
+					check_variable = { militancy < temp }
+				}
 			}
 		}
 		cancel_trigger = {
@@ -398,8 +396,10 @@ civil_war_crisis = {
 					has_civil_war = no
 					NOT = {
 						set_temp_variable = { temp = 0.3 }
-						custom_trigger_tooltip = { tooltip = pop_militancy_less_than_tt }
-						check_variable = { militancy < temp }
+						custom_trigger_tooltip = {
+							tooltip = pop_militancy_less_than_tt
+							check_variable = { militancy < temp }
+						}
 					}
 				}
 			}

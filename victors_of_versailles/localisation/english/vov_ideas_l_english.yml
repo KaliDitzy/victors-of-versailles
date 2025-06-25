@@ -2,6 +2,8 @@
   personality_warmonger: "Warmonger Personality"
   personality_pacifist: "Pacifist Personality"
   personality_diplomat: "Diplomatic Personality"
+  personality_logistician: "Logistician Personality"
+  personality_technocracy: "Technocratic Personality"
   personality_none: "No Personality"
 
   GER_turnip_winter_aftermath: "Shadow of the Turnip Winter"

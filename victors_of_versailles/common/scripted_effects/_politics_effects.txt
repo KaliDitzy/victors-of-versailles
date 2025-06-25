@@ -475,6 +475,7 @@ force_reform = {
 		clr_country_flag = passing_law
 		clr_country_flag = next_border_in_progress
 	}
+	calculate_reform_will = yes
 }
 reduce_consciousness_from_reform = {
 	every_controlled_state = {
@@ -1452,7 +1453,7 @@ start_previous_suffrage_reform = {
 	set_country_flag = passing_law
 	set_country_flag = previous_suffrage_in_progress
 
-	set_variable = { law_progress = 0.4 }
+	set_variable = { law_progress = previous_suffrage_will }
 
 	set_variable = { passing_law_time = 150 }
 	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
@@ -1461,7 +1462,7 @@ start_next_suffrage_reform = {
 	set_country_flag = passing_law
 	set_country_flag = next_suffrage_in_progress
 
-	set_variable = { law_progress = 0.2 }
+	set_variable = { law_progress = next_suffrage_will }
 
 	set_variable = { passing_law_time = 150 }
 	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
@@ -1675,6 +1676,7 @@ ai_do_reform = {
 	if = {
 		limit = {
 			is_ai = yes
+			NOT = { has_idea = no_elections }
 			NOT = { has_country_flag = passing_law }
 		}
 		random_list = {
@@ -1692,28 +1694,28 @@ ai_do_reform = {
 				}
 				start_next_suffrage_reform = yes
 			}
-			10 = {
+			2 = {
 				modifier = {
 					factor = 0
 					has_idea = feudalism
 				}
 				start_previous_property_reform = yes
 			}
-			10 = {
+			2 = {
 				modifier = {
 					factor = 0
 					has_idea = property_abolished
 				}
 				start_next_property_reform = yes
 			}
-			10 = {
+			23 = {
 				modifier = {
 					factor = 0
 					has_idea = religious_discrimination
 				}
 				start_previous_acceptance_reform = yes
 			}
-			10 = {
+			23 = {
 				modifier = {
 					factor = 0
 					has_idea = no_discrimination
@@ -1722,7 +1724,11 @@ ai_do_reform = {
 			}
 		}
 	}
-	else = {
+	else_if = {
+		limit = {
+			is_ai = yes
+			NOT = { has_idea = no_elections }
+		}
 		set_temp_variable_to_random = dice
 		if = {
 			limit = {

@@ -6,8 +6,16 @@ on_actions = {
 					limit = {
 						NOT = { has_state_flag = defined_pops }
 					}
-					set_variable = { militancy = 0.025 }
-					set_variable = { consciousness = 0.05 }
+					set_variable_to_random = {
+						var = militancy
+						min = 0
+						max = 0.025
+					}
+					set_variable_to_random = {
+						var = consciousness
+						min = 0
+						max = 0.05
+					}
 				}
 				set_temp_variable = { amt_states = 0 }
 				set_temp_variable = { total_militancy = 0 }

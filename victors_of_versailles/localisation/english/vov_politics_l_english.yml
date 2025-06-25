@@ -27,11 +27,11 @@
   enactment_progress: "§Y[?law_progress|%0]§!"
 
   #SOCIAL
-  next_suffrage_will: "20%"
+  next_suffrage_will: "[?next_suffrage_will|0%]"
   next_suffrage_law.2.t: "[reforms_current_suffrage_law_title] Complete"
   next_suffrage_law.3.t: "[reforms_next_suffrage_law_title] Failed"
 
-  previous_suffrage_will: "40%"
+  previous_suffrage_will: "[?previous_suffrage_will|0%]"
   previous_suffrage_law.2.t: "[reforms_current_suffrage_law_title] Complete"
   previous_suffrage_law.3.t: "[reforms_previous_suffrage_law_title] Failed"
 
