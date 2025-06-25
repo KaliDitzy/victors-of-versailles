@@ -1,4 +1,4 @@
-version="a1.2.0"
+version="a1.3.0"
 tags={
 	"Alternative History"
 	"Events"
@@ -9,3 +9,7 @@ tags={
 }
 name="Victors of Versailles"
 supported_version="1.16.8"
+replace_path="common/decisions"
+replace_path="common/decisions/categories"
+replace_path="common/national_focus"
+replace_path="events"

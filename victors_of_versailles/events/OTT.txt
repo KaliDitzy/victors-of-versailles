@@ -1,0 +1,66 @@
+add_namespace = OTT
+add_namespace = OTT_focus
+
+news_event = {
+	id = OTT_focus.1
+	title = OTT_focus.1.t
+	desc = OTT_focus.1.d
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = OTT_focus.1a
+	}
+}
+country_event = {
+	id = OTT_focus.2
+	title = OTT_focus.2.t
+	desc = OTT_focus.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = OTT_focus.2a
+		if = {
+			limit = {
+				original_tag = GRE
+			}
+			white_peace = OTT
+			transfer_state = 341
+		}
+		else_if = {
+			limit = {
+				original_tag = ENG
+			}
+			797 = {
+				set_demilitarized_zone = yes
+			}
+			340 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		else_if = {
+			limit = {
+				original_tag = ITA
+			}
+			transfer_state = 339
+			transfer_state = 342
+			transfer_state = 343
+			transfer_state = 346
+		}
+		else_if = {
+			limit = {
+				original_tag = FRA
+			}
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = OTT
+					}
+				}
+				remove_core_of = OTT
+			}
+		}
+	}
+}

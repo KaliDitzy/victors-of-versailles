@@ -85,10 +85,42 @@ focus_tree = {
 					keep_completed = yes
 					copy_completed_from = OTT
 				}
+				hidden_effect = { load_generic_units = yes }
 				change_tag_from = OTT
 			}
 			hidden_effect = {
 				load_focus_tree = { tree = generic_focus }
+				OTT = {
+					news_event = {
+						id = OTT_focus.1
+						days = 90
+						random_days = 3
+					}
+				}
+				GRE = {
+					country_event = {
+						id = OTT_focus.2
+						days = 85
+					}
+				}
+				ENG = {
+					country_event = {
+						id = OTT_focus.2
+						days = 85
+					}
+				}
+				ITA = {
+					country_event = {
+						id = OTT_focus.2
+						days = 85
+					}
+				}
+				FRA = {
+					country_event = {
+						id = OTT_focus.2
+						days = 85
+					}
+				}
 			}
 		}
 	}
@@ -114,8 +146,11 @@ focus_tree = {
 				limit = {
 					is_core_of = OTT
 				}
-				add_to_variable = { consciousness = 0.15 }
-				add_to_variable = { militancy = 0.15 }
+				set_temp_variable = { temp = 0.15 }
+				custom_effect_tooltip = pop_militancy_change_tt
+				add_to_variable = { militancy = temp }
+				custom_effect_tooltip = pop_consciousness_change_tt
+				add_to_variable = { consciousness = temp }
 			}
 			every_core_state = {
 				add_core_of = TUR
@@ -157,9 +192,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			OTT = {
+			TUR = {
 				declare_war_on = {
-					target = TUR
+					target = OTT
 					type = civil_war
 				}
 			}

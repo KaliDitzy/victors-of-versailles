@@ -1,6 +1,6 @@
 ﻿l_english:
-  pop_militancy_change_tt: "Militancy: [?temp|%-]."
-  pop_consciousness_change_tt: "Consciousness: [?temp|%-]."
+  pop_militancy_change_tt: "Militancy: [?temp|%-=]."
+  pop_consciousness_change_tt: "Consciousness: [?temp|%-=]."
   pop_militancy_equals_tt: "Militancy is §Y[?temp|%]§!."
   pop_consciousness_equals_tt: "Consciousness is §Y[?temp|%]§!."
   pop_militancy_less_than_tt: "Militancy is less than §Y[?temp|%]§!."
@@ -13,10 +13,11 @@
   SGF_become_bavarian_communists: "You will assume control of the communists during the South German Civil War."
   SGF_unlock_civil_war_decisions: "Unlock South German Civil War decisions."
   SGF_expand_cw_size_tt: "The number of states that your side will own at the beginning of the civil war will increase by one."
+
   SGF_expand_army_size_tt: "The ratio of divisions and planes that you will have at the beginning of the civil war will increase by 10%."
   SOV_sending_equipment_to_SGF: "When the South German Civil War begins:"
-  RCW_delay_surrender: "This will delay an unconditional surrender."
-  RCW_advance_surrender: "This will bring us closer to an unconditional surrender"
-  RCW_strategic_control: "will come under the occupation of [ROOT.GetNameDef]"
 
   RCW_active: "The Russian Civil War is happening"
+  RCW_delay_surrender: "Modify §YThe Russian Civil War§! by\nSurrender Limit: §G+5.0%§!"
+  RCW_advance_surrender: "Modify §YThe Russian Civil War§! by\nSurrender Limit: §R-5.0%§!"
+  RCW_strategic_control: "will come under the occupation of [ROOT.GetNameDef]"
