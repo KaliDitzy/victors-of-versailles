@@ -1,6 +1,7 @@
 ideas = {
 	country = {
 		personality_warmonger = {
+			picture = personality_warmonger
 			on_add = {
 				add_war_support = 0.15
 			}
@@ -24,6 +25,7 @@ ideas = {
 			}
 		}
 		personality_pacifist = {
+			picture = personality_pacifist
 			on_add = {
 				add_war_support = -0.15
 			}
@@ -47,6 +49,7 @@ ideas = {
 			}
 		}
 		personality_diplomat = {
+			picture = personality_diplomat
 			on_add = {
 				add_stability = 0.15
 			}
@@ -71,6 +74,7 @@ ideas = {
 			}
 		}
 		personality_logistician = {
+			picture = personality_logistician
 			modifier = {
 				max_fuel_factor = 0.25
 				fuel_gain_factor = 0.125
@@ -82,14 +86,16 @@ ideas = {
 			}
 		}
 		personality_technocracy = {
+			picture = personality_technocracy
 			modifier = {
 				equipment_conversion_speed = 0.25
 				research_speed_factor = 0.125
 
-				civilian_intel_to_others = 0.125
+				civilian_intel_to_others = 12.5
 			}
 		}
 		personality_none = {
+			picture = personality_none
 			modifier = {}
 		}
 	}

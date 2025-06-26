@@ -17,8 +17,9 @@ guiTypes = {
 
 		buttonType = {
 			name = "snap_election_btn"
-			spriteType = "GFX_closebutton"
-            position = { x = 237 y = 330 }
+			spriteType = "GFX_snap_election_btn"
+            position = { x = 217 y = 335 }
+			pdx_tooltip = snap_election_btn_tt
 		}
     }
 	#containerWindowType = {

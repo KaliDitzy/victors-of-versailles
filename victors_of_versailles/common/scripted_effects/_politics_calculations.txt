@@ -1,6 +1,19 @@
+reset_pop_mana_change = {
+	set_variable = { previous_militancy = militancy }
+	set_variable = { previous_consciousness = consciousness }
+}
+calculate_pop_mana_change = {
+	set_variable = { change_militancy = militancy }
+	subtract_from_variable = { change_militancy = previous_militancy }
+	set_variable = { change_consciousness = consciousness }
+	subtract_from_variable = { change_consciousness = previous_consciousness }
+	set_variable = { previous_militancy = militancy }
+	set_variable = { previous_consciousness = consciousness }
+}
+
 calculate_reform_will = {
 	### SOCIAL
-	# SUFFRAGE
+	# SUFFRAGE 
 	set_variable = { next_suffrage_will = next_suffrage_will_base }
 	if = {
 		limit = {
@@ -56,6 +69,102 @@ calculate_reform_will = {
 		min = 0
 		max = 1
 	}
+	# PROPERTY 
+	set_variable = { next_property_will = next_property_will_base }
+	set_temp_variable = { consciousness_influence = 0.7 }
+	add_to_temp_variable = { consciousness_influence = consciousness }
+	multiply_variable = { next_property_will = consciousness_influence }
+	if = {
+		limit = {
+			OR = {
+				has_government = communism
+				AND = {
+					has_government = fascism
+					NOT = { has_idea = state_property }
+				}
+			}
+		}
+		multiply_variable = { next_property_will = 2 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = feudalism
+				has_idea = limited_private_property
+			}
+		}
+		multiply_variable = { next_property_will = 1.5 }
+	}
+	
+	add_to_variable = { next_property_will = reform_will }
+	clamp_variable = {
+		var = next_property_will
+		min = 0
+		max = 1
+	}
+
+	set_variable = { previous_property_will = previous_property_will_base }
+	set_temp_variable = { consciousness_influence = 0.7 }
+	add_to_temp_variable = { consciousness_influence = consciousness }
+	divide_variable = { previous_property_will = consciousness_influence }
+	if = {
+		limit = {
+			has_government = neutrality
+		}
+		multiply_variable = { previous_property_will = 2 }
+	}
+	if = {
+		limit = {
+			OR = {
+				has_idea = property_abolished
+				has_idea = state_property
+			}
+		}
+		multiply_variable = { previous_property_will = 1.5 }
+	}
+
+	add_to_variable = { previous_property_will = reform_will }
+	clamp_variable = {
+		var = previous_property_will
+		min = 0
+		max = 1
+	}
+	# ACCEPTANCE 
+	set_variable = { next_acceptance_will = next_acceptance_will_base }
+	set_temp_variable = { consciousness_influence = 0.7 }
+	add_to_temp_variable = { consciousness_influence = consciousness }
+	multiply_variable = { next_acceptance_will = consciousness_influence }
+	if = {
+		limit = {
+			date > 1950.1.1
+		}
+		multiply_variable = { next_acceptance_will = 2 }
+	}
+	
+	add_to_variable = { next_acceptance_will = reform_will }
+	clamp_variable = {
+		var = next_acceptance_will
+		min = 0
+		max = 1
+	}
+
+	set_variable = { previous_acceptance_will = previous_acceptance_will_base }
+	set_temp_variable = { consciousness_influence = 0.7 }
+	add_to_temp_variable = { consciousness_influence = consciousness }
+	divide_variable = { previous_acceptance_will = consciousness_influence }
+	if = {
+		limit = {
+			date < 1935.1.1
+		}
+		multiply_variable = { previous_acceptance_will = 2 }
+	}
+
+	add_to_variable = { previous_acceptance_will = reform_will }
+	clamp_variable = {
+		var = previous_acceptance_will
+		min = 0
+		max = 1
+	}
 }
 
 calculate_unity_penalty_from_pops = {
@@ -68,4 +177,9 @@ calculate_unity_penalty_from_pops = {
 	subtract_from_temp_variable = { weekly = 0.3 }
 	divide_temp_variable = { weekly = -100 }
 	set_variable = { pop_war_support_weekly = weekly }
+}
+
+calculate_days_until_force_reform = {
+	set_variable = { days_until_force_reform = -75 }
+	add_to_variable = { days_until_force_reform = passing_law_time }
 }

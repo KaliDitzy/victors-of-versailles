@@ -1,2 +1,4 @@
 ﻿l_english:
+  militancy_tt: "§YMilitancy§!\nMilitancy Change: [?change_militancy|1%-=] since yesterday."
+  consciousness_tt: "§YConsciousness§!\nConsciousness Change: [?change_consciousness|1%-=] since yesterday."
   pop_modifiers: "Populus"

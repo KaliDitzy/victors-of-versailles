@@ -22,6 +22,7 @@ guiTypes = {
 			spriteType = "GFX_militancy_icon"
 			position = { x= 176 y = 32 }
 			Orientation = "UPPER_LEFT"
+			pdx_tooltip = militancy_tt
 		}
 
 		instantTextBoxType = {
@@ -33,6 +34,7 @@ guiTypes = {
 			maxWidth = 56
 			maxHeight = 24
 			fixedsize = yes
+			pdx_tooltip = militancy_tt
 		}
 
         iconType ={
@@ -47,6 +49,7 @@ guiTypes = {
 			spriteType = "GFX_consciousness_icon"
 			position = { x= 249 y = 32 }
 			Orientation = "UPPER_LEFT"
+			pdx_tooltip = consciousness_tt
 		}
 
 		instantTextBoxType = {
@@ -58,6 +61,7 @@ guiTypes = {
 			maxWidth = 56
 			maxHeight = 24
 			fixedsize = yes
+			pdx_tooltip = consciousness_tt
 		}
     }
 }

@@ -1,6 +1,7 @@
 ﻿l_english:
-  increase_law_progress: "Enactment progress will change by [?tt_temp|+%]."
-  force_reform: "The current active reform will be forced through legislation."
+  increase_law_progress_tt: "Enactment progress will change by [?temp|+%]."
+  force_reform_btn_tt: "Force the current active reform through legislation.\n[force_reform_btn_tt_extra]"
+  snap_election_btn_tt: "Hold a snap election which will last 30 days."
 
   dec_suffrage_law: "The current §YSuffrage§! law will be set back by one step."
   inc_suffrage_law: "The current §YSuffrage§! law will be set forward by one step."
@@ -35,19 +36,19 @@
   previous_suffrage_law.2.t: "[reforms_current_suffrage_law_title] Complete"
   previous_suffrage_law.3.t: "[reforms_previous_suffrage_law_title] Failed"
 
-  next_property_will: "20%"
+  next_property_will: "[?next_property_will|0%]"
   next_property_law.2.t: "[reforms_current_property_law_title] Complete"
   next_property_law.3.t: "[reforms_next_property_law_title] Failed"
 
-  previous_property_will: "30%"
+  previous_property_will: "[?previous_property_will|0%]"
   previous_property_law.2.t: "[reforms_current_property_law_title] Complete"
   previous_property_law.3.t: "[reforms_previous_property_law_title] Failed"
 
-  next_acceptance_will: "10%"
+  next_acceptance_will: "[?next_acceptance_will|0%]"
   next_acceptance_law.2.t: "[reforms_current_acceptance_law_title] Complete"
   next_acceptance_law.3.t: "[reforms_next_acceptance_law_title] Failed"
 
-  previous_acceptance_will: "20%"
+  previous_acceptance_will: "[?previous_acceptance_will|0%]"
   previous_acceptance_law.2.t: "[reforms_current_acceptance_law_title] Complete"
   previous_acceptance_law.3.t: "[reforms_previous_acceptance_law_title] Failed"
 

@@ -93,9 +93,21 @@ guiTypes = {
 
         buttonType = {
             name = "force_reform_btn"
-            spriteType = "GFX_closebutton"
-            position = { x = 400 y = 30 }
+            spriteType = "GFX_force_reform_btn"
+            position = { x = 350 y = 8 }
             Orientation = "UPPER_LEFT"
+            pdx_tooltip = force_reform_btn_tt
+        }
+        instantTextBoxType = {
+            name = "force-reform_btn_txt"
+            position = { x = 372 y = 16 }
+            Orientation = "UPPER_LEFT"
+            text = "Force Reform"
+            font = "hoi_18mbs"
+            maxWidth = 100
+			maxHeight = 20
+			format = left
+            pdx_tooltip = force_reform_btn_tt
         }
 
         iconType = {

@@ -1450,224 +1450,206 @@ inc_border_law = {
 
 # SOCIAL
 start_previous_suffrage_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_suffrage_in_progress
-
 	set_variable = { law_progress = previous_suffrage_will }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_suffrage_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_suffrage_in_progress
-
 	set_variable = { law_progress = next_suffrage_will }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_property_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_property_in_progress
+	set_variable = { law_progress = next_property_will }
 
-	set_variable = { law_progress = 0.3 }
-
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_property_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_property_in_progress
+	set_variable = { law_progress = previous_property_will }
 
-	set_variable = { law_progress = 0.2 }
-
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_acceptance_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_acceptance_in_progress
+	set_variable = { law_progress = previous_acceptance_will }
 
-	set_variable = { law_progress = 0.2 }
-
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_acceptance_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_acceptance_in_progress
+	set_variable = { law_progress = next_acceptance_will }
 
-	set_variable = { law_progress = 0.1 }
-
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 
 # ECONOMIC
 start_previous_trade_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_trade_in_progress
-
 	set_variable = { law_progress = 0.4 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_trade_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_trade_in_progress
-
 	set_variable = { law_progress = 0.6 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_economy_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_economy_in_progress
-
 	set_variable = { law_progress = 0.6 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_economy_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_economy_in_progress
-
 	set_variable = { law_progress = 0.4 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_labor_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_labor_in_progress
-
 	set_variable = { law_progress = 0.4 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_labor_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_labor_in_progress
-
 	set_variable = { law_progress = 0.2 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 
 # MILITARY
 start_previous_conscription_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_conscription_in_progress
-
 	set_variable = { law_progress = 0.6 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_conscription_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_conscription_in_progress
-
 	set_variable = { law_progress = 0.4 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_aoe_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_aoe_in_progress
-
 	set_variable = { law_progress = 0.6 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_aoe_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_aoe_in_progress
-
 	set_variable = { law_progress = 0.4 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_centralization_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_centralization_in_progress
-
 	set_variable = { law_progress = 0.15 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_centralization_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_centralization_in_progress
-
 	set_variable = { law_progress = 0.15 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 
 # FOREIGN
 start_previous_warfare_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_warfare_in_progress
-
 	set_variable = { law_progress = 0.4 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_warfare_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_warfare_in_progress
-
 	set_variable = { law_progress = 0.3 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_diplomacy_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_diplomacy_in_progress
-
 	set_variable = { law_progress = 0.3 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_diplomacy_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_diplomacy_in_progress
-	
 	set_variable = { law_progress = 0.3 }
 
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_previous_border_reform = {
-	set_country_flag = passing_law
 	set_country_flag = previous_border_in_progress
-
 	set_variable = { law_progress = 0.2 }
-
-	set_variable = { passing_law_time = 150 }
-	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
 }
 start_next_border_reform = {
-	set_country_flag = passing_law
 	set_country_flag = next_border_in_progress
-	
 	set_variable = { law_progress = 0.3 }
 
+	start_generic_reform = yes
+	calculate_days_until_force_reform = yes
+	calculate_reform_will = yes
+}
+# LOGICAL STUFF
+start_generic_reform = {
+	set_country_flag = passing_law
 	set_variable = { passing_law_time = 150 }
 	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
 }
@@ -1680,47 +1662,189 @@ ai_do_reform = {
 			NOT = { has_country_flag = passing_law }
 		}
 		random_list = {
-			5 = {
+			### SOCIAL
+			# SUFFRAGE
+			10 = { 
 				modifier = {
 					factor = 0
 					has_idea = no_elections
 				}
 				start_previous_suffrage_reform = yes
 			}
-			5 = {
+			10 = {
 				modifier = {
 					factor = 0
 					has_idea = universal_suffrage
 				}
 				start_next_suffrage_reform = yes
 			}
-			2 = {
+			# PROPERTY
+			10 = {
 				modifier = {
 					factor = 0
 					has_idea = feudalism
 				}
 				start_previous_property_reform = yes
 			}
-			2 = {
+			10 = {
 				modifier = {
 					factor = 0
 					has_idea = property_abolished
 				}
 				start_next_property_reform = yes
 			}
-			23 = {
+			# ACCEPTANCE
+			10 = {
 				modifier = {
 					factor = 0
 					has_idea = religious_discrimination
 				}
 				start_previous_acceptance_reform = yes
 			}
-			23 = {
+			10 = {
 				modifier = {
 					factor = 0
 					has_idea = no_discrimination
 				}
 				start_next_acceptance_reform = yes
+			}
+			### ECONOMIC
+			# TRADE
+			10 = { 
+				modifier = {
+					factor = 0
+					has_idea = closed_economy
+				}
+				start_previous_trade_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = free_trade
+				}
+				start_next_trade_reform = yes
+			}
+			# ECONOMY
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = civilian_economy
+				}
+				start_previous_economy_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = tot_economic_mobilisation
+				}
+				start_next_economy_reform = yes
+			}
+			# LABOR
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = child_labor_legal
+				}
+				start_previous_labor_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = subsidized_unemployment
+				}
+				start_next_labor_reform = yes
+			}
+			### MILITARY
+			# CONSCRIPTION
+			10 = { 
+				modifier = {
+					factor = 0
+					has_idea = disarmed_nation
+				}
+				start_previous_conscription_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = scraping_the_barrel
+				}
+				start_next_conscription_reform = yes
+			}
+			# Age of enlistment
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = aoe_children
+				}
+				start_previous_aoe_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = aoe_21
+				}
+				start_next_aoe_reform = yes
+			}
+			# CENTRALIZATION
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = civilian_irregulars
+				}
+				start_previous_centralization_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = hegemonic_military
+				}
+				start_next_centralization_reform = yes
+			}
+			### FOREIGN
+			# WARFARE
+			10 = { 
+				modifier = {
+					factor = 0
+					has_idea = pacifism
+				}
+				start_previous_warfare_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = jingoism
+				}
+				start_next_warfare_reform = yes
+			}
+			# DIPLOMACY
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = diplomatic_isolation
+				}
+				start_previous_diplomacy_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = diplomatic_collaboration
+				}
+				start_next_diplomacy_reform = yes
+			}
+			# BORDERS
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = no_borders
+				}
+				start_previous_border_reform = yes
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					has_idea = closed_borders
+				}
+				start_next_border_reform = yes
 			}
 		}
 	}

@@ -56,3 +56,17 @@ defined_text = {
 		localization_key = election_in_progress
 	}
 }
+defined_text = {
+	name = force_reform_btn_tt_extra
+
+	text = {
+		trigger = {
+			has_country_flag = passing_law
+			NOT = { check_variable = { passing_law_time < 75 } }
+		}
+		localization_key = "[?days_until_force_reform] days until possible."
+	}
+	text = {
+		localization_key = ""
+	}
+}

@@ -84,9 +84,9 @@ country_event = {
 
 	option = {
 		name = next_suffrage_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -98,9 +98,9 @@ country_event = {
 
 	option = {
 		name = next_suffrage_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -188,9 +188,9 @@ country_event = {
 
 	option = {
 		name = previous_suffrage_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -202,9 +202,9 @@ country_event = {
 
 	option = {
 		name = previous_suffrage_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -246,10 +246,16 @@ country_event = {
 		}
 		else = {
 			random_list = {
-				20 = {
+				1 = {
+					modifier = {
+						factor = var:next_property_will
+					}
 					country_event = next_property_law.4
 				}
-				30 = {
+				1 = {
+					modifier = {
+						factor = var:previous_property_will
+					}
 					country_event = next_property_law.5
 				}
 			}
@@ -287,9 +293,9 @@ country_event = {
 
 	option = {
 		name = next_property_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -301,9 +307,9 @@ country_event = {
 
 	option = {
 		name = next_property_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -344,10 +350,16 @@ country_event = {
 		}
 		else = {
 			random_list = {
-				30 = {
+				1 = {
+					modifier = {
+						factor = var:previous_property_will
+					}
 					country_event = previous_property_law.4
 				}
-				20 = {
+				1 = {
+					modifier = {
+						factor = var:next_property_will
+					}
 					country_event = previous_property_law.5
 				}
 			}
@@ -385,9 +397,9 @@ country_event = {
 
 	option = {
 		name = previous_property_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -399,9 +411,9 @@ country_event = {
 
 	option = {
 		name = previous_property_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -443,10 +455,16 @@ country_event = {
 		}
 		else = {
 			random_list = {
-				10 = {
+				1 = {
+					modifier = {
+						factor = var:next_acceptance_will
+					}
 					country_event = next_acceptance_law.4
 				}
-				20 = {
+				1 = {
+					modifier = {
+						factor = var:previous_acceptance_will
+					}
 					country_event = next_acceptance_law.5
 				}
 			}
@@ -484,9 +502,9 @@ country_event = {
 
 	option = {
 		name = next_acceptance_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -498,9 +516,9 @@ country_event = {
 
 	option = {
 		name = next_acceptance_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -541,10 +559,16 @@ country_event = {
 		}
 		else = {
 			random_list = {
-				20 = {
+				1 = {
+					modifier = {
+						factor = var:previous_acceptance_will
+					}
 					country_event = previous_acceptance_law.4
 				}
-				10 = {
+				1 = {
+					modifier = {
+						factor = var:next_acceptance_will
+					}
 					country_event = previous_acceptance_law.5
 				}
 			}
@@ -582,9 +606,9 @@ country_event = {
 
 	option = {
 		name = previous_acceptance_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -596,9 +620,9 @@ country_event = {
 
 	option = {
 		name = previous_acceptance_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -682,9 +706,9 @@ country_event = {
 
 	option = {
 		name = next_trade_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -696,9 +720,9 @@ country_event = {
 
 	option = {
 		name = next_trade_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -780,9 +804,9 @@ country_event = {
 
 	option = {
 		name = previous_trade_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -794,9 +818,9 @@ country_event = {
 
 	option = {
 		name = previous_trade_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -878,9 +902,9 @@ country_event = {
 
 	option = {
 		name = next_economy_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -892,9 +916,9 @@ country_event = {
 
 	option = {
 		name = next_economy_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -976,9 +1000,9 @@ country_event = {
 
 	option = {
 		name = previous_economy_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -990,9 +1014,9 @@ country_event = {
 
 	option = {
 		name = previous_economy_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1074,9 +1098,9 @@ country_event = {
 
 	option = {
 		name = next_labor_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1088,9 +1112,9 @@ country_event = {
 
 	option = {
 		name = next_labor_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1172,9 +1196,9 @@ country_event = {
 
 	option = {
 		name = previous_labor_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1186,9 +1210,9 @@ country_event = {
 
 	option = {
 		name = previous_labor_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1316,9 +1340,9 @@ country_event = {
 						has_war = yes
 					}
 				}
-				set_temp_variable = { tt_temp = 0.1 }
-				custom_effect_tooltip = increase_law_progress
-				add_to_variable = { law_progress = tt_temp }
+				set_temp_variable = { temp = 0.1 }
+				custom_effect_tooltip = increase_law_progress_tt
+				add_to_variable = { law_progress = temp }
 			}
 			30 = {
 				modifier = {
@@ -1330,9 +1354,9 @@ country_event = {
 						}
 					}
 				}
-				set_temp_variable = { tt_temp = -0.15 }
-				custom_effect_tooltip = increase_law_progress
-				add_to_variable = { law_progress = tt_temp }
+				set_temp_variable = { temp = -0.15 }
+				custom_effect_tooltip = increase_law_progress_tt
+				add_to_variable = { law_progress = temp }
 			}
 		}
 	}
@@ -1349,9 +1373,9 @@ country_event = {
 						}
 					}
 				}
-				set_temp_variable = { tt_temp = -0.1 }
-				custom_effect_tooltip = increase_law_progress
-				add_to_variable = { law_progress = tt_temp }
+				set_temp_variable = { temp = -0.1 }
+				custom_effect_tooltip = increase_law_progress_tt
+				add_to_variable = { law_progress = temp }
 			}
 			30 = {
 				modifier = {
@@ -1364,9 +1388,9 @@ country_event = {
 						has_war = yes
 					}
 				}
-				set_temp_variable = { tt_temp = 0.15 }
-				custom_effect_tooltip = increase_law_progress
-				add_to_variable = { law_progress = tt_temp }
+				set_temp_variable = { temp = 0.15 }
+				custom_effect_tooltip = increase_law_progress_tt
+				add_to_variable = { law_progress = temp }
 			}
 		}
 	}
@@ -1380,10 +1404,10 @@ country_event = {
 
 	option = {
 		name = next_conscription_law.5a
-		set_temp_variable_to_random = tt_temp
-		divide_temp_variable = { tt_temp = 5 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable_to_random = temp
+		divide_temp_variable = { temp = 5 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1395,10 +1419,10 @@ country_event = {
 
 	option = {
 		name = next_conscription_law.6a
-		set_temp_variable_to_random = tt_temp
-		divide_temp_variable = { tt_temp = -7.5 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable_to_random = temp
+		divide_temp_variable = { temp = -7.5 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1503,9 +1527,9 @@ country_event = {
 
 	option = {
 		name = previous_conscription_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1517,9 +1541,9 @@ country_event = {
 
 	option = {
 		name = previous_conscription_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1531,15 +1555,15 @@ country_event = {
 
 	option = {
 		name = previous_conscription_law.6a
-		set_temp_variable_to_random = tt_temp
-		multiply_temp_variable = { tt_temp = 1.5 }
-		subtract_from_temp_variable = { tt_temp = 0.5 }
-		multiply_temp_variable = { tt_temp = 0.15 }
+		set_temp_variable_to_random = temp
+		multiply_temp_variable = { temp = 1.5 }
+		subtract_from_temp_variable = { temp = 0.5 }
+		multiply_temp_variable = { temp = 0.15 }
 		if = {
 			limit = {
 				has_war = yes
 			}
-			add_to_temp_variable = { tt_temp = -0.025 }
+			add_to_temp_variable = { temp = -0.025 }
 		}
 		if = {
 			limit = {
@@ -1547,7 +1571,7 @@ country_event = {
 					has_war = yes
 				}
 			}
-			add_to_temp_variable = { tt_temp = -0.025 }
+			add_to_temp_variable = { temp = -0.025 }
 		}
 		if = {
 			limit = {
@@ -1556,10 +1580,10 @@ country_event = {
 					has_idea = limited_conscription
 				}
 			}
-			add_to_temp_variable = { tt_temp = -0.025 }
+			add_to_temp_variable = { temp = -0.025 }
 		}
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1642,9 +1666,9 @@ country_event = {
 
 	option = {
 		name = next_aoe_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1656,9 +1680,9 @@ country_event = {
 
 	option = {
 		name = next_aoe_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1740,9 +1764,9 @@ country_event = {
 
 	option = {
 		name = previous_aoe_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1754,9 +1778,9 @@ country_event = {
 
 	option = {
 		name = previous_aoe_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1839,9 +1863,9 @@ country_event = {
 
 	option = {
 		name = next_centralization_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1853,9 +1877,9 @@ country_event = {
 
 	option = {
 		name = next_centralization_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -1937,9 +1961,9 @@ country_event = {
 
 	option = {
 		name = previous_centralization_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -1951,9 +1975,9 @@ country_event = {
 
 	option = {
 		name = previous_centralization_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -2037,9 +2061,9 @@ country_event = {
 
 	option = {
 		name = next_warfare_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -2051,9 +2075,9 @@ country_event = {
 
 	option = {
 		name = next_warfare_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -2135,9 +2159,9 @@ country_event = {
 
 	option = {
 		name = previous_warfare_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -2149,9 +2173,9 @@ country_event = {
 
 	option = {
 		name = previous_warfare_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -2234,9 +2258,9 @@ country_event = {
 
 	option = {
 		name = next_diplomacy_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -2248,9 +2272,9 @@ country_event = {
 
 	option = {
 		name = next_diplomacy_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -2332,9 +2356,9 @@ country_event = {
 
 	option = {
 		name = previous_diplomacy_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -2346,9 +2370,9 @@ country_event = {
 
 	option = {
 		name = previous_diplomacy_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -2431,9 +2455,9 @@ country_event = {
 
 	option = {
 		name = next_border_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -2445,9 +2469,9 @@ country_event = {
 
 	option = {
 		name = next_border_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 
@@ -2529,9 +2553,9 @@ country_event = {
 
 	option = {
 		name = previous_border_law.4a
-		set_temp_variable = { tt_temp = 0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = 0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }
 country_event = {
@@ -2543,8 +2567,8 @@ country_event = {
 
 	option = {
 		name = previous_border_law.5a
-		set_temp_variable = { tt_temp = -0.1 }
-		custom_effect_tooltip = increase_law_progress
-		add_to_variable = { law_progress = tt_temp }
+		set_temp_variable = { temp = -0.1 }
+		custom_effect_tooltip = increase_law_progress_tt
+		add_to_variable = { law_progress = temp }
 	}
 }

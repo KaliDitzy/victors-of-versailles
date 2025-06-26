@@ -87,6 +87,7 @@ coup_crisis = {
 				ideology = democratic
 				popularity = 0.15
 			}
+			add_ideas = wealth_voting
 			every_owned_state = {
 				limit = {
 					is_controlled_by = ROOT

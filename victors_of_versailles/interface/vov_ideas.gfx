@@ -1,5 +1,30 @@
 spriteTypes = {
 	spriteType = {
+        name = "GFX_idea_personality_warmonger"
+        texturefile = "gfx/interface/ideas/generic/idea_personality_warmonger.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_personality_pacifist"
+        texturefile = "gfx/interface/ideas/generic/idea_personality_pacifist.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_personality_diplomat"
+        texturefile = "gfx/interface/ideas/generic/idea_personality_diplomat.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_personality_logistician"
+        texturefile = "gfx/interface/ideas/generic/idea_personality_logistician.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_personality_technocracy"
+        texturefile = "gfx/interface/ideas/generic/idea_personality_technocracy.dds"
+	}
+	spriteType = {
+        name = "GFX_idea_personality_none"
+        texturefile = "gfx/interface/ideas/generic/idea_personality_none.dds"
+	}
+	
+	spriteType = {
         name = "GFX_idea_GER_treaty_of_versailles"
         texturefile = "gfx/interface/ideas/GER_treaty_of_versailles.dds"
 	}

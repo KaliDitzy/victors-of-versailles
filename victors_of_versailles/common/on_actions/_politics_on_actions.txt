@@ -1,16 +1,8 @@
 on_actions = {
 	on_daily = {
 		effect = {
-			### WILL
-			set_temp_variable = { will = consciousness }
-			divide_temp_variable = { will = 100 }
-			add_to_variable = { reform_will = will }
-			clamp_variable = { 
-				var = reform_will
-				min = 0
-				max = 0.25
-			}
-			calculate_reform_will = yes
+			### POP STUFF
+			calculate_pop_mana_change = yes
 
 			### REFORMS
 			if = {
@@ -18,6 +10,8 @@ on_actions = {
 					check_variable = { passing_law_time > 0 }
 				}
 				subtract_from_variable = { passing_law_time = 1 }
+				set_variable = { days_until_force_reform = -75 }
+				add_to_variable = { days_until_force_reform = passing_law_time }
 			}
 			else_if = {
 				limit = {
@@ -41,6 +35,16 @@ on_actions = {
 	}
 	on_weekly = {
 		effect = {
+			### POP STUFF
+			set_temp_variable = { will = consciousness }
+			divide_temp_variable = { will = 100 }
+			add_to_variable = { reform_will = will }
+			clamp_variable = { 
+				var = reform_will
+				min = 0
+				max = 0.25
+			}
+			calculate_reform_will = yes
 			ai_do_reform = yes
 		}
 	}

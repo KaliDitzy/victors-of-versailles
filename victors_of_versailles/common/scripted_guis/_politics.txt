@@ -28,10 +28,7 @@ scripted_gui = {
 		window_name = vov_reformsview
 
 		visible = {
-			OR = {
-				is_ai = yes
-				has_country_flag = politics_reforms_open
-			}
+			has_country_flag = politics_reforms_open
 		}
 
 		effects = {

@@ -14,20 +14,18 @@ on_actions = {
 					}
 				}
 
-				if = {
-					limit = {
-						check_variable = { next_suffrage_will_base = 0 }
-					}
-					set_variable = { next_suffrage_will_base = 0.2 }
-				}
-				if = {
-					limit = {
-						check_variable = { previous_suffrage_will_base = 0 }
-					}
-					set_variable = { previous_suffrage_will_base = 0.4 }
-				}
+				### SOCIAL
+				# SUFFRAGE
+				set_variable = { next_suffrage_will_base = 0.2 } #0.2 = og
+				set_variable = { previous_suffrage_will_base = 0.4 } #0.4 = og
+				# PROPERTY
+				set_variable = { next_property_will_base = 0.2 } #0.2 = og
+				set_variable = { previous_property_will_base = 0.3 } #0.3 = og
+				# ACCEPTANCE
+				set_variable = { next_acceptance_will_base = 0.1 } #0.1 = og
+				set_variable = { previous_acceptance_will_base = 0.2 } #0.2 = og
+				reset_pop_mana_change = yes
 				calculate_reform_will = yes
-
 				load_generic_units = yes
 			}
 		}

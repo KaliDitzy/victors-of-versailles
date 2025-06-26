@@ -4,6 +4,15 @@ spriteTypes = {
         textureFile = "gfx/interface/politics/reforms_open_btn.dds"
 	}
 	spriteType = {
+        name = "GFX_force_reform_btn"
+        textureFile = "gfx/interface/politics/force_reform_btn.dds"
+	}
+	spriteType = {
+        name = "GFX_snap_election_btn"
+        textureFile = "gfx/interface/politics/snap_election_btn.dds"
+	}
+
+	spriteType = {
 		name = "GFX_stupid_volunteer_only"
 		textureFile = "gfx/interface/ideas/idea_volunteer_only.dds"
 	}
