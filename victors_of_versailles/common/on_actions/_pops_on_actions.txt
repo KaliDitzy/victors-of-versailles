@@ -2,6 +2,10 @@ on_actions = {
 	on_startup = {
 		effect = {
 			every_country = {
+				set_temp_variable = { pp_d = party_popularity_100@democratic }
+				set_temp_variable = { pp_c = party_popularity_100@communism }
+				set_temp_variable = { pp_f = party_popularity_100@fascism }
+				set_temp_variable = { pp_n = party_popularity_100@neutrality }
 				every_controlled_state = {
 					limit = {
 						NOT = { has_state_flag = defined_pops }
@@ -16,7 +20,13 @@ on_actions = {
 						min = 0
 						max = 0.05
 					}
+					set_variable = { democratic_support = pp_d }
+					set_variable = { communism_support = pp_c }
+					set_variable = { fascism_support = pp_f }
+					set_variable = { neutrality_support = pp_n }
 				}
+				calculate_party_popularity = yes
+				
 				set_temp_variable = { amt_states = 0 }
 				set_temp_variable = { total_militancy = 0 }
 				set_temp_variable = { total_consciousness = 0 }
@@ -54,6 +64,9 @@ on_actions = {
 				}
 			}
 		}
+		effect = {
+			calculate_party_popularity = yes
+		}
 		effect = {  # For more important, immediate changes in pops
 			set_temp_variable = { amt_states = 0 }
 			set_temp_variable = { total_militancy = 0 }
@@ -68,62 +81,6 @@ on_actions = {
 				set_temp_variable = { consciousness_add = 0 }
 				set_temp_variable = { consciousness_factor = 1 }
 				###
-
-				#if = {
-				#	limit = {
-				#		any_neighbor_state = {
-				#			check_variable = { militancy > 0.45 }
-				#		}
-				#		check_variable = { militancy < 0.45 }
-				#	}
-				#	add_to_temp_variable = { militancy_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		any_neighbor_state = {
-				#			check_variable = { militancy > 0.3 }
-				#		}
-				#		check_variable = { militancy < 0.3 }
-				#	}
-				#	add_to_temp_variable = { militancy_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		any_neighbor_state = {
-				#			check_variable = { militancy > 0.15 }
-				#		}
-				#		check_variable = { militancy < 0.15 }
-				#	}
-				#	add_to_temp_variable = { militancy_add = 0.001 }
-				#}
-
-				#if = {
-				#	limit = {
-				#		any_neighbor_state = {
-				#			check_variable = { consciousness > 0.45 }
-				#		}
-				#		check_variable = { consciousness < 0.45 }
-				#	}
-				#	add_to_temp_variable = { consciousness_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		any_neighbor_state = {
-				#			check_variable = { consciousness > 0.3 }
-				#		}
-				#		check_variable = { consciousness < 0.3 }
-				#	}
-				#	add_to_temp_variable = { consciousness_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		any_neighbor_state = {
-				#			check_variable = { consciousness > 0.15 }
-				#		}
-				#		check_variable = { consciousness < 0.15 }
-				#	}
-				#	add_to_temp_variable = { consciousness_add = 0.001 }
-				#}
 				
 				if = {
 					limit = {
@@ -167,34 +124,97 @@ on_actions = {
 				divide_temp_variable = { militancy_from_consciousness = 150 }
 				add_to_temp_variable = { militancy_add = militancy_from_consciousness }
 
-				#if = {
-				#	limit = {
-				#		check_variable = { consciousness > 0.6 }
-				#	}
-				#	add_to_temp_variable = { militancy_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		check_variable = { consciousness > 0.45 }
-				#	}
-				#	add_to_temp_variable = { militancy_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		check_variable = { consciousness > 0.3 }
-				#	}
-				#	add_to_temp_variable = { militancy_add = 0.001 }
-				#}
-				#if = {
-				#	limit = {
-				#		NOT = { check_variable = { consciousness > 0.15 } }
-				#	}
-				#	add_to_temp_variable = { militancy_add = -0.001 }
-				#}
+				## PARTY DRIFT
+				if = {
+					limit = {
+						check_variable = { democratic_support > 0 }
+					}
+					set_temp_variable_to_random = emigrate_rng
+					set_temp_variable = { pass_democratic_support = democratic_support }
+					divide_temp_variable = { pass_democratic_support = 560 }
+					random_neighbor_state = {
+						limit = {
+							OR = {
+								NOT = { check_variable = { emigrate_rng < 0.7 } }
+								owner = {
+									tag = prev.prev.owner
+								}
+							}
+						}
+						PREV = {
+							subtract_from_variable = { democratic_support = pass_democratic_support }
+						}
+						add_to_variable = { democratic_support = pass_democratic_support }
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { communism_support > 0 }
+					}
+					set_temp_variable_to_random = emigrate_rng
+					set_temp_variable = { pass_communism_support = communism_support }
+					divide_temp_variable = { pass_communism_support = 560 }
+					random_neighbor_state = {
+						limit = {
+							OR = {
+								NOT = { check_variable = { emigrate_rng < 0.7 } }
+								owner = {
+									tag = prev.prev.owner
+								}
+							}
+						}
+						PREV = {
+							subtract_from_variable = { communism_support = pass_communism_support }
+						}
+						add_to_variable = { communism_support = pass_communism_support }
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { fascism_support > 0 }
+					}
+					set_temp_variable_to_random = emigrate_rng
+					set_temp_variable = { pass_fascism_support = fascism_support }
+					divide_temp_variable = { pass_fascism_support = 560 }
+					random_neighbor_state = {
+						limit = {
+							OR = {
+								NOT = { check_variable = { emigrate_rng < 0.7 } }
+								owner = {
+									tag = prev.prev.owner
+								}
+							}
+						}
+						PREV = {
+							subtract_from_variable = { fascism_support = pass_fascism_support }
+						}
+						add_to_variable = { fascism_support = pass_fascism_support }
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { neutrality_support > 0 }
+					}
+					set_temp_variable_to_random = emigrate_rng
+					set_temp_variable = { pass_neutrality_support = neutrality_support }
+					divide_temp_variable = { pass_neutrality_support = 560 }
+					random_neighbor_state = {
+						limit = {
+							OR = {
+								NOT = { check_variable = { emigrate_rng < 0.7 } }
+								owner = {
+									tag = prev.prev.owner
+								}
+							}
+						}
+						PREV = {
+							subtract_from_variable = { neutrality_support = pass_neutrality_support }
+						}
+						add_to_variable = { neutrality_support = pass_neutrality_support }
+					}
+				}
 
-				#add_to_temp_variable = { consciousness_add = -0.001 }
-				#add_to_temp_variable = { militancy_add = -0.001 }
-
+				## MILITANCY/CONSCIOUSNESS DRIFT
 				if = {
 					limit = {
 						check_variable = { militancy > 0 }
@@ -226,14 +246,6 @@ on_actions = {
 					set_temp_variable = { pass_consciousness = consciousness }
 					divide_temp_variable = { pass_consciousness = 70 }
 					random_neighbor_state = {
-						#limit = {
-						#	OR = {
-						#		NOT = { check_variable = { emigrate_rng < 0.3 } }
-						#		owner = {
-						#			tag = prev.prev.owner
-						#		}
-						#	}
-						#}
 						PREV = {
 							subtract_from_variable = { consciousness = pass_consciousness }
 						}

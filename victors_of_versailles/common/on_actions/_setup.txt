@@ -9,6 +9,19 @@ on_actions = {
 
 			every_country = {
 				limit = {
+					check_variable = { soi_red = 0 }
+					check_variable = { soi_green = 0 }
+					check_variable = { soi_blue = 0 }
+				}
+				set_variable_to_random = soi_red
+				if = { limit = { check_variable = { soi_red > 0.2 } } add_to_variable = { soi_red = 0.2 } }
+				set_variable_to_random = soi_green
+				if = { limit = { check_variable = { soi_green > 0.2 } } add_to_variable = { soi_green = 0.2 } }
+				set_variable_to_random = soi_blue
+				if = { limit = { check_variable = { soi_blue > 0.2 } } add_to_variable = { soi_blue = 0.2 } }
+			}
+			every_country = {
+				limit = {
 					NOT = {
 						original_tag = SGF
 					}

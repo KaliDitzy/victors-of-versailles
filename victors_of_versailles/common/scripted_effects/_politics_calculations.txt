@@ -10,6 +10,58 @@ calculate_pop_mana_change = {
 	set_variable = { previous_militancy = militancy }
 	set_variable = { previous_consciousness = consciousness }
 }
+calculate_party_popularity = {
+	set_temp_variable = { pp_d = 0 }
+	set_temp_variable = { pp_c = 0 }
+	set_temp_variable = { pp_f = 0 }
+	set_temp_variable = { pp_n = 0 }
+	every_controlled_state = {
+		add_to_temp_variable = { pp_d = democratic_support }
+		add_to_temp_variable = { pp_c = communism_support }
+		add_to_temp_variable = { pp_f = fascism_support }
+		add_to_temp_variable = { pp_n = neutrality_support }
+		if = {
+			limit = {
+				PREV = { is_ai = no }
+			}
+			log = "democratic_support: [?democratic_support]"
+		}
+	}
+	divide_temp_variable = { pp_d = num_controlled_states }
+	divide_temp_variable = { pp_c = num_controlled_states }
+	divide_temp_variable = { pp_f = num_controlled_states }
+	divide_temp_variable = { pp_n = num_controlled_states }
+
+	if = {
+		limit = {
+			is_ai = no
+		}
+		log = "pp_d: [?pp_d]"
+	}
+
+	set_political_party = {
+		ideology = democratic
+		popularity = pp_d
+	}
+	set_political_party = {
+		ideology = communism
+		popularity = pp_c
+	}
+	set_political_party = {
+		ideology = fascism
+		popularity = pp_f
+	}
+	set_political_party = {
+		ideology = neutrality
+		popularity = pp_n
+	}
+	set_popularities = {
+		democratic = pp_d
+		communism = pp_c
+		fascism = pp_f
+		neutrality = pp_n
+	}
+}
 
 calculate_reform_will = {
 	### SOCIAL

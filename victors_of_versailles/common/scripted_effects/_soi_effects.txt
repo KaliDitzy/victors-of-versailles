@@ -1,0 +1,3 @@
+d_create_soi = {
+	set_country_flag = has_soi
+}

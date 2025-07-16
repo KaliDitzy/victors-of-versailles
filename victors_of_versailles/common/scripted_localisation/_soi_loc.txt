@@ -1,0 +1,47 @@
+defined_text = {
+    name = GetSphereIcon
+    text = {
+        trigger = {
+			original_tag = ENG
+            OR = {
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+        }
+        localization_key = "GFX_soi_british_empire"
+    }
+    text = {
+        trigger = {
+			original_tag = FRA
+            has_government = democratic
+        }
+        localization_key = "GFX_soi_entente_cordiale"
+    }
+
+	### GENERIC
+	text = {
+        trigger = {
+			has_government = democratic
+        }
+        localization_key = "GFX_soi_generic_democratic"
+    }
+	text = {
+        trigger = {
+			has_government = communism
+        }
+        localization_key = "GFX_soi_generic_communism"
+    }
+	text = {
+        trigger = {
+			has_government = fascism
+        }
+        localization_key = "GFX_soi_generic_fascism"
+    }
+	text = {
+        trigger = {
+			has_government = neutrality
+        }
+        localization_key = "GFX_soi_generic_neutrality"
+    }
+}

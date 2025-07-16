@@ -1,0 +1,27 @@
+spriteTypes = {
+	spriteType = {
+        name = "GFX_soi_generic_democratic"
+        textureFile = "gfx/interface/soi/soi_generic_democratic.dds"
+	}
+	spriteType = {
+        name = "GFX_soi_generic_communism"
+        textureFile = "gfx/interface/soi/soi_generic_communism.dds"
+	}
+	spriteType = {
+        name = "GFX_soi_generic_fascism"
+        textureFile = "gfx/interface/soi/soi_generic_fascism.dds"
+	}
+	spriteType = {
+        name = "GFX_soi_generic_neutrality"
+        textureFile = "gfx/interface/soi/soi_generic_neutrality.dds"
+	}
+
+	spriteType = {
+        name = "GFX_soi_british_empire"
+        textureFile = "gfx/interface/soi/soi_british_empire.dds"
+	}
+	spriteType = {
+        name = "GFX_soi_entente_cordiale"
+        textureFile = "gfx/interface/soi/soi_entente_cordiale.dds"
+	}
+}

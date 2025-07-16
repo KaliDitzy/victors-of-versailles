@@ -1652,6 +1652,7 @@ start_generic_reform = {
 	set_country_flag = passing_law
 	set_variable = { passing_law_time = 150 }
 	divide_variable = { reform_will = @DIVIDE_REFORM_WILL }
+	scoped_sound_effect = ui_reform_begin
 }
 
 ai_do_reform = {

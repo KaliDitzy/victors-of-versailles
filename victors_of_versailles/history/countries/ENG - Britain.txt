@@ -1,6 +1,10 @@
 capital = 126
 
 set_major = yes
+set_country_flag = has_soi
+set_variable = { soi_red = 0.788 }
+set_variable = { soi_green = 0.070 }
+set_variable = { soi_blue = 0.274 }
 
 set_research_slots = 4
 

@@ -1,0 +1,25 @@
+scripted_gui = {
+	soi_button = {
+		context_type = country_mapicon
+		window_name = vov_soi_mapmode
+		mapmode = soi_mapmode
+
+		visible = { always = yes }
+		mapicon_targets = {
+			target_array = global.countries
+			target_trigger = {
+				FROM = { has_country_flag = has_soi }
+			}
+		}
+
+		properties = {
+			soi_icon = {
+				image = "[FROM.GetSphereIcon]"
+			}
+		}
+		effects = {
+			soi_icon_click = {
+			}
+		}
+	}
+}

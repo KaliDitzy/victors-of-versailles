@@ -1,0 +1,80 @@
+scripted_map_modes = {
+	soi_mapmode = {
+		top = {
+			type = country
+
+			color = {
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								has_country_flag = has_soi
+								overlord = {
+									has_country_flag = has_soi
+								}
+								NOT = { check_variable = { current_soi = 0 } }
+							}
+						}
+					}
+					if = {
+						limit = {
+							FROM = { is_subject = yes }
+						}
+						FROM.overlord = {
+							set_temp_variable = { red = var:soi_red }
+							set_temp_variable = { green = var:soi_green }
+							set_temp_variable = { blue = var:soi_blue }
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { FROM = { check_variable = { current_soi = 0 } } }
+						}
+						FROM = {
+							var:current_soi = {
+								set_temp_variable = { red = var:soi_red }
+								set_temp_variable = { green = var:soi_green }
+								set_temp_variable = { blue = var:soi_blue }
+							}
+						}
+					}
+					else = {
+						set_temp_variable = { red = FROM.soi_red }
+						set_temp_variable = { green = FROM.soi_green }
+						set_temp_variable = { blue = FROM.soi_blue }
+					}
+					set_temp_variable = { alpha = 0.75 }
+				}
+				else = {
+					set_temp_variable = { red = 0.5 }
+					set_temp_variable = { green = 0.5 }
+					set_temp_variable = { blue = 0.5 }
+					set_temp_variable = { alpha = 0.25 }
+				}
+
+				set_temp_variable = { thickness = 1.15 }
+			}
+
+			thickness = yes
+		}
+
+		bottom = {
+			type = none
+		}
+
+		# if we want to show texts on map this you can set far_text & near_text
+		# must be one of the:
+		#  none
+		#  country
+		#  state
+		#  faction
+		#  player
+
+		far_text = country
+		near_text = country
+
+		# if yes, the game will update the map mode daily_update
+		# otherwise force_update_map_mode effect can be used
+		update_daily = yes
+	}
+}
