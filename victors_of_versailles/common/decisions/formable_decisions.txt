@@ -18,6 +18,22 @@ formable_germany = {
 		}
 		available = {
 			formable_germany_possible = yes
+			if = {
+				limit = {
+					original_tag = NGF
+				}
+				SGF = { exists = no }
+			}
+			else_if = {
+				limit = {
+					original_tag = SGF
+				}
+				NGF = { exists = no }
+			}
+			else = {
+				NGF = { exists = no }
+				SGF = { exists = no }
+			}
 		}
 		complete_effect = {
 			set_cosmetic_tag = GER
