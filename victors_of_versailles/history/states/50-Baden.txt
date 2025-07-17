@@ -30,13 +30,7 @@ state = {
 			air_base = 2
 		}
 		
-		1939.1.1 = {
-			buildings = {
-				arms_factory = 8
-				industrial_complex = 2
-			}
-		}
-
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

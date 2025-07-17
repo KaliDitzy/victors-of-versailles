@@ -1,0 +1,33 @@
+formable_germany_possible = {
+	# comment: Victoria 3 styled unification trigger
+	custom_trigger_tooltip = {
+        tooltip = formable_germany_possible_tt
+
+		set_temp_variable = { num_required_states = 0 }
+		set_temp_variable = { num_acquired_states = 0 }
+		all_of_scopes = {
+			array = global.states
+			if = {
+				limit = {
+					has_state_flag = formable_germany_state
+					OR = {
+						is_owned_by = PREV
+						is_controlled_by = PREV
+					}
+				}
+				add_to_temp_variable = { num_acquired_states = 1 }
+				add_to_temp_variable = { num_required_states = 1 }
+			}
+			else_if = {
+				limit = {
+					has_state_flag = formable_germany_state
+				}
+				add_to_temp_variable = { num_required_states = 1 }
+			}
+		}
+		set_temp_variable = { percentage = num_acquired_states }
+		divide_temp_variable = { percentage = num_required_states }
+
+		NOT = { check_variable = { percentage < 0.60 } }
+    }
+}

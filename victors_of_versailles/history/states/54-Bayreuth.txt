@@ -28,11 +28,7 @@ state = {
 			industrial_complex = 2
 		}
 
-		1939.1.1 = {
-			buildings = {
-				air_base = 3
-			}
-		}
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

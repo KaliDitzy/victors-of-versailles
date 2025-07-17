@@ -1,4 +1,11 @@
 ﻿l_english:
+  # flags
+  RCW_active: "The §YRussian Civil War§! is happening"
+
+  # triggers
+  formable_germany_possible_tt: "Owns or controls §Y60%§! of the required §Y[GER.GetAdjective]§! states."
+
+  # effects
   pop_militancy_change_tt: "Militancy: [?temp|1%-=]."
   pop_consciousness_change_tt: "Consciousness: [?temp|1%-=]."
   pop_militancy_equals_tt: "Militancy is §Y[?temp|1%]§!."
@@ -17,7 +24,6 @@
   SGF_expand_army_size_tt: "The ratio of divisions and planes that you will have at the beginning of the civil war will increase by 10%."
   SOV_sending_equipment_to_SGF: "When the South German Civil War begins:"
 
-  RCW_active: "The Russian Civil War is happening"
   RCW_delay_surrender: "Modify §YThe Russian Civil War§! by\nSurrender Limit: §G+5.0%§!"
   RCW_advance_surrender: "Modify §YThe Russian Civil War§! by\nSurrender Limit: §R-5.0%§!"
   RCW_strategic_control: "will come under the occupation of [ROOT.GetNameDef]"

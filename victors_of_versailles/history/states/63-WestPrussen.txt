@@ -37,6 +37,7 @@ state = {
 			air_base = 3
 		}
 		
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

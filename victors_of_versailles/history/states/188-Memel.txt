@@ -23,12 +23,7 @@ state = {
 			}
 		}
 		
-		1939.3.22 = {
-			owner = GER
-			controller = GER
-			add_core_of = GER
-		}
-
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

@@ -32,6 +32,8 @@ state = {
 			arms_factory = 2
 			industrial_complex = 3 #WAS 2
 		}
+
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

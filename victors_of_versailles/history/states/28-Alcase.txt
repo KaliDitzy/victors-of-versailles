@@ -53,6 +53,8 @@ state={
 
 		}
 		add_core_of = FRA
+
+		set_state_flag = formable_germany_state
 	}
 
 	provinces={

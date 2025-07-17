@@ -23,6 +23,7 @@ state = {
 			6583 5 # Luxembourg City
 		}
 		
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

@@ -27,6 +27,7 @@ state = {
 			industrial_complex = 1
 		}
 		
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

@@ -17,6 +17,8 @@ state={
 		victory_points = { 
 			11531 5 # Saarbrücken
 		}
+
+		set_state_flag = formable_germany_state
 	}
 
 	provinces={

@@ -16,6 +16,8 @@ state = {
 			infrastructure = 3
 			industrial_complex = 2
 		}
+
+		set_state_flag = formable_germany_state
 	}
 
 

@@ -19,6 +19,8 @@ state = {
 		victory_points = {
 			9515 3 # Regensburg
 		}
+
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

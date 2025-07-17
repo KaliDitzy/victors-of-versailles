@@ -35,14 +35,7 @@ state = {
 			6444 2 # Wiesbaden
 		}
 
-		1939.1.1 = {
-			buildings = {
-				air_base = 3
-				arms_factory = 4
-				# From "Develop Heraeus Research Facilities"
-				industrial_complex = 4
-			}
-		}
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

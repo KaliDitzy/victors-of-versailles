@@ -29,9 +29,7 @@ state = {
 			}
 		}
 		
-		1938.3.12 = {
-			add_claim_by = GER
-		}
+		set_state_flag = formable_germany_state
 	}
 
 	provinces = {

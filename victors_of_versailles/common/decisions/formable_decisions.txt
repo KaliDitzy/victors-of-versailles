@@ -1,0 +1,27 @@
+formable_germany = {
+	formable_germany_decision = {
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = formable_germany_state
+			}
+		}
+		visible = {
+			NOT = {
+				any_country = {
+					has_cosmetic_tag = GER
+				}
+			}
+
+			capital_scope = {
+				has_state_flag = formable_germany_state
+			}
+		}
+		available = {
+			formable_germany_possible = yes
+		}
+		complete_effect = {
+			set_cosmetic_tag = GER
+			hidden_effect = { set_major = yes }
+		}
+	}
+}
